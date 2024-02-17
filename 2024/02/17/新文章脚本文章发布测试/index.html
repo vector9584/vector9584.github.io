@@ -20,17 +20,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"vector9584.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac","show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这是一级标题 这是二级标题 这是删除线 \[y&#x3D;kx+b\]">
+    <meta name="description" content="之前在Linux服务器部署hexo admin工具，一切正常运行，但是当我重新部署在win server服务器运行不了sh脚本文件，所以从头开始写一下相关部署过程及问题解决方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新文章脚本文章发布测试">
+<meta property="og:title" content="博客在线发布">
 <meta property="og:url" content="https://vector9584.github.io/2024/02/17/%E6%96%B0%E6%96%87%E7%AB%A0%E8%84%9A%E6%9C%AC%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8B%E8%AF%95/index.html">
 <meta property="og:site_name" content="Mocha">
-<meta property="og:description" content="这是一级标题 这是二级标题 这是删除线 \[y&#x3D;kx+b\]">
+<meta property="og:description" content="之前在Linux服务器部署hexo admin工具，一切正常运行，但是当我重新部署在win server服务器运行不了sh脚本文件，所以从头开始写一下相关部署过程及问题解决方法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-17T04:32:48.000Z">
-<meta property="article:modified_time" content="2024-02-17T04:35:42.031Z">
+<meta property="article:modified_time" content="2024-02-17T14:27:38.897Z">
 <meta property="article:author" content="王瑞兵">
-<meta property="article:tag" content="文章测试">
+<meta property="article:tag" content="Node">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
 
 
@@ -38,10 +39,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":"","permalink":"https://vector9584.github.io/2024/02/17/%E6%96%B0%E6%96%87%E7%AB%A0%E8%84%9A%E6%9C%AC%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8B%E8%AF%95/","path":"/2024/02/17/新文章脚本文章发布测试/","title":"新文章脚本文章发布测试"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":"","permalink":"https://vector9584.github.io/2024/02/17/%E6%96%B0%E6%96%87%E7%AB%A0%E8%84%9A%E6%9C%AC%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8B%E8%AF%95/","path":"/2024/02/17/新文章脚本文章发布测试/","title":"博客在线发布"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>新文章脚本文章发布测试 | Mocha</title>
+<title>博客在线发布 | Mocha</title>
   
 
 
@@ -140,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">这是一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">这是二级标题</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">基本介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E7%89%88%E6%9C%AC"><span class="nav-number">1.1.</span> <span class="nav-text">Hexo版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="nav-number">1.2.</span> <span class="nav-text">本地使用与部署</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="nav-number">2.</span> <span class="nav-text">快速开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.1.</span> <span class="nav-text">安装hexo并创建博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85admin%E5%B9%B6%E5%90%AF%E5%8A%A8"><span class="nav-number">2.2.</span> <span class="nav-text">安装admin并启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4"><span class="nav-number">2.3.</span> <span class="nav-text">密码保护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE"><span class="nav-number">2.4.</span> <span class="nav-text">自定义文章标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC"><span class="nav-number">2.5.</span> <span class="nav-text">文章发布自动化脚本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%89%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">汉化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E6%B1%89%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">手动汉化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-admin-sch"><span class="nav-number">3.2.</span> <span class="nav-text">hexo-admin-sch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">快速开始</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#eee-error-spawn-unknown-at-childprocess.spawn"><span class="nav-number">4.1.</span> <span class="nav-text">EEE Error: spawn UNKNOWN at ChildProcess.spawn</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,12 +162,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -192,37 +193,6 @@
 
     
         <div class="pjax">
-        <div class="sidebar-inner sidebar-post-related">
-          <div class="animated">
-              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
-    相关文章
-  </div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/05/22/%E9%9D%92%E6%98%A5%E7%87%83%E7%83%A7%EF%BC%9A%E6%97%A5%E6%9C%AC%E5%8A%A8%E6%BC%AB%E4%B8%8E%E6%88%98%E5%90%8E%E5%B7%A6%E7%BF%BC%E8%BF%90%E5%8A%A8/" rel="bookmark">
-        <time class="popular-posts-time">2023-05-22</time>
-        <br>
-      青春燃烧：日本动漫与战后左翼运动
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/04/23/Hexo-NexT%E7%9A%84Tag%E8%AF%A6%E8%A7%A3/" rel="bookmark">
-        <time class="popular-posts-time">2023-04-23</time>
-        <br>
-      Hexo-NexT的Tag详解
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/05/11/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" rel="bookmark">
-        <time class="popular-posts-time">2023-05-11</time>
-        <br>
-      最短路径规划
-      </a>
-    </li>
-  </ul>
-
-          </div>
-        </div>
         </div>
   </aside>
 
@@ -253,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="新文章脚本文章发布测试 | Mocha">
+      <meta itemprop="name" content="博客在线发布 | Mocha">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          新文章脚本文章发布测试
+          博客在线发布
         </h1>
 
         <div class="post-meta-container">
@@ -270,7 +240,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-02-17 12:32:48 / 修改时间：12:35:42" itemprop="dateCreated datePublished" datetime="2024-02-17T12:32:48+08:00">2024-02-17</time>
+      <time title="创建时间：2024-02-17 12:32:48 / 修改时间：22:27:38" itemprop="dateCreated datePublished" datetime="2024-02-17T12:32:48+08:00">2024-02-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -278,7 +248,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+          <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">博客</span></a>
         </span>
     </span>
 
@@ -291,10 +261,83 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="这是一级标题">这是一级标题</h1>
-<h2 id="这是二级标题">这是二级标题</h2>
-<p><del>这是删除线</del></p>
-<p><span class="math display">\[y=kx+b\]</span></p>
+    <div class="post-body" itemprop="articleBody"><p>之前在Linux服务器部署hexo
+admin工具，一切正常运行，但是当我重新部署在win
+server服务器运行不了sh脚本文件，所以从头开始写一下相关部署过程及问题解决方法。</p>
+<span id="more"></span>
+<h1 id="基本介绍">基本介绍</h1>
+<p>要在网址发布文章，必須通过 CLI 介面以 hexo new 指令新增文章，再利用
+hexo g -d 生成并部署。</p>
+<p>通过 hexo-admin 这个插件，就能通过 GUI
+介面进行后台管理，例如编辑原有的 markdown
+文件，也可以新增文章或页面、发布草稿和提供预览功能等等，在操作上简化了发布文章的流程。</p>
+<p>hexo-admin是Hexo博客引擎的管理 UI
+。基于Ghost界面，灵感来自svbtle和prose.io。</p>
+<h2 id="hexo版本">Hexo版本</h2>
+<p>对于 2.x，请使用0.3.0此插件的版本。1.x及以上版本仅支持 Hexo
+v3.x。</p>
+<h2 id="本地使用与部署">本地使用与部署</h2>
+<p>这个插件最初被设计为本地编辑器——您在本地运行
+hexo，用于hexo-admin编写帖子，然后使用hexo generate或hexo
+deploy将生成的静态 HTML 文件发送到 github 页面或其他静态服务器。</p>
+<p>但是，hexo-admin只要您使用非静态托管服务（例如 Heroku、DigitalOcean
+等），就可以在实时博客上运行。静态托管服务（例如 Github Pages 和
+Surge.sh）不支持从以下位置运行
+hexo-admin您的实时网站。如果在实时博客中使用 Hexo
+admin，那么您绝对应该设置一个密码（见下文）——否则任何人都可以编辑内容。</p>
+<h1 id="快速开始">快速开始</h1>
+<h2 id="安装hexo并创建博客">安装hexo并创建博客</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line"><span class="built_in">cd</span> ~/</span><br><span class="line">hexo init my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h2 id="安装admin并启动">安装admin并启动</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br><span class="line">hexo server -d</span><br><span class="line">open http://localhost:<span class="number">4000</span>/admin/</span><br></pre></td></tr></table></figure>
+<h2 id="密码保护">密码保护</h2>
+<p>如果您在实时服务器上使用 Hexo
+admin，您需要一些密码保护。要启用此功能，您只需向 hexo 添加一些配置变量
+_config.yml：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">admin:</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">myfavoritename</span></span><br><span class="line">  <span class="attr">password_hash:</span> <span class="string">be121740bf988b2225a313fa1f107ca1</span></span><br><span class="line">  <span class="attr">secret:</span> <span class="string">a</span> <span class="string">secret</span> <span class="string">something</span></span><br></pre></td></tr></table></figure>
+<p>这password_hash是您密码的 bcrypt 哈希值。用于secret确保 cookie
+的安全，因此最好将其设置得又长又复杂。</p>
+<p>Hexo admin 设置中的实用程序可以对您的密码进行哈希处理并admin
+为您生成该部分。启动 Hexo 并Settings &gt; Setup authentification
+填写您的信息。将生成的 YAML 复制到您的_config.yml.</p>
+<p>完成后，启动您的 hexo 服务器，然后/admin/将要求您输入密码。</p>
+<h2 id="自定义文章标签">自定义文章标签</h2>
+<p>要使用管理界面添加和编辑您自己的帖子元数据，请将元数据变量和自定义变量添加到您的
+hexo 中_config.yml：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">comments:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure>
+<h2 id="文章发布自动化脚本">文章发布自动化脚本</h2>
+<p>通过写脚本，在部署页面一键部署执行脚本文件</p>
+<ol type="1">
+<li>写脚本文件（注意这里因为之前用到了豆瓣插件hexo-douban，该插件执行的命令也是hexo
+d，所以在发布时写全命令deploy，防止命令冲突）</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env sh</span></span><br><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>
+<p>npx为局部hexo变量设置，如果全局配置了hexo，可以直接写命令，不需要npx后缀</p>
+<p>关于sh脚本命令相关介绍：https://blog.csdn.net/qq_37164975/article/details/106181500</p>
+<ol start="2" type="1">
+<li>脚本配置</li>
+</ol>
+<p>首先将脚本文件命名（如publish.sh）,将该文件放到博客目录中（如根目录），然后打开配置文件进行配置_config.yml：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">admin:</span></span><br><span class="line">  <span class="attr">deployCommand:</span> <span class="string">&#x27;./publish.sh&#x27;</span></span><br></pre></td></tr></table></figure>
+<h1 id="汉化">汉化</h1>
+<h2 id="手动汉化">手动汉化</h2>
+<p>修改文件路径<code>blog\node_modules\hexo-admin\www\bundle.js</code></p>
+<p>将里面的英文对应修改为中文</p>
+<h2 id="hexo-admin-sch"><code>hexo-admin-sch</code></h2>
+<h3 id="快速开始-1">快速开始</h3>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-admin-sch --save</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>启动后访问IP:端口/admin就可以看到效果了</p>
+<h1 id="相关问题">相关问题</h1>
+<h2
+id="eee-error-spawn-unknown-at-childprocess.spawn"><code>EEE Error: spawn UNKNOWN at ChildProcess.spawn</code></h2>
+<p>通过还原Hexo-admin（不用汉化的）、管理员方式启动Hexo还是全局安装Hexo都不行</p>
+<p>然后了解node运行脚本的机制：https://blog.csdn.net/w20101310/article/details/89786587</p>
+<p>最后修改文件：<code>blog\node_modules\hexo-admin-sch\deploy.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span> (<span class="params">command, message, done</span>) &#123;</span><br><span class="line">  done = <span class="title function_">once</span>(done);</span><br><span class="line">  <span class="keyword">var</span> proc = <span class="title function_">spawn</span>(<span class="string">&quot;D:/Git/git-bash.exe&quot;</span>, [<span class="string">&#x27;E:/hexo-next/hexo_publish.sh&#x27;</span>], &#123;<span class="attr">detached</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  <span class="keyword">var</span> stdout = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  <span class="keyword">var</span> stderr = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  proc.<span class="property">stdout</span>.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="keyword">function</span>(<span class="params">data</span>)&#123;stdout += data.<span class="title function_">toString</span>()&#125;)</span><br><span class="line">  proc.<span class="property">stderr</span>.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="keyword">function</span>(<span class="params">data</span>)&#123;stderr += data.<span class="title function_">toString</span>()&#125;)</span><br><span class="line">  proc.<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="keyword">function</span>(<span class="params">err</span>) &#123;</span><br><span class="line">    <span class="title function_">done</span>(err, &#123;<span class="attr">stdout</span>: stdout, <span class="attr">stderr</span>: stderr&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  proc.<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">done</span>(<span class="literal">null</span>, &#123;<span class="attr">stdout</span>: stdout, <span class="attr">stderr</span>: stderr&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意这里着重修改了spawn方法：</p>
+<p><code>var proc = spawn("D:/Git/git-bash.exe", ['E:/hexo-next/hexo_publish.sh'], &#123;detached: true&#125;);</code></p>
+<p>给定了明确执行脚本的git地址和明确的脚本文件</p>
+<p>通过测试，前端页面可以正常执行脚本，但是结果并没有办法返回给前端，还需进一步研究</p>
 
     </div>
 
@@ -312,7 +355,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://vector9584.github.io/2024/02/17/%E6%96%B0%E6%96%87%E7%AB%A0%E8%84%9A%E6%9C%AC%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8B%E8%AF%95/" title="新文章脚本文章发布测试">https://vector9584.github.io/2024/02/17/新文章脚本文章发布测试/</a>
+      <a href="https://vector9584.github.io/2024/02/17/%E6%96%B0%E6%96%87%E7%AB%A0%E8%84%9A%E6%9C%AC%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8B%E8%AF%95/" title="博客在线发布">https://vector9584.github.io/2024/02/17/新文章脚本文章发布测试/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -321,7 +364,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> 文章测试</a>
+              <a href="/tags/Node/" rel="tag"><i class="fa fa-tag"></i> Node</a>
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           </div>
 
         
