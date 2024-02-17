@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>新文章脚本文章发布测试</title>
+    <url>//2024/02/17/%E6%96%B0%E6%96%87%E7%AB%A0%E8%84%9A%E6%9C%AC%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h1 id="这是一级标题">这是一级标题</h1>
+<h2 id="这是二级标题">这是二级标题</h2>
+<p><del>这是删除线</del></p>
+<p><span class="math display">\[y=kx+b\]</span></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>文章测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>青春燃烧：日本动漫与战后左翼运动</title>
     <url>//2023/05/22/%E9%9D%92%E6%98%A5%E7%87%83%E7%83%A7%EF%BC%9A%E6%97%A5%E6%9C%AC%E5%8A%A8%E6%BC%AB%E4%B8%8E%E6%88%98%E5%90%8E%E5%B7%A6%E7%BF%BC%E8%BF%90%E5%8A%A8/</url>
     <content><![CDATA[<p>新美日安保条约掀起了长达十多年的社会运动风潮。正是这场日本历史上空前绝后的社会运动，洗礼了整整一代日本年轻人。其中很多人投身了日本动漫产业，共同打造出日本战后时代对世界影响最深远的文化产业，铸就了战后日本动漫的黄金时代。</p>
@@ -6123,7 +6138,7 @@ href="https://github.com/ecomfe/zrender">ZRender</a>，提供直观，交互丰�
 <h2 id="echarts测试">Echarts测试</h2>
 <h3 id="折线图-line">折线图 <em><font color=gray>Line</font></em></h3>
 <h4 id="基本折线图">基本折线图</h4>
-<div id="echarts3694" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts9573" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6135,7 +6150,7 @@ href="https://github.com/ecomfe/zrender">ZRender</a>，提供直观，交互丰�
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3694'));
+        var myChart = echarts.init(document.getElementById('echarts9573'));
         // 指定图表的配置项和数据
         var option = {
     xAxis: {
@@ -6154,7 +6169,7 @@ href="https://github.com/ecomfe/zrender">ZRender</a>，提供直观，交互丰�
         myChart.setOption(option);
 </script>
 <h4 id="堆积面积图">堆积面积图</h4>
-<div id="echarts6033" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts9183" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6166,7 +6181,7 @@ href="https://github.com/ecomfe/zrender">ZRender</a>，提供直观，交互丰�
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6033'));
+        var myChart = echarts.init(document.getElementById('echarts9183'));
         // 指定图表的配置项和数据
         var option = option = null;
 option = {
@@ -6260,7 +6275,7 @@ if (option && typeof option === "object") {
         myChart.setOption(option);
 </script>
 <h4 id="雨量流量关系图">雨量流量关系图</h4>
-<div id="echarts6212" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5117" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6272,7 +6287,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6212'));
+        var myChart = echarts.init(document.getElementById('echarts5117'));
         // 指定图表的配置项和数据
         var option = option = null;
 option = {
@@ -6454,7 +6469,7 @@ if (option && typeof option === "object") {
         myChart.setOption(option);
 </script>
 <h3 id="柱状图-bar">柱状图 <em><font color=gray>Bar</font></em></h3>
-<div id="echarts9025" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts8613" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6466,7 +6481,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9025'));
+        var myChart = echarts.init(document.getElementById('echarts8613'));
         // 指定图表的配置项和数据
         var option = option = null;
 var xAxisData = [];
@@ -6534,7 +6549,7 @@ if (option && typeof option === "object") {
 </script>
 <h3 id="散点图-point">散点图 <em><font color=gray>Point</font></em></h3>
 <h4 id="散布aqi颜色">散布Aqi颜色</h4>
-<div id="echarts355" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5676" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6546,7 +6561,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts355'));
+        var myChart = echarts.init(document.getElementById('echarts5676'));
         // 指定图表的配置项和数据
         var option = option = null;
 var dataBJ = [
@@ -6836,7 +6851,7 @@ if (option && typeof option === "object") {
 <h3 id="旭日图-circle">旭日图
 <em><font color=gray>Circle</font></em></h3>
 <h4 id="饮料香精">饮料香精</h4>
-<div id="echarts8833" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1209" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6848,7 +6863,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8833'));
+        var myChart = echarts.init(document.getElementById('echarts1209'));
         // 指定图表的配置项和数据
         var option = option = null;
 var data = [{
@@ -7571,7 +7586,7 @@ if (option && typeof option === "object") {
 <h3 id="平行坐标系-parallel">平行坐标系
 <em><font color=gray>Parallel</font></em></h3>
 <h4 id="平行aqi">平行Aqi</h4>
-<div id="echarts2444" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5491" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -7583,7 +7598,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2444'));
+        var myChart = echarts.init(document.getElementById('echarts5491'));
         // 指定图表的配置项和数据
         var option = option = null;
 // Schema:
@@ -7825,7 +7840,7 @@ if (option && typeof option === "object") {
 <h3 id="象形柱图-pictorialbar">象形柱图
 <em><font color=gray>PictorialBar</font></em></h3>
 <h4 id="圣诞驯鹿的速度">圣诞驯鹿的速度</h4>
-<div id="echarts1908" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5870" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -7837,7 +7852,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1908'));
+        var myChart = echarts.init(document.getElementById('echarts5870'));
         // 指定图表的配置项和数据
         var option = option = null;
 var pathSymbols = {
@@ -7942,7 +7957,7 @@ if (option && typeof option === "object") {
 </script>
 <h3 id="热力图-thermodynamic">热力图
 <em><font color=gray>Thermodynamic</font></em></h3>
-<div id="echarts4751" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts6565" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -7954,7 +7969,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4751'));
+        var myChart = echarts.init(document.getElementById('echarts6565'));
         // 指定图表的配置项和数据
         var option = option = null;
 var hours = ['12a', '1a', '2a', '3a', '4a', '5a', '6a',
