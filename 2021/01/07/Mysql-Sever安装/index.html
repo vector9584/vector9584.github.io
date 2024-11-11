@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CCedarville+Cursive:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"vector9584.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac","show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Mysql的下载以及安装配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql Sever安装">
+<meta property="og:url" content="https://vector9584.github.io/2021/01/07/Mysql-Sever%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:site_name" content="Mocha">
+<meta property="og:description" content="Mysql的下载以及安装配置">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-07T13:28:00.000Z">
+<meta property="article:modified_time" content="2023-10-17T11:42:38.000Z">
+<meta property="article:author" content="王瑞兵">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://vector9584.github.io/2021/01/07/Mysql-Sever%E5%AE%89%E8%A3%85/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://vector9584.github.io/2021/01/07/Mysql-Sever%E5%AE%89%E8%A3%85/","path":"/2021/01/07/Mysql-Sever安装/","title":"Mysql Sever安装"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mysql Sever安装 | Mocha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mocha</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E7%84%B6%E5%90%8E%E8%A7%A3%E5%8E%8B%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%96%B0%E5%BB%BAmy.ini%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">解压，然后解压目录下新建my.ini文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#host-xxx-is-not-allowed-to-connect-to-this-mysql-server-%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number"></span> <span class="nav-text">1130
+- Host XXX is not allowed to connect to this MySQL server
+错误提示的解决办法</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王瑞兵"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">王瑞兵</p>
+  <div class="site-description" itemprop="description">不满是向上的车轮，能够载着不自满的人类，向人道前进</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vector9584" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/8482661" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;8482661" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://119.91.113.10:8080/vector9584" title="Server → http:&#x2F;&#x2F;119.91.113.10:8080&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fa-solid fa-server fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/admin/" title="Admin → &#x2F;admin&#x2F;" rel="noopener me"><i class="fa-solid fa-pen-nib fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vector9584.github.io/2021/01/07/Mysql-Sever%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="王瑞兵">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mocha">
+      <meta itemprop="description" content="不满是向上的车轮，能够载着不自满的人类，向人道前进">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Mysql Sever安装 | Mocha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mysql Sever安装
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-07 21:28:00" itemprop="dateCreated datePublished" datetime="2021-01-07T21:28:00+08:00">2021-01-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-17 19:42:38" itemprop="dateModified" datetime="2023-10-17T19:42:38+08:00">2023-10-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">后端开发</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Mysql的下载以及安装配置</p>
+<span id="more"></span>
+<p>mysql sever下载官网：https://dev.mysql.com/downloads/mysql/</p>
+<p>选择体量较小的那个zip进行下载</p>
+<p>解压到存放的位置</p>
+<p>打开环境变量</p>
+<p>在path中添加刚刚解压文件夹中的bin目录</p>
+<p>以管理员身份运行cmd</p>
+<p>cd进入sqlsever的bin目录</p>
+<blockquote>
+<p>cd后的路径不能有空格，如果有，整个路径应该用引号引起来，否则无法进入</p>
+</blockquote>
+<p>mysqld -install</p>
+<blockquote>
+<p>缺少msvcp140.dll：链接：https://pan.baidu.com/s/1Xt_nuTTf_-gSQDJgwrpFjQ
+提取码：6v5j</p>
+<p>文件存放位置：C/Windows/SYSTEM32下</p>
+<p>应用程序无法正常启动(0xc000007b)：cmd中输入</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sfc /scannow</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>显示：Service successfully installed.</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure>
+<p>显示：</p>
+<blockquote>
+<p>2021-01-07T13:26:50.831608Z 0 [System] [MY-013169] [Server]
+D:.22-winx64.exe (mysqld 8.0.22) initializing of server in progress as
+process 1528 2021-01-07T13:26:50.862623Z 1 [System] [MY-013576] [InnoDB]
+InnoDB initialization has started. 2021-01-07T13:26:52.056042Z 1
+[System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-01-07T13:26:55.123443Z 6 [Note] [MY-010454] [Server] A temporary
+password is generated for root@localhost: CouYVy/ps5J(</p>
+</blockquote>
+<blockquote>
+<p>如果报错Can't create test
+file……证明cmd没有以管理员方式运行或者命令错误（检查自己的拼写）</p>
+<p>删除data文件夹，重新cmd进入bin，然后按照以下命令</p>
+<p>mysqld -remove MySQL</p>
+<p>mysqld --initialize --console</p>
+<p>mysqld --install</p>
+</blockquote>
+<p>注意：这里最后一行显示了默认密码</p>
+<p>此时上层目录也多了data文件夹</p>
+<p>net start mysql</p>
+<p>显示：</p>
+<blockquote>
+<p>MySQL 服务正在启动 . MySQL 服务已经启动成功。</p>
+</blockquote>
+<p>mysql -u root -p</p>
+<p>显示：Enter password:</p>
+<p>粘贴默认密码并回车</p>
+<p>显示：</p>
+<blockquote>
+<p>Welcome to the MySQL monitor. Commands end with ; or . Your MySQL
+connection id is 8 Server version: 8.0.22</p>
+<p>Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights
+reserved.</p>
+<p>Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.</p>
+<p>Type 'help;' or ' for help. Type ' to clear the current input
+statement.</p>
+<p>mysql&gt;</p>
+</blockquote>
+<p>就成功启动服务并进入了</p>
+<p>接下来修改默认密码</p>
+<p>先修改root用户的密码</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;password1&#x27;;</span><br></pre></td></tr></table></figure>
+<p>注意后面有分号，最后的字符串就是密码，敲回车后显示</p>
+<p>Query OK, 0 rows affected (0.01 sec)</p>
+<p>表示修改成功</p>
+<p>我们可以退出试一下</p>
+<p>退出命令：exit</p>
+<p>然后敲回车</p>
+<p>显示</p>
+<p>Bye</p>
+<p>然后（按键盘上的↑键可以回到上一个命令）</p>
+<p>mysql -u root -p</p>
+<p>之后输入修改的密码重新进入</p>
+<p>创建自己的用户和密码</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create user &#x27;vector&#x27;@&#x27;localhost&#x27; identified by &#x27;password&#x27;;</span><br></pre></td></tr></table></figure>
+<p>回车后显示：Query OK, 0 rows affected (0.02 sec)</p>
+<p>我们重新退出，用创建的账号登录试一下</p>
+<p>exit</p>
+<p>mysql -u vector -p</p>
+<p>输入密码</p>
+<p>显示：mysql&gt;</p>
+<p>成功进入</p>
+<p>接下来对用户授权</p>
+<p>首先我们要退出当前创建的用户，当前用户权限不够</p>
+<p>然后以root用户进入mysql</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">exit</span></span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>输入命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON *.* TO &#x27;vector&#x27;@&#x27;localhost&#x27;;</span><br></pre></td></tr></table></figure>
+<p>GRANT privileges ON databasename.tablename TO 'username'@'host'</p>
+<ul>
+<li>privileges：用户的操作权限，如SELECT，INSERT，UPDATE等，如果要授予所有的权限则使用ALL</li>
+<li>databasename：数据库名</li>
+<li>tablename：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用<em>表示，如</em>.*</li>
+<li>host：主机名，用%或localhost替代</li>
+</ul>
+<p>显示Query OK, 0 rows affected (0.01 sec)</p>
+<p>表示该用户拥有了所有权限和所有数据库</p>
+<p>接下来我们就可以用创建的用户进行各种操作了</p>
+<p>在数据库中<code>*.*</code>表示所有数据库中的所有表</p>
+<p>当然如果我们只想把某一个数据库给某一个用户就可以用上面的语法</p>
+<p>如：</p>
+<p>创建数据库：create database test;</p>
+<p>展示数据库：show databases;</p>
+<p>选择某些数据展示：select * from 表名</p>
+<p>当我们有一个数据库叫test，里面有一个表叫data</p>
+<p>show databases;</p>
+<p>展示所有的数据库</p>
+<p>在mysql中用指令use test，就连接上了我们的数据库</p>
+<p>show tables;</p>
+<p>展示所有的表</p>
+<p>select * from data;</p>
+<p>展示表中所有内容</p>
+<p>navicat链接</p>
+<p>连接名：可以用来识别即可</p>
+<p>主机：localhost(自己电脑用localhost，连接其他服务器用其IP)</p>
+<p>端口：3306(默认3306)</p>
+<blockquote>
+<p>查看端口号方法：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">输入密码</span><br><span class="line">show global variables like ‘port‘;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3
+id="解压然后解压目录下新建my.ini文件">解压，然后解压目录下新建my.ini文件</h3>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端默认字符集</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8mb4</span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment">#设置3306端口</span></span><br><span class="line"><span class="attr">port</span> = <span class="number">3306</span> </span><br><span class="line"><span class="comment"># 设置mysql的安装目录</span></span><br><span class="line"><span class="attr">basedir</span>=D:\Java\mysql-<span class="number">8.0</span>.<span class="number">15</span>-winx64</span><br><span class="line"><span class="comment"># 设置mysql数据库的数据的存放目录</span></span><br><span class="line"><span class="attr">datadir</span>=D:\Java\mysql-<span class="number">8.0</span>.<span class="number">15</span>-winx64\data</span><br><span class="line"><span class="comment"># 允许最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">200</span></span><br><span class="line"><span class="comment"># 服务端使用的字符集默认为8比特编码的latin1字符集</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8mb4</span><br><span class="line"><span class="comment"># 创建新表时将使用的默认存储引擎</span></span><br><span class="line"><span class="attr">default-storage-engine</span>=INNODB</span><br></pre></td></tr></table></figure>
+<hr />
+<h2
+id="host-xxx-is-not-allowed-to-connect-to-this-mysql-server-错误提示的解决办法">1130
+- Host XXX is not allowed to connect to this MySQL server
+错误提示的解决办法</h2>
+<p><strong>登陆服务器，进入数据库</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql <span class="literal">-uroot</span> <span class="literal">-p</span>密码</span><br></pre></td></tr></table></figure>
+<p>查看数据库用户</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+<p><strong>切换用户，查看配置</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line"><span class="built_in">select</span> host from user <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>修改配置</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update user <span class="built_in">set</span> host = <span class="string">&#x27;%&#x27;</span> <span class="built_in">where</span> user =<span class="string">&#x27;root&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解释：将localhost设置为通配符%。
+localhost设置了“%”后便可以允许远程访问。</p>
+</blockquote>
+<p><strong>使配置生效</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<p>然后再查看配置</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">select</span> host from user <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<table style="width:10%;">
+<colgroup>
+<col style="width: 9%" />
+</colgroup>
+<tbody>
+<tr>
+<td>host</td>
+</tr>
+<tr>
+<td>%</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>出现该结果表示成功</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>王瑞兵
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://vector9584.github.io/2021/01/07/Mysql-Sever%E5%AE%89%E8%A3%85/" title="Mysql Sever安装">https://vector9584.github.io/2021/01/07/Mysql-Sever安装/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/01/04/vue%E5%AD%A6%E4%B9%A0/" rel="prev" title="vue学习">
+                  <i class="fa fa-angle-left"></i> vue学习
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/01/26/GeoServer/" rel="next" title="GeoServer">
+                  GeoServer <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">王瑞兵</span>
+  </div><div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("3/17/2020 23:55:11");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+<a href="https://icp.gov.moe/?keyword=20231015" target="view_window" style="border-bottom:none">
+  <img src="https://cdn.bili33.top/gh/Vikutorika/assets@master/img/GovMoe/icon120.png" style="display:inline-block;vertical-align:middle;width:20px;height:20px;">
+  萌ICP备20231015号
+</a >
+
+
+
+<script>
+    
+        reloadPages = ['Echarts','Tableau','书籍','电影','游戏','歌曲']
+        document.addEventListener("click", function (event) {
+        
+            clickElement = event.target.innerText
+            
+            
+            if(reloadPages.indexOf(clickElement) > -1){
+                
+                
+                
+                
+                
+                if(event.target.tagName==='A'){
+                  window.location.href=event.target.href
+                }else if(event.target.tagName==='SPAN'){
+                window.location.href=event.target.parentElement.href
+                }
+            }
+        });
+</script>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3,"priority":true,"url":"https://vector9584.github.io/2021/01/07/Mysql-Sever%E5%AE%89%E8%A3%85/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"vector9584","repo":"vector9584.github.io","client_id":"b42d32a40fbaaf12f8ca","client_secret":"7b76e445bb7e15d2762970bfbe766c73e9b0fa79","admin_user":"vector9584","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"ce1c370bbef7b0c347b2e69c3511a3e7"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

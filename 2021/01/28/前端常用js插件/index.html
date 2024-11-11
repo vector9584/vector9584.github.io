@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CCedarville+Cursive:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"vector9584.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac","show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="JavaScript 资源大全中文版">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端常用js插件">
+<meta property="og:url" content="https://vector9584.github.io/2021/01/28/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8js%E6%8F%92%E4%BB%B6/index.html">
+<meta property="og:site_name" content="Mocha">
+<meta property="og:description" content="JavaScript 资源大全中文版">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-28T08:26:55.000Z">
+<meta property="article:modified_time" content="2023-10-17T11:42:38.000Z">
+<meta property="article:author" content="王瑞兵">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://vector9584.github.io/2021/01/28/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8js%E6%8F%92%E4%BB%B6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://vector9584.github.io/2021/01/28/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8js%E6%8F%92%E4%BB%B6/","path":"/2021/01/28/前端常用js插件/","title":"前端常用js插件"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>前端常用js插件 | Mocha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mocha</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">包管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">加载器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7"><span class="nav-number">3.</span> <span class="nav-text">打包工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6"><span class="nav-number">4.</span> <span class="nav-text">测试框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6"><span class="nav-number">4.1.</span> <span class="nav-text">框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E8%A8%80"><span class="nav-number">4.2.</span> <span class="nav-text">断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E7%8E%87"><span class="nav-number">4.3.</span> <span class="nav-text">覆盖率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%99%A8"><span class="nav-number">4.4.</span> <span class="nav-text">运行器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qa-%E5%B7%A5%E5%85%B7"><span class="nav-number">5.</span> <span class="nav-text">QA 工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mvc-%E6%A1%86%E6%9E%B6%E5%92%8C%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">MVC 框架和库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E-node-%E7%9A%84-cms-%E6%A1%86%E6%9E%B6"><span class="nav-number">7.</span> <span class="nav-text">基于 Node 的 CMS 框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="nav-number">8.</span> <span class="nav-text">模板引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flux"><span class="nav-number">9.</span> <span class="nav-text">Flux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">10.</span> <span class="nav-text">数据可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E8%BD%B4"><span class="nav-number">10.1.</span> <span class="nav-text">时间轴</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">11.</span> <span class="nav-text">编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">11.1.</span> <span class="nav-text">文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">11.2.</span> <span class="nav-text">函数式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-number">11.3.</span> <span class="nav-text">响应式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">11.4.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F"><span class="nav-number">11.5.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">11.6.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97"><span class="nav-number">11.7.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8"><span class="nav-number">11.8.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2"><span class="nav-number">11.9.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BD%E9%99%85%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96i18n-and-l10n"><span class="nav-number">11.10.</span> <span class="nav-text">国际化和本地化（I18n And
+L10n）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">11.11.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="nav-number">11.12.</span> <span class="nav-text">控制流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1"><span class="nav-number">11.13.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">11.14.</span> <span class="nav-text">安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E5%BF%97"><span class="nav-number">11.15.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">11.16.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AA%92%E4%BD%93"><span class="nav-number">11.17.</span> <span class="nav-text">媒体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E9%9F%B3%E5%91%BD%E4%BB%A4"><span class="nav-number">11.18.</span> <span class="nav-text">语音命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#api"><span class="nav-number">11.19.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E8%A7%89%E6%A3%80%E6%B5%8B"><span class="nav-number">11.20.</span> <span class="nav-text">视觉检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A3%80%E6%B5%8B"><span class="nav-number">11.21.</span> <span class="nav-text">浏览器检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">11.22.</span> <span class="nav-text">性能分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ui"><span class="nav-number">12.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE"><span class="nav-number">12.1.</span> <span class="nav-text">代码高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E7%8A%B6%E6%80%81"><span class="nav-number">12.2.</span> <span class="nav-text">加载状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81"><span class="nav-number">12.3.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%AE%E7%9B%98%E5%B0%81%E8%A3%85%E5%99%A8"><span class="nav-number">12.4.</span> <span class="nav-text">键盘封装器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%92%8C%E5%BC%95%E5%AF%BC"><span class="nav-number">12.5.</span> <span class="nav-text">浏览和引导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E7%9F%A5"><span class="nav-number">12.6.</span> <span class="nav-text">通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%BB%E7%81%AF%E7%89%87"><span class="nav-number">12.7.</span> <span class="nav-text">幻灯片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%91%E5%9D%97%E6%8E%A7%E4%BB%B6"><span class="nav-number">12.8.</span> <span class="nav-text">滑块控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6"><span class="nav-number">12.9.</span> <span class="nav-text">表单组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">12.10.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E5%8E%86"><span class="nav-number">12.11.</span> <span class="nav-text">日历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9"><span class="nav-number">12.12.</span> <span class="nav-text">选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">12.13.</span> <span class="nav-text">文件上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">12.14.</span> <span class="nav-text">其它</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">12.15.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%80%81%E6%A1%86%E5%92%8C%E5%BC%B9%E5%87%BA%E6%A1%86"><span class="nav-number">12.16.</span> <span class="nav-text">模态框和弹出框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%9A%E5%8A%A8"><span class="nav-number">12.17.</span> <span class="nav-text">滚动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95"><span class="nav-number">12.18.</span> <span class="nav-text">菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E6%A0%85%E6%A0%BC"><span class="nav-number">12.19.</span> <span class="nav-text">表格&#x2F;栅格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6-1"><span class="nav-number">12.20.</span> <span class="nav-text">框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E5%8A%BF"><span class="nav-number">12.21.</span> <span class="nav-text">手势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8"><span class="nav-number">12.22.</span> <span class="nav-text">触摸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9B%BE"><span class="nav-number">12.23.</span> <span class="nav-text">地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E9%9F%B3%E9%A2%91"><span class="nav-number">12.24.</span> <span class="nav-text">视频&#x2F;音频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB"><span class="nav-number">12.25.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86"><span class="nav-number">12.26.</span> <span class="nav-text">图片处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ecmascript-6"><span class="nav-number">12.27.</span> <span class="nav-text">ECMAScript 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E5%8C%85sdk"><span class="nav-number">12.28.</span> <span class="nav-text">软件开发工具包(SDK)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%9D%82%E7%83%A9"><span class="nav-number">12.29.</span> <span class="nav-text">大杂烩</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王瑞兵"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">王瑞兵</p>
+  <div class="site-description" itemprop="description">不满是向上的车轮，能够载着不自满的人类，向人道前进</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vector9584" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/8482661" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;8482661" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://119.91.113.10:8080/vector9584" title="Server → http:&#x2F;&#x2F;119.91.113.10:8080&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fa-solid fa-server fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/admin/" title="Admin → &#x2F;admin&#x2F;" rel="noopener me"><i class="fa-solid fa-pen-nib fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vector9584.github.io/2021/01/28/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8js%E6%8F%92%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="王瑞兵">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mocha">
+      <meta itemprop="description" content="不满是向上的车轮，能够载着不自满的人类，向人道前进">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="前端常用js插件 | Mocha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端常用js插件
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-28 16:26:55" itemprop="dateCreated datePublished" datetime="2021-01-28T16:26:55+08:00">2021-01-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-17 19:42:38" itemprop="dateModified" datetime="2023-10-17T19:42:38+08:00">2023-10-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjobbole%2Fawesome-javascript-cn">JavaScript
+资源大全中文版</a></p>
+<span id="more"></span>
+<h2 id="包管理器">包管理器</h2>
+<p>管理着 JavaScript 库，并提供读取和打包它们的工具。</p>
+<ul>
+<li>npm：npm 是 JavaScript 的包管理器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.npmjs.com%2F">官网</a></li>
+<li>Bower：一个 web 应用的包管理器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbower%2Fbower">官网</a></li>
+<li>component：能构建更好 web 应用的客户端包管理器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcomponentjs%2Fcomponent">官网</a></li>
+<li>spm：全新的静态包管理器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fspmjs%2Fspm">官网</a></li>
+<li>jam：一个专注于浏览器端和兼容 RequireJS 的包管理器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcaolan%2Fjam">官网</a></li>
+<li>jspm：流畅的浏览器包管理器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjspm%2Fjspm-cli">官网</a></li>
+<li>Ender：没有库文件的程序库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fender-js%2FEnder">官网</a></li>
+<li>volo：以项目模板、添加依赖项与自动化生成的方式创建前端项目。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fvolojs%2Fvolo">官网</a></li>
+<li>Duo：一个整合 Component、Browserify 和 Go <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fduojs%2Fduo">官网</a>的最佳思想，使开发者能快速方便地组织和编写前端代码的下一代包管理器。</li>
+</ul>
+<h2 id="加载器">加载器</h2>
+<p>JavaScript 的模块或加载系统。</p>
+<ul>
+<li>RequireJS：JavaScript 文件和模块的加载器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjrburke%2Frequirejs">官网</a></li>
+<li>browserify：在浏览器端以 node.js 的方式 require()。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsubstack%2Fnode-browserify">官网</a></li>
+<li>SeaJS：用于 Web 的模块加载器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fseajs%2Fseajs">官网</a></li>
+<li>HeadJS：HEAD 的唯一脚本。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fheadjs%2Fheadjs">官网</a></li>
+<li>curl：小巧、快速且易扩展的模块加载器，它能处理 AMD、CommonJS
+Modules/1.1、CSS、HTML/text 和历史脚本。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcujojs%2Fcurl">官网</a></li>
+<li>lazyload：小巧且无依赖的异步 JavaScript 和 CSS 加载器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Frgrove%2Flazyload%2F">官网</a></li>
+<li>script.js：异步 JavaScript 加载器和依赖管理器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fded%2Fscript.js">官网</a></li>
+<li>systemjs：AMD、CJS（commonJS） 和符合 ES6 规范的模块加载器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsystemjs%2Fsystemjs">官网</a></li>
+<li>LodJS：基于 AMD 的模块加载器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fyanhaijing%2Flodjs">官网</a></li>
+<li>ESL：浏览器端的模块加载器，支持延迟定义和 AMD。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fecomfe%2Fesl">官网</a></li>
+<li>modulejs：轻量的 JavaScript 模块系统。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flrsjng%2Fmodulejs">官网</a></li>
+</ul>
+<h2 id="打包工具">打包工具</h2>
+<ul>
+<li>browserify ：Browserify 让你能在浏览器端使用 require('modules')
+，打包所有依赖。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsubstack%2Fnode-browserify">官网</a></li>
+<li>webpack：为浏览器打包 CommonJs/AMD 模块。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwebpack%2Fwebpack">官网</a></li>
+<li>gulp：用自动化构建工具增强你的工作流程！<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fgulpjs.com%2F">官网</a></li>
+<li>rollup: JavaScript 模块打包器! <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Frollupjs.org%2F">官网</a>
+<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.rollupjs.com%2F">中文</a></li>
+</ul>
+<h2 id="测试框架">测试框架</h2>
+<h3 id="框架">框架</h3>
+<ul>
+<li>mocha：适用于 node.js 和浏览器、简易、灵活、有趣的 JavaScript
+测试框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmochajs%2Fmocha">官网</a></li>
+<li>jasmine：简单无 DOM 的 JavaScript 测试框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjasmine%2Fjasmine">官网</a></li>
+<li>qunit：一个易于使用的 JavaScript 单元测试框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjquery%2Fqunit">官网</a></li>
+<li>jest：简单的 JavaScript 单元测试框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffacebook%2Fjest">官网</a></li>
+<li>prova：基于 Tape 和 Browserify 的测试运行器，它适用于 Node &amp;
+浏览器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fazer%2Fprova">官网</a></li>
+<li>DalekJS：自动化且跨浏览器的 JavaScript 功能测试框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdalekjs%2Fdalek">官网</a></li>
+</ul>
+<h3 id="断言">断言</h3>
+<ul>
+<li>chai：适用于 node.js 和浏览器的 BDD / TDD
+断言框架，并能搭配其它测试框架使用。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fchaijs%2Fchai">官网</a></li>
+<li>Sinon.JS：对 JavaScript 进行 spies、stubs 和 mock 测试。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsinonjs%2Fsinon">官网</a></li>
+<li>expect.js：简约的、适用于 Node.js 和浏览器端的 BDD 式断言工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FAutomattic%2Fexpect.js">官网</a></li>
+<li>should.js：适用于 Node.js 的 BDD 式断言工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftj%2Fshould.js">官网</a></li>
+</ul>
+<h3 id="覆盖率">覆盖率</h3>
+<ul>
+<li>istanbul：另一个 JS 代码覆盖率检测工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgotwarlost%2Fistanbul">官网</a></li>
+<li>blanket：一个简单的代码覆盖率检测库。它的设计理念是易于安装和使用，且可用于浏览器端和
+node.js。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Falex-seville%2Fblanket">官网</a></li>
+<li>JSCover：JSCover 是一个检测 JavaScript 程序代码覆盖率的工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftntim96%2FJSCover">官网</a></li>
+</ul>
+<h3 id="运行器">运行器</h3>
+<ul>
+<li>phantomjs：脚本化的 Headless WebKit。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fariya%2Fphantomjs">官网</a></li>
+<li>slimerjs：一个内核为 Gecko 的类似 PhantomJS 工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flaurentj%2Fslimerjs">官网</a></li>
+<li>casperjs：基于 PhantomJS 和 Slimer JS 的导航脚本和测试工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fn1k0%2Fcasperjs">官网</a></li>
+<li>zombie：基于 node.js 、快速、全栈且无图形界面的浏览器的测试工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fassaf%2Fzombie">官网</a></li>
+<li>totoro：一个简单可靠且能跨浏览器运行的测试工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftotorojs%2Ftotoro">官网</a></li>
+<li>karma：一个优秀的的 JavaScript 测试运行器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkarma-runner%2Fkarma">官网</a></li>
+<li>nightwatch：基于 node.js 和 selenium webdriver
+的图形界面自动化测试框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnightwatchjs%2Fnightwatch">官网</a></li>
+<li>intern：下一代 JavaScript 代码测试栈。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftheintern%2Fintern">官网</a></li>
+<li>yolpo：在浏览器逐句执行的 JavaScript 解释器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.yolpo.com%2F">官网</a></li>
+</ul>
+<h2 id="qa-工具">QA 工具</h2>
+<ul>
+<li>JSHint：JSHint 是一个有助于发现 JavaScript
+代码错误和潜在问题的工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjshint%2Fjshint%2F">官网</a></li>
+<li>jscs：JavaScript 代码风格检测工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjscs-dev%2Fnode-jscs">官网</a></li>
+<li>jsfmt：格式化、搜索和改写 JavaScript。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Frdio%2Fjsfmt">官网</a></li>
+<li>jsinspect：检测复制粘贴和结构类似的代码。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdanielstjules%2Fjsinspect">官网</a></li>
+<li>buddy.js：发现 JavaScript 代码里的 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fzh.wikipedia.org%2Fwiki%2F%E9%AD%94%E8%A1%93%E6%95%B8%E5%AD%97">魔术数字</a>。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdanielstjules%2Fbuddy.js">官网</a></li>
+<li>ESLint：完全插件化的工具，能在 JavaScript 中识别和记录模式。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Feslint%2Feslint">官网</a></li>
+<li>JSLint
+：高标准、严格和固执的代码质量工具，旨在只保持语言的优良部分。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdouglascrockford%2FJSLint">官网</a></li>
+</ul>
+<h2 id="mvc-框架和库">MVC 框架和库</h2>
+<ul>
+<li><p><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fangularjs%2F">angular.js</a>：为网络应用增强
+HTML。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fangular%2Fangular.js">官网</a></p></li>
+<li><p>aurelia：一个适用于移动设备、桌面电脑和 web 的客户端 JavaScript
+框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Faurelia.io%2F">官网</a></p></li>
+<li><p>backbone：给你的 JS 应用加入带有 Models、Views、Collections 和
+Events 的 Backbone。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjashkenas%2Fbackbone">官网</a></p></li>
+<li><p>batman.js：最适合 Rails 开发者的 JavaScript 框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fbatmanjs.org%2F">官网</a></p></li>
+<li><p>ember.js：一个旨在创建非凡 web 应用的 JavaScript 框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Femberjs%2Fember.js">官网</a></p></li>
+<li><p>meteor：一个超简单的、数据库无处不在的、只传输数据的纯 JavaScript
+web 框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmeteor%2Fmeteor">官网</a></p></li>
+<li><p>ractive：新一代 DOM 操作。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fractivejs%2Fractive">官网</a></p></li>
+<li><p>vue：一个用于构建可交互界面的、直观快速和可组合的 MVVM 框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fvuejs%2Fvue">官网</a></p></li>
+<li><p>knockout：Knockout 用 JavaScript 让创建响应式的富 UI 更加容易。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fknockout%2Fknockout">官网</a></p></li>
+<li><p>spine：构建 JavaScript 应用的轻量 MVC 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fspine%2Fspine">官网</a></p></li>
+<li><p>espresso.js：一个极小的、用于制作用户界面的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftechlayer%2Fespresso.js">官网</a></p></li>
+<li><p>canjs：让 JS 更好、更快、更简单。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcanjs%2Fcanjs">官网</a></p></li>
+<li><p>react：用于建构用户界面的库。它是声明式的、高效的和极度灵活的，并使用虚拟
+DOM 作为其不同的实现。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Ffacebook.github.io%2Freact%2F">官网</a></p></li>
+<li><p>react-native：一个用 React 构建原生应用的框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffacebook%2Freact-native">官网</a></p></li>
+<li><p>riot：类 React 库，但很轻量。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Friot%2Friot">官网</a></p></li>
+<li><p>thorax：加强你的 Backbone。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwalmartlabs%2Fthorax">官网</a></p></li>
+<li><p>chaplin：使用 Backbone.js 库的 JavaScript 应用架构。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fchaplinjs%2Fchaplin">官网</a></p></li>
+<li><p>marionette：一个 Backbone.js 的复合应用程序库，旨在简化大型
+JavaScript 应用结构。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmarionettejs%2Fbackbone.marionette">官网</a></p></li>
+<li><p>ripple：一个小巧的、用于构建响应界面的基础框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fripplejs%2Fripple">官网</a></p></li>
+<li><p>rivets：轻量却拥有强大的数据绑定和模板解决方案<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmikeric%2Frivets">官网</a></p></li>
+<li><p>derby：让编写实时和协同应用更简单的 MVC 框架，能够在 Node.js
+和浏览器同时运行。</p>
+<p>官网</p>
+<ul>
+<li>derby-awesome：很棒的 derby 组件集合。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Frussll%2Fawesome-derby">官网</a></li>
+</ul></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fway-js%2F">way.js</a>：简单、轻量、持久化的双向数据绑定。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgwendall%2Fway.js">官网</a></p></li>
+<li><p>mithril.js：Mithril 是一个客户端 MVC 框架（轻量、强大和快速）<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flhorie%2Fmithril.js">官网</a></p></li>
+<li><p>jsblocks：jsblocks 是一个更好的 MV-ish 框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fastoilkov%2Fjsblocks">官网</a></p></li>
+<li><p>LiquidLava：易懂的、用于构建用户界面的 MVC 框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.lava-framework.com%2F">官网</a></p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Felectron%2F">Electron</a>：用Html、CSS和JavaScript构建跨平台的客户端应用程序。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Felectron.atom.io%2F">官网</a>、<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Felectron%2Felectron">GitHub</a></p></li>
+</ul>
+<h2 id="基于-node-的-cms-框架">基于 Node 的 CMS 框架</h2>
+<ul>
+<li>KeystoneJS：强大的 CMS 和 web 应用框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkeystonejs%2Fkeystone">官网</a></li>
+<li>Reaction Commerce：拥有实时的架构和设计的响应式（reactive） CMS。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Freactioncommerce%2Freaction">官网</a></li>
+<li>Ghost：简单、强大的发布平台。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftryghost%2FGhost">官网</a></li>
+<li>Apostrophe：提供内容编辑和基本服务的 CMS。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpunkave%2Fapostrophe">官网</a></li>
+<li>We.js：适用于实时应用、网站或博客的框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwejs%2Fwe%2F">官网</a></li>
+<li>Hatch.js：拥有社交特性的 CMS 平台。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Finventures%2Fhatchjs">官网</a></li>
+<li>TaracotJS：拥有快速、极简风格特点且基于Node.js 的 CMS。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fxtremespb%2Ftaracotjs-generator%2F">官网</a></li>
+<li>Nodizecms：为 CoffeeScript 爱好者准备的 CMS。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnodize%2Fnodizecms">官网</a></li>
+<li>Cody：拥有所见即所得的编辑器的 CMS。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjcoppieters%2Fcody">官网</a></li>
+<li>PencilBlue：CMS 和博客平台。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpencilblue%2Fpencilblue%2F">官网</a></li>
+</ul>
+<h2 id="模板引擎">模板引擎</h2>
+<p>模板引擎允许您执行字符串插值。</p>
+<ul>
+<li>mustache.js：是 JavaScript 中带有  的最简模板。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjanl%2Fmustache.js">官网</a></li>
+<li>handlebars.js：是 Mustache 模板语言的扩展。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwycats%2Fhandlebars.js%2F">官网</a></li>
+<li>hogan.js：是 Mustache 模板语言的编译器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftwitter%2Fhogan.js">官网</a></li>
+<li>doT：最快速简洁的 JavaScript 模板引擎，适用于 nodejs 和浏览器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Folado%2FdoT">官网</a></li>
+<li>dustjs：适用于浏览器和 node.js 的异步模板。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flinkedin%2Fdustjs%2F">官网</a></li>
+<li>eco：嵌入式的 CoffeeScript 模板。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsstephenson%2Feco%2F">官网</a></li>
+<li>JavaScript-Templates：轻量（小于 1KB）、快速且无依赖的强大
+JavaScript 模版引擎。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fblueimp%2FJavaScript-Templates">官网</a></li>
+<li>t.js：小巧的 JavaScript 模板框架，压缩后约为 400 字节。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjasonmoo%2Ft.js">官网</a></li>
+<li>pug：健壮的、优雅且功能丰富的 nodejs 模板引擎。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpugjs%2Fpug">官网</a></li>
+<li>EJS：高效的 JavaScript 模板。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmde%2Fejs">官网</a></li>
+<li>xtemplate：可扩展的模板引擎，适用于 node 和浏览器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fxtemplate%2Fxtemplate">官网</a></li>
+<li>marko：快速轻量且基于 HTML 的模板引擎，支持异步、流、自定义标签和
+CommonJS 模编译后输出。适用于 Node.js <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmarko-js%2Fmarko">官网</a>和浏览器。</li>
+</ul>
+<h2 id="flux">Flux</h2>
+<p>Flux是Facebook用来构建客户端Web应用的应用架构</p>
+<ul>
+<li>Reflux是根据React的flux创建的单向数据流类库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Freflux%2Frefluxjs">官网</a></li>
+<li>Redux是可预测javascript应用程序状态的容器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fredux.js.org%2F">官网</a></li>
+<li>Mobx是通过透明的函数响应式编程实现简单，可扩展的状态管理库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fmobx.js.org%2F">官网</a></li>
+<li>Dva是基于Redux, Redux-saga 和 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=mailto%3Areact-router%402.x">react-router@2.x</a>的轻量级的框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdvajs%2Fdva">官网</a></li>
+</ul>
+<h2 id="数据可视化">数据可视化</h2>
+<p>Web 数据可视化工具</p>
+<ul>
+<li>d3：一个对 HTML 和 SVG 进行可视化的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmbostock%2Fd3">官网</a></li>
+<li>metrics-graphics：更简洁和拥有更规范的数据图表布局优化算法的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmozilla%2Fmetrics-graphics">官网</a></li>
+<li>pykcharts.js：经过精心设计后，去除 d3.js 复杂性的 d3.js 图表库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpykih%2FPykCharts.js">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fthree-js%2F">three.js</a>：JavaScript
+3D 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmrdoob%2Fthree.js">官网</a></li>
+<li>Chart.js：简单的、基于 canvas 标签的 HTML5 图表库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnnnick%2FChart.js">官网</a></li>
+<li>paper.js：是矢量图形脚本中的瑞士军刀 —— 使用 HTML5 Canvas 将
+Scriptographer 移植到 JavaScript <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpaperjs%2Fpaper.js">官网</a>和浏览器。</li>
+<li>fabric.js：JavaScript Canvas 库，SVG 与 Canvas 可以相互解析。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkangax%2Ffabric.js">官网</a></li>
+<li>peity：进度条、线状和饼状图。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbenpickles%2Fpeity">官网</a></li>
+<li>raphael：JavaScript 矢量库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FDmitryBaranovskiy%2Fraphael">官网</a></li>
+<li>echarts：商业产品图表。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fecomfe%2Fecharts">官网</a></li>
+<li>vis：动态的、基于浏览器的可视化库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Falmende%2Fvis">官网</a></li>
+<li>two.js：一个渲染器无关的适用于 web 的二维绘图 api 。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjonobr1%2Ftwo.js">官网</a></li>
+<li>g.raphael：基于 Raphaël 图表库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FDmitryBaranovskiy%2Fg.raphael">官网</a></li>
+<li>sigma.js：一个致力于图形绘画的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjacomyal%2Fsigma.js">官网</a></li>
+<li>arbor：一个使用 web workers 和 jQuery 的图形可视化库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsamizdatco%2Farbor">官网</a></li>
+<li>cubism：可视化时间序列的 D3 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsquare%2Fcubism">官网</a></li>
+<li>dc.js：与 crossfilter 无缝合作的多维图表绘制库，使用 d3.js 渲染。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdc-js%2Fdc.js">官网</a></li>
+<li>vega：一套可视化语法。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftrifacta%2Fvega">官网</a></li>
+<li>processing.js：Processing.js 基于 Web
+标准使数据可视化，而无需任何插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fprocessingjs.org%2F">官网</a></li>
+<li>envisionjs：动态的 HTML5 可视化。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FHumbleSoftware%2Fenvisionjs">官网</a></li>
+<li>rickshaw：用于构建交互式实时图表的 JavaScript 工具包。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fshutterstock%2Frickshaw">官网</a></li>
+<li>flot：吸引人的、基于 jQuery 的 JavaScript 图表库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fflot%2Fflot">官网</a></li>
+<li>morris.js：漂亮的时间序列线框图。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmorrisjs%2Fmorris.js">官网</a></li>
+<li>nvd3：一个为 D3.js 构建可复用图表和图表组件的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnovus%2Fnvd3">官网</a></li>
+<li>svg.js：一个轻量的、用于操作和添加 SVG 动画的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwout%2Fsvg.js">官网</a></li>
+<li>heatmap.js：基于 HTML5 canvas 的热力图 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpa7%2Fheatmap.js">官网</a></li>
+<li>jquery.sparkline：一个直接在浏览器端生成小型走势图的 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgwatts%2Fjquery.sparkline">官网</a></li>
+<li>xCharts：一个基于 D3、用于构建自定义图表和图形的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftenxer%2FxCharts">官网</a></li>
+<li>trianglify：基于 d3.js 的低多边形（low poly）风格背景图片生成器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fqrohlf%2Ftrianglify">官网</a></li>
+<li>d3-cloud：创建词云（word cloud）效果的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjasondavies%2Fd3-cloud">官网</a></li>
+<li>d4：一个基于 D3 、友好、可复用的 DSL 图表库 。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fheavysixer%2Fd4">官网</a></li>
+<li>dimple.js：基于 d3 的简易商业分析图表库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fdimplejs.org%2F">官网</a></li>
+<li>chartist-js：简单的响应式图表。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgionkunz%2Fchartist-js">官网</a></li>
+<li>epoch：一个通用的实时图表库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fepochjs%2Fepoch">官网</a></li>
+<li>c3：基于 D3 的可复用图表库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmasayuki0812%2Fc3">官网</a></li>
+<li>BabylonJS：一个运用 HTML5 和 WebGL 构建 3D 游戏的框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FBabylonJS%2FBabylon.js">官网</a></li>
+<li>jquery.raty.js：一个星级评分插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwbotelhos%2Fraty">官网</a></li>
+</ul>
+<p>也有一些很棒的收费库，如 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.amcharts.com%2F">amchart</a>、<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fplot.ly%2F">plotly</a>
+和 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.highcharts.com%2F">highchart</a>。</p>
+<h3 id="时间轴">时间轴</h3>
+<ul>
+<li>TimelineJS： 一个用 JavaScript 编写的可叙事时间轴库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FNUKnightLab%2FTimelineJS">官网</a></li>
+<li>timesheet.js：用于构建简单的 HTML5 &amp; CSS3 时间表的 JavaScript
+库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsemu%2Ftimesheet.js">官网</a></li>
+</ul>
+<h2 id="编辑器">编辑器</h2>
+<ul>
+<li>ace：Ace（Ajax.org Cloud9 Editor）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fajaxorg%2Face">官网</a></li>
+<li>CodeMirror：浏览器端的代码编辑器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcodemirror%2FCodeMirror">官网</a></li>
+<li>esprima：用于综合分析的 ECMAScript 解析器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fariya%2Fesprima">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fquill%2F">quill</a>：一个带有
+API 的跨浏览器富文本编辑器。(<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fquilljs.com%2F">官网</a>)</li>
+<li>medium-editor：Medium.com 所见即所得编辑器的克隆版。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fyabwe%2Fmedium-editor">官网</a></li>
+<li>pen：享受在线编辑（支持 markdown）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsofish%2Fpen">官网</a></li>
+<li>jquery-notebook：一个易用的、简洁优雅的文本编辑器。灵感来源于 Medium
+的魅力。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fraphaelcruzeiro%2Fjquery-notebook">官网</a></li>
+<li>bootstrap-wysiwyg：小巧的、兼容 bootstrap
+的所见即所得的富文本编辑器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmindmup%2Fbootstrap-wysiwyg">官网</a></li>
+<li>ckeditor-releases：适用于每个人的 web 文本编辑器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fckeditor%2Fckeditor-releases">官网</a></li>
+<li>editor：一个 markdown 编辑器，但仍在开发中。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flepture%2Feditor">官网</a></li>
+<li>EpicEditor：一个可嵌入的 JavaScript Markdown <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FOscarGodson%2FEpicEditor">官网</a>的编辑器，拥有全屏编辑、即时预览、自动保存草稿和离线支持等功能。</li>
+<li>jsoneditor：查看、编辑和格式化 JSON 的 web 工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjosdejong%2Fjsoneditor">官网</a></li>
+<li>vim.js： 拥有持久化 ~/.vimrc 的 Vim 编辑器的 JavaScript 移植版本。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcoolwanglu%2Fvim.js">官网</a></li>
+<li>Squire：HTML5 富文本编辑器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fneilj%2FSquire">官网</a></li>
+<li>TinyMCE：JavaScript 富文本编辑器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftinymce%2Ftinymce">官网</a></li>
+<li>trix：由 Basecamp 制作，适用于每天写作的富文本编辑器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbasecamp%2Ftrix">官网</a></li>
+</ul>
+<h3 id="文件">文件</h3>
+<p>处理文件的库。</p>
+<ul>
+<li>Papa Parse：一款强大的 CSV 库，支持解析 CSV 文件/字符串，也能导出
+CSV。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmholt%2FPapaParse">官网</a></li>
+<li>jBinary：对用声明式语法描述文件类型和数据结构的二进制文件，进行高级
+I/O（加载、解析、操作、序列化、存储）操作。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FjDataView%2FjBinary">官网</a></li>
+</ul>
+<h3 id="函数式编程">函数式编程</h3>
+<p>函数式编程库扩展了 JavaScript 的能力。</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Funderscore%2F">underscore</a>：JavaScript
+的实用工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjashkenas%2Funderscore">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Flodash%2F">lodash</a>：提供一致性、可定制、高性能和额外功能的实用库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flodash%2Flodash">官网</a></li>
+<li>Sugar：一个扩展了原生对象功能的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fandrewplummer%2FSugar">官网</a></li>
+<li>lazy.js：类似 Underscore，但性能更优越<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdtao%2Flazy.js">官网</a></li>
+<li>ramda：一个针对 JavaScript 程序员的实用函数库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FCrossEye%2Framda">官网</a></li>
+<li>mout：模块化的 JavaScript 工具库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmout%2Fmout">官网</a></li>
+<li>mesh：流数据同步工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcrcn%2Fmesh.js">官网</a></li>
+</ul>
+<h3 id="响应式编程">响应式编程</h3>
+<p>响应式程序库扩展了 JavaScript 的能力。</p>
+<ul>
+<li>RxJs：对 JavaScript 进行响应式扩展。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FReactive-Extensions%2FRxJS">官网</a></li>
+<li>Bacon：JavaScript 的 FPR（函数式响应式编程）库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbaconjs%2Fbacon.js">官网</a></li>
+<li>Kefir：受 Bacon.js 和 RxJS 启发的 FRP
+库，专注于高性能和低内存消耗。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpozadi%2Fkefir">官网</a></li>
+<li>Highland：对 JavaScript 实用工具的重新思考，Highland
+能轻易地管理同步和异步信息，而且仅使用标准 JavaScript 和类 Node 流。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhighlandjs.org%2F">官网</a></li>
+<li>Most.js：高性能 FRP 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcujojs%2Fmost">官网</a></li>
+</ul>
+<h3 id="数据结构">数据结构</h3>
+<p>数据结构库用于构建一个更复杂的应用。</p>
+<ul>
+<li>immutable-js：不可变的数据集合，包括
+Sequence、Range、Repeat、Map、OrderedMap、Set 和 sparse Vector。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffacebook%2Fimmutable-js">官网</a></li>
+<li>mori：使用 ClojureScript 持久化数据结构和支持原生 JavaScript API
+的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fswannodette%2Fmori">官网</a></li>
+<li>buckets：完整的、经过充分测试和记录数据结构的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmauriciosantos%2FBuckets-JS">官网</a></li>
+<li>hashmap：简单的 hashmap 实现，支持任何类型的键值。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fflesler%2Fhashmap">官网</a></li>
+</ul>
+<h3 id="日期">日期</h3>
+<p>日期库。</p>
+<ul>
+<li>moment：解析、验证、操作和显示日期。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmoment%2Fmoment">官网</a></li>
+<li>moment-timezone：基于 moment.js 的时区库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmoment%2Fmoment-timezone">官网</a></li>
+<li>jquery-timeago：一款支持自动更新模糊时间戳的 jQuery 插件（如："4
+分钟之前"）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Frmm5t%2Fjquery-timeago">官网</a></li>
+<li>timezone-js：让 JavaScript Date 对象拥有时区功能。使用 Olson
+zoneinfo 文件记录着时区数据。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmde%2Ftimezone-js">官网</a></li>
+<li>date：拥有人性化的 Date() 方法。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FMatthewMueller%2Fdate">官网</a></li>
+<li>ms.js：小巧的毫秒转换工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Frauchg%2Fms.js">官网</a></li>
+<li>timeago.js：一个非常轻量级(~1.7
+Kb)的用于将时间转化成<code>xxx时间前</code>格式，例如：8分钟前。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Ftimeago.org%2F">官网</a></li>
+</ul>
+<h3 id="字符串">字符串</h3>
+<p>字符串库。</p>
+<ul>
+<li>selecting：一个允许你获取用户选定文本的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FEvandroLG%2Fselecting">官网</a></li>
+<li>underscore.string：扩展了 Underscore.js 的字符串操作。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fepeli%2Funderscore.string">官网</a></li>
+<li>string.js：额外的 JavaScript 字符串方法。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjprichardson%2Fstring.js">官网</a></li>
+<li>he：健壮的 HTML 实体编码/解码器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmathiasbynens%2Fhe">官网</a></li>
+<li>multiline：多行字符串。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsindresorhus%2Fmultiline">官网</a></li>
+<li>query-string：解析和字符串化 URL 查询字符串。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsindresorhus%2Fquery-string">官网</a></li>
+<li>URI.js：URL 操作库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmedialize%2FURI.js%2F">官网</a></li>
+<li>jsurl：轻量的 URL 操作库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FMikhus%2Fjsurl">官网</a></li>
+<li>sprintf.js：实现字符串格式化。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Falexei%2Fsprintf.js">官网</a></li>
+<li>url-pattern：让 url
+和其它字符串进行比正则表达式匹配更简单。字符串和数据可相互转化。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsnd%2Furl-pattern">官网</a></li>
+</ul>
+<h3 id="数字">数字</h3>
+<ul>
+<li>Numeral-js：对数字进行格式化和操作的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fadamwdraper%2FNumeral-js">官网</a></li>
+<li>odometer：流畅的数字过渡效果。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FHubSpot%2Fodometer">官网</a></li>
+<li>accounting.js：对数字、金钱、货币进行格式化的轻量库——完全本地化和无依赖。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjosscrowcroft%2Faccounting.js">官网</a></li>
+<li>money.js：一个小巧（1kb）的货币转换库，适用于 web 和 nodeJS。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjosscrowcroft%2Fmoney.js">官网</a></li>
+<li>Fraction.js：一个有理数库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Finfusion%2FFraction.js">官网</a></li>
+<li>Complex.js： 一个复数库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Finfusion%2FComplex.js">官网</a></li>
+<li>Polynomial.js：一个多项式库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Finfusion%2FPolynomial.js">官网</a></li>
+</ul>
+<h3 id="存储">存储</h3>
+<ul>
+<li>store.js：为所有浏览器封装了 LocalStorage，而没有使用 cookies 和
+flash。隐秘地使用 localStorage、globalStorage 和用户数据。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmarcuswestin%2Fstore.js">官网</a></li>
+<li>localForage：改善后的离线存储。其封装了 IndexedDB、WebSQL 和
+localStorage，拥有操作简单和强大的 API。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmozilla%2FlocalForage">官网</a></li>
+<li>jStorage：jStorage
+是一个简单的键值对数据库，用于在浏览器端存储数据。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fandris9%2FjStorage">官网</a></li>
+<li>cross-storage：获得权限后，能跨域名本地存储。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fzendesk%2Fcross-storage">官网</a></li>
+<li>basket.js：用 localStorage 加载和缓存脚本的资源加载器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Faddyosmani%2Fbasket.js">官网</a></li>
+<li>bag.js：可以缓存脚本和加载资源，与 basket.js
+相似，但增加了键值对接口和对 localStorage / websql / <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnodeca%2Fbag.js">官网</a>undexedDB
+的支持。</li>
+<li>basil.js：智能的 JavaScript 数据持久层库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FWisembly%2Fbasil.js">官网</a></li>
+<li>jquery-cookie：轻量简单的、用于读取、编辑和删除 cookie 的 jQuery
+插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcarhartl%2Fjquery-cookie">官网</a></li>
+<li>Cookies：客户端 Cookie 操作库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FScottHamper%2FCookies">官网</a></li>
+<li>DB.js：基于 Promise 的、封装了 IndexedDB 的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Faaronpowell%2Fdb.js%2F">官网</a></li>
+<li>lawnchair.js：简单的客户端 JSON 存储。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbrianleroux%2Flawnchair%2F">官网</a></li>
+</ul>
+<h3 id="颜色">颜色</h3>
+<ul>
+<li>randomColor：JavaScript 颜色生成器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdavidmerfield%2FrandomColor">官网</a></li>
+<li>chroma.js：拥有各种各样颜色操作的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgka%2Fchroma.js">官网</a></li>
+<li>color：JavaScript 颜色转换和操作库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FMoOx%2Fcolor">官网</a></li>
+<li>colors：更智能的默认 web 颜色。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmrmrs%2Fcolors">官网</a></li>
+<li>PleaseJS：随机创建出赏心悦目的颜色和配色方案。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FFooidge%2FPleaseJS">官网</a></li>
+<li>TinyColor：快速、轻巧的颜色操作和转换库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbgrins%2FTinyColor">官网</a></li>
+<li>Vibrant.js：从图像提取主要颜色。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjariz%2Fvibrant.js%2F">官网</a></li>
+</ul>
+<h3 id="国际化和本地化i18n-and-l10n">国际化和本地化（I18n And
+L10n）</h3>
+<p>本地化和国际化 JavaScript 库</p>
+<ul>
+<li>i18next：JavaScript 最简单的国际化（i18n）方法。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fi18next%2Fi18next">官网</a></li>
+<li>polyglot：小巧的国际化助手库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fairbnb%2Fpolyglot.js">官网</a></li>
+<li>babelfish：i18n 提供友好易懂的 API ，并且内置多种支持。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnodeca%2Fbabelfish%2F">官网</a></li>
+</ul>
+<h3 id="类">类</h3>
+<ul>
+<li>ClassManager：世界上最快、最方便的类系统之一。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkogarashisan%2FClassManager">官网</a></li>
+<li>klass：用于创建极富表现力的类工具库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fded%2Fklass">官网</a></li>
+<li>augment：世界上最小且最快的一流 JavaScript 继承模式。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjavascript%2Faugment">官网</a></li>
+</ul>
+<h3 id="控制流">控制流</h3>
+<ul>
+<li>async：适用于 node 和浏览器的异步工具库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcaolan%2Fasync">官网</a></li>
+<li>q：实现异步的 promise JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkriskowal%2Fq">官网</a></li>
+<li>step：让逻辑顺序合理化的异步控制流库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcreationix%2Fstep%2F">官网</a></li>
+<li>contra：利用函数风格实现的异步流控制。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbevacqua%2Fcontra%2F">官网</a></li>
+<li>Bluebird：专注于革新功能和性能的，功能齐全的 promoise 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpetkaantonov%2Fbluebird%2F">官网</a></li>
+<li>when：快速可靠的、Promises/A+ 规范的 when()
+实现，而且拥有异步其它的优秀特性。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcujojs%2Fwhen">官网</a></li>
+<li>ObjectEventTarget：提供增加了事件监听的原型（与 DOMElement 的
+EventTarget 在浏览器行为一致）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgartz%2FObjectEventTarget">官网</a></li>
+</ul>
+<h3 id="路由">路由</h3>
+<ul>
+<li>director：一个小巧的、与 URL 同构的路由器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fflatiron%2Fdirector">官网</a></li>
+<li>page.js：受 Express router
+启发的小型客户端路由器（约为1200字节）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fvisionmedia%2Fpage.js">官网</a></li>
+<li>pathjs：简单、轻量的 web 路由器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmtrpcic%2Fpathjs">官网</a></li>
+<li>crossroads：JavaScript 路由。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmillermedeiros%2Fcrossroads.js">官网</a></li>
+<li>davis.js：使用 pushState、RESTful 风格和可降级的 JavaScript
+路由器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Folivernn%2Fdavis.js">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fangular-ui-router%2F">angular-ui-router</a>：基于AngularJS的可嵌套路由。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fangular-ui.github.io%2Fui-router%2F">官网</a></li>
+<li>react-router: Declarative routing for React <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FReactTraining%2Freact-router">官方</a></li>
+<li>vue-router: Declarative routing for Vue <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Frouter.vuejs.org%2F">官方</a></li>
+</ul>
+<h3 id="安全性">安全性</h3>
+<ul>
+<li>DOMPurify：针对 HTML、MathML 和 SVG 的仅支持DOM、快速、高容错的 XSS
+过滤器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcure53%2FDOMPurify">官网</a></li>
+<li>js-xss：通过白名单配置，即可过滤不信任的 HTML（防止 XSS 攻击）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fleizongmin%2Fjs-xss">官网</a></li>
+</ul>
+<h3 id="日志">日志</h3>
+<ul>
+<li>log：带有样式的 Console.log。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fadamschwartz%2Flog">官网</a></li>
+<li>Conzole：对 JavaScript 原生 console 对象方法和功能进行封装的 debug
+面板，使其显示在页面内。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FOaxoa%2FConzole">官网</a></li>
+<li>console.log-wrapper：将日志清晰地记录到
+console，且兼容所有浏览器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpatik%2Fconsole.log-wrapper">官网</a></li>
+<li>loglevel：最轻量的 JavaScript 日志记录工具库，向封装后可用的
+console.log 方法增加可靠的日志等级。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpimterry%2Floglevel">官网</a></li>
+<li>minilog：轻量的、用流式 API
+显示的、可用于客户端和服务器端的日志记录库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fmixu.net%2Fminilog%2F">官网</a></li>
+</ul>
+<h3 id="正则表达式">正则表达式</h3>
+<ul>
+<li>RegEx101：在线的 JavaScript 正则表达式测试器和调试器。同时支持
+Python、PHP 和 PCRE。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fregex101.com%2F%23javascript">官网</a></li>
+<li>RegExr：用于创建、测试和学习正则表达式的 HTML/JS 工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fregexr.com%2F">官网</a></li>
+<li>RegExpBuilder：使用链式方法创建正则表达式。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fthebinarysearchtree%2Fregexpbuilderjs">官网</a></li>
+</ul>
+<h3 id="媒体">媒体</h3>
+<ul>
+<li>Ion.Sound：可用于任何网页上简单音频。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FIonDen%2Fion.sound">官网</a></li>
+</ul>
+<h3 id="语音命令">语音命令</h3>
+<ul>
+<li>annyang：向网站添加语音命令的语音识别库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FTalAter%2Fannyang">官网</a></li>
+<li>voix.js：向网站、app 或游戏添加语音命令的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpazguille%2Fvoix">官网</a></li>
+</ul>
+<h3 id="api">API</h3>
+<ul>
+<li>bottleneck：强大的频率限制器，使调节流量变得更容易。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FSGrondin%2Fbottleneck">官网</a></li>
+<li>oauth-signature-js：适用于 node 和 浏览器的 OAuth 1.0a
+签名生成器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbettiolo%2Foauth-signature-js">官网</a></li>
+<li>amygdala：为 Web 应用提供 RESTful HTTP 客户端解决方案。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flincolnloop%2Famygdala">官网</a></li>
+<li>jquery.rest：一个让 RESTful API 更易使用的 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjpillora%2Fjquery.rest">官网</a></li>
+</ul>
+<h3 id="视觉检测">视觉检测</h3>
+<ul>
+<li>tracking.js：在 web 上实现计算视觉的一种现代方法。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Feduardolundgren%2Ftracking.js">官网</a></li>
+<li>ocrad.js：通过 Emscripten 用 JavaScript 实现 OCR（光学字符识别）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fantimatter15%2Focrad.js">官网</a></li>
+</ul>
+<h3 id="浏览器检测">浏览器检测</h3>
+<ul>
+<li>bowser：一个浏览器检测器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fded%2Fbowser">官网</a></li>
+</ul>
+<h3 id="性能分析">性能分析</h3>
+<ul>
+<li>easy-monitor：一个轻量级实时 Node.js 项目的内核性能分析工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.easy-monitor.cn%2Fdocument">官网</a></li>
+</ul>
+<h2 id="ui">UI</h2>
+<h3 id="代码高亮">代码高亮</h3>
+<ul>
+<li>Highlight.js：JavaScript 语法高亮器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fisagalaev%2Fhighlight.js">官网</a></li>
+<li>PrismJS：轻量、健壮和优雅的语法高亮器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FPrismJS%2Fprism">官网</a></li>
+</ul>
+<h3 id="加载状态">加载状态</h3>
+<p>指示加载状态的库。</p>
+<ul>
+<li>Mprogress.js：创建谷歌 Material 设计风格的线性进度条。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flightningtgc%2FMProgress.js">官网</a></li>
+<li>NProgress：在 Ajax'y 应用显示细长型进度条<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fricostacruz.com%2Fnprogress%2F">官网</a></li>
+<li>Spin.js：一个旋转的进度指示器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffgnass%2Fspin.js">官网</a></li>
+<li>progress.js：为页面任何对象创建和管理进度条。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fusablica%2Fprogress.js">官网</a></li>
+<li>progressbar.js：用 SVG path 动画制作的、漂亮和响应式的进度条。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkimmobrunfeldt%2Fprogressbar.js">官网</a></li>
+<li>pace：自动向你的网站添加一个进度条。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FHubSpot%2Fpace">官网</a></li>
+<li>topbar：小巧漂亮的、与网站同宽的进度指示器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbuunguyen%2Ftopbar">官网</a></li>
+<li>nanobar：非常轻量的进度条。不依赖 jQuery。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjacoborus%2Fnanobar">官网</a></li>
+<li>PageLoadingEffects：使用 SVG 动画展现新内容的现代方式。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcodrops%2FPageLoadingEffects">官网</a></li>
+<li>SpinKit：运用 CSS 动画的加载指示器集合。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftobiasahlin%2FSpinKit">官网</a></li>
+<li>Ladda：内置在按钮的加载指示器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fhakimel%2FLadda">官网</a></li>
+<li>css-loaders：运用 CSS 动画的旋转加载指示器的集合。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flukehaas%2Fcss-loaders">官网</a></li>
+</ul>
+<p>除了上述这些库，还有收藏在 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fcodepen.io%2Fcollection%2FHtAne%2F">Codepen</a>
+的，另外还有 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.ajaxload.info%2F">Ajaxload</a>，<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fpreloaders.net%2F">Preloaders</a>
+和 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fcssload.net%2F">CSSLoad</a>
+这些生成器。</p>
+<h3 id="验证">验证</h3>
+<ul>
+<li>Parsley.js：不用写一行 JavaScript 代码即可在前端验证表单。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fguillaumepotier%2FParsley.js">官网</a></li>
+<li>jquery-validation：jQuery 验证插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjzaefferer%2Fjquery-validation">官网</a></li>
+<li>validator.js：字符串验证和过滤（在使用用户输入之前清理用户输入中的有害或危险字符的操作）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fchriso%2Fvalidator.js">官网</a></li>
+<li>validate.js：受 CodeIgniter 启发的轻量表单验证 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Frickharrison%2Fvalidate.js">官网</a></li>
+<li>validatr：跨浏览器的 HTML5 表单验证库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjaymorrow%2Fvalidatr%2F">官网</a></li>
+<li>BootstrapValidator：是验证表单域中最好的 jQuery 插件。要与 Bootstrap
+3 一起使用。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnghuuphuoc%2Fbootstrapvalidator">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fis-js%2F">is.js</a>：检查类型、正则表达式、是否存在、时间等。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Farasatasaygin%2Fis.js">官网</a></li>
+<li>FieldVal：多用途验证库。同时支持同步和异步验证。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FFieldVal%2Ffieldval-js">官网</a></li>
+</ul>
+<h3 id="键盘封装器">键盘封装器</h3>
+<ul>
+<li>mousetrap：处理键盘快捷键的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fccampbell%2Fmousetrap">官网</a></li>
+<li>keymaster：定义和调度键盘快捷键的小型库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmadrobby%2Fkeymaster">官网</a></li>
+<li>Keypress：键入捕捉工具库，任何键都可以成为一个修饰健。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdmauro%2FKeypress">官网</a></li>
+<li>KeyboardJS：一个用于绑定键盘组合的 JavaScript
+库，让你脱离快捷键和快捷键组合冲突的痛苦。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FRobertWHurst%2FKeyboardJS">官网</a></li>
+<li>jquery.hotkeys：jQuery Hotkeys
+能让你在代码任何的地方监听键盘事件，并几乎支持所有按键组合。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjeresig%2Fjquery.hotkeys">官网</a></li>
+<li>jwerty：令人惊叹的键盘事件处理库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkeithamus%2Fjwerty">官网</a></li>
+</ul>
+<h3 id="浏览和引导">浏览和引导</h3>
+<ul>
+<li>intro.js：这是一个介绍新功能的很好方式，能一步步地引导用户浏览你的网站和项目。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fusablica%2Fintro.js">官网</a></li>
+<li>shepherd：通过引导让用户浏览你的应用程序。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FHubSpot%2Fshepherd">官网</a></li>
+<li>bootstrap-tour：应用 Twitter Bootstrap
+弹出框对产品进行快速简单的引导。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsorich87%2Fbootstrap-tour">官网</a></li>
+<li>tourist：简单、灵活的应用引导介绍库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Feaselinc%2Ftourist">官网</a></li>
+<li>chardin.js：简单的应用遮罩层介绍。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fheelhook%2Fchardin.js">官网</a></li>
+<li>pageguide：使用 jQuery 和 CSS3 的 web 页面元素交互引导库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftracelytics%2Fpageguide">官网</a></li>
+<li>hopscotch：让开发者更容易向其页面产品添加引导的框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flinkedin%2Fhopscotch">官网</a></li>
+<li>joyride：基于 jQuery 的功能引导插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fzurb%2Fjoyride">官网</a></li>
+<li>focusable：通过向页面其余部分添加遮罩层，使焦点聚集在特定 DOM
+元素。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fzzarcon%2Ffocusable">官网</a></li>
+</ul>
+<h3 id="通知">通知</h3>
+<ul>
+<li>messenger：为你的应用添加 Growl-style 弹框和信息（Crowl 是 Mac OS X
+下的一个通知系统）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FHubSpot%2Fmessenger">官网</a></li>
+<li>noty：jQuery 通知插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fneedim%2Fnoty">官网</a></li>
+<li>pnotify：适用于 Bootstrap、jQuery UI 和 Web Notifications Draft 的
+JavaScript 通知库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsciactive%2Fpnotify">官网</a></li>
+<li>toastr：用来显示简单的，会自动到期的信息窗口）简单的弹出框通知（<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fux.stackexchange.com%2Fquestions%2F11998%2Fwhat-is-a-toast-notification">toast
+notifications</a><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FCodeSeven%2Ftoastr">官网</a></li>
+<li>humane-js：一个简单、时髦的浏览器通知系统。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwavded%2Fhumane-js">官网</a></li>
+<li>smoke.js：与框架无关的、能够自定义样式的 JavaScript 弹框系统。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fhxgf%2Fsmoke.js">官网</a></li>
+</ul>
+<h3 id="幻灯片">幻灯片</h3>
+<ul>
+<li>Swiper：使用硬件加速过渡的移动设备触控滑块框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnolimits4web%2FSwiper">官网</a></li>
+<li>slick：你所需要的最后一个轮播插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkenwheeler%2Fslick">官网</a></li>
+<li>slidesJs：响应式的 jQuery（1.7.1+）幻灯片插件，具有触摸、 CSS3
+过渡等特性。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.slidesjs.com%2F">官网</a></li>
+<li>FlexSlider：一款令人惊叹的、全响应式的幻灯片 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwoothemes%2FFlexSlider">官网</a></li>
+<li>unslider：最简单的幻灯片 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fidiot%2Funslider">官网</a></li>
+<li>colorbox：轻量、可自定义的灯箱 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjackmoore%2Fcolorbox">官网</a></li>
+<li>fancyBox：提供了良好优雅的方式，为页面上的图片、html
+内容和多媒体添加缩放功能的工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffancyapps%2FfancyBox">官网</a></li>
+<li>sly：基于项导航的、支持单向滚动的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdarsain%2Fsly">官网</a></li>
+<li>vegas：向页面添加漂亮的全屏背景的 jQuery 插件，甚至允许幻灯片。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjaysalvat%2Fvegas">官网</a></li>
+<li>Sequence：用于创建响应式的幻灯片、演示、旗帜广告和以步骤为基础的应用的
+CSS 动画框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FIanLunn%2FSequence">官网</a></li>
+<li>baguetteBox.js：易于使用的、用纯 JavaScript 实现的遮罩层脚本。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffeimosi%2FbaguetteBox.js">官网</a></li>
+<li>reveal.js：用 HTML 创建漂亮演示控件的框架。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fhakimel%2Freveal.js">官网</a></li>
+<li>PhotoSwipe：适用于移动设备和桌面电脑的、模块化和不无依赖框架的
+JavaScript 画廊控件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdimsemenov%2FPhotoSwipe">官网</a></li>
+<li>jcSlider：用 CSS 动画实现的响应式幻灯片 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FJoanClaret%2FjcSlider">官网</a></li>
+<li>basic-jquery-slider：易于使用、指定主题和定制化。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjcobb%2Fbasic-jquery-slider">官网</a></li>
+<li>unslider： 这是最简单的幻灯片 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fidiot%2Funslider">官网</a></li>
+<li>viewerjs：原生js实现的图片查看器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Ffengyuanchen.github.io%2Fviewerjs%2F">官网</a></li>
+<li>jQuery.adaptive-slider：带有自适应颜色标题和导航的幻灯片 jQuery
+插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcreative-punch%2FjQuery.adaptive-slider%2F">官网</a></li>
+<li>slidr：可添加一些幻灯片效果。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbchanx%2Fslidr">官网</a></li>
+<li>Flickity：可触摸的、响应式的和可轻弹的画廊。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmetafizzy%2Fflickity">官网</a></li>
+</ul>
+<h3 id="滑块控件">滑块控件</h3>
+<ul>
+<li>Ion.RangeSlider：强大的、易于自定义的范围滑块选择库，支持很多配置和皮肤。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FIonDen%2Fion.rangeSlider">官网</a></li>
+<li>jQRangeSlider：支持日期的滑块选择库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fghusse%2FjQRangeSlider">官网</a></li>
+<li>noUiSlider：轻量无冗余的、高度定制化的滑块选择库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fleongersen%2FnoUiSlider">官网</a></li>
+<li>rangeslider.js：HTML5 input 区域滑块元素。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fandreruffert%2Frangeslider.js">官网</a></li>
+</ul>
+<h3 id="表单组件">表单组件</h3>
+<h3 id="输入">输入</h3>
+<ul>
+<li>typeahead.js：快速的、功能齐全的自动补全库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftwitter%2Ftypeahead.js">官网</a></li>
+<li>tag-it：处理多标签字段以及标签建议/自动完成的 jQuery UI 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Faehlke%2Ftag-it">官网</a></li>
+<li>At.js：向你的应用添加类似 Github 的自动完成提示功能。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fichord%2FAt.js">官网</a></li>
+<li>Placeholders.js：JavaScript 补全 HTML5 占位符的属性。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjamesallardice%2FPlaceholders.js">官网</a></li>
+<li>fancyInput：利用 CSS3 效果让输入更有趣。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FyairEO%2FfancyInput">官网</a></li>
+<li>jQuery-Tags-Input：利用这个 jQuery
+插件，可奇妙地将一个简单的文本输入转换成一个酷酷的标签列表。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fxoxco%2FjQuery-Tags-Input">官网</a></li>
+<li>vanilla-masker：一个纯 JavaScript 实现的输入控制库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FBankFacil%2Fvanilla-masker">官网</a></li>
+<li>Ion.CheckRadio：一个为复选框和单选按钮添加样式的 jQuery
+库，支持多种皮肤。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FIonDen%2Fion.checkRadio">官网</a></li>
+</ul>
+<h3 id="日历">日历</h3>
+<ul>
+<li>pickadate.js：对移动设备友好的、响应式的和轻量的 jQuery 日期 &amp;
+时间输入选择器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Famsul%2Fpickadate.js">官网</a></li>
+<li>bootstrap-datepicker：基于 bootstrap 的日历选择器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Feternicode%2Fbootstrap-datepicker">官网</a></li>
+<li>Pikaday：一个崭新的 JavaScript 日期选择器 —— 轻量、无依赖和模块化的
+CSS。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdbushell%2FPikaday">官网</a></li>
+<li>fullcalendar：全尺寸、支持拖放事件的日历（jQuery 插件）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffullcalendar%2Ffullcalendar">官网</a></li>
+<li>rome：可定制的日期（和时间）选择器。无依赖，可选 UI。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbevacqua%2Frome">官网</a></li>
+<li>datedropper： datedropper 是一个 jQuery
+插件，它提供了快速简易的方式去管理日期输入框。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffelicegattuso%2Fdatedropper">官网</a></li>
+<li>flatpickr： flatpickr
+是一个轻量、强大、无依赖的日历和时间选择器插件，支持移动端，并支持React、Ember、Angular和Vue。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fchmln.github.io%2Fflatpickr%2F">官网</a></li>
+</ul>
+<h3 id="选择">选择</h3>
+<ul>
+<li>selectize.js：Selectize
+是文本框和选择框的混合体。它基于jQuery，拥有自动完成和键盘感应下拉列表功能，可用于标签、联系人列表等。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbrianreavis%2Fselectize.js">官网</a></li>
+<li>select2：它基于 jQuery，是选择框（select
+box）的替代品。支持搜索、远程数据集和无限滚动。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fselect2%2Fselect2">官网</a></li>
+<li>chosen：可以让冗长不便的选择框更友好的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fharvesthq%2Fchosen">官网</a></li>
+</ul>
+<h3 id="文件上传">文件上传</h3>
+<ul>
+<li>jQuery-File-Upload：File Upload
+是一个支持多文件选择、文件拖放、进度条、验证和图片、音频、视频预览的 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fblueimp%2FjQuery-File-Upload">官网</a>jQuery
+插件。</li>
+<li>dropzone：Dropzone
+是一个易于使用且支持多文件拖放的库。其支持图片预览并且拥有很好的进度条效果。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fenyo%2Fdropzone">官网</a></li>
+<li>flow.js：一个通过 HTML5 的 File API
+，提供多个同时链接的、稳定的、容错的、可恢复的/可重新开始的文件上传库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fflowjs%2Fflow.js">官网</a></li>
+<li>fine-uploader：一个带有进度条、拖放功能和支持直接上传到 S3 （Amazon
+Simple Storage Service，亚马逊简易存储服务）的多文件上传插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FFineUploader%2Ffine-uploader">官网</a></li>
+<li>FileAPI：JavaScript
+文件工具集合。支持多文件上传、拖放和文件分块上传。对于图像，支持裁剪、调整大小和根据
+<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fbaike.baidu.com%2Fview%2F22006.htm">EXIF</a>自动调整方向。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmailru%2FFileAPI">官网</a></li>
+<li>plupload：处理文件上传的 JavaScript <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmoxiecode%2Fplupload">官网</a>API，其支持多文件选择、文件类型过滤、分块请求、客户端图片缩放和根据不同的运行环境选择
+HTML5、Silverlight 和 Flash。</li>
+</ul>
+<h3 id="其它">其它</h3>
+<ul>
+<li>form：jQuery 表单插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmalsup%2Fform">官网</a></li>
+<li>Garlic.js：自动在本地保存表单文本和选择框的值，直到表单被提交。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fguillaumepotier%2FGarlic.js">官网</a></li>
+<li>Countable：对某个 HTML
+元素包含文本的段落数、单词数和字符数进行统计的 JavaScript 函数。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FRadLikeWhoa%2FCountable">官网</a></li>
+<li>card：只需一行代码，让信用卡表单变得更友好。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjessepollak%2Fcard">官网</a></li>
+<li>stretchy：自适应大小的 form 元素，表单本应该是这样的。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FLeaVerou%2Fstretchy">官网</a></li>
+<li>list.js：向表格、列表等 HTML
+元素添加搜索、排序、过滤和自适应功能的库。在已有 HTML 上增加可视化。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjavve%2Flist.js">官网</a></li>
+</ul>
+<h3 id="提示">提示</h3>
+<ul>
+<li>tipsy：基于 jQuery 的 Fackbook 风格的提示工具（tooltip）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjaz303%2Ftipsy">官网</a></li>
+<li>opentip：开源且基于 prototype 框架的 JavaScript 工具提示库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fenyo%2Fopentip">官网</a></li>
+<li>qTip2：非常强大的工具提示库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FqTip2%2FqTip2">官网</a></li>
+<li>tooltipster：一个工具提示 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fiamceege%2Ftooltipster">官网</a></li>
+<li>simptip：用 Sass 制作的、简单的工具提示。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Farashmanteghi%2Fsimptip">官网</a></li>
+<li>jquery-popup-overlay：是一个响应式的和可访问性强的模态框（modal）和工具提示框
+jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fvast-engineering%2Fjquery-popup-overlay">官网</a></li>
+</ul>
+<h3 id="模态框和弹出框">模态框和弹出框</h3>
+<ul>
+<li>Magnific-Popup：专注于性能、轻量、响应式的灯箱（lightbox）脚本。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdimsemenov%2FMagnific-Popup">官网</a></li>
+<li>jquery-popbox：jQuery 提示框插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgristmill%2Fjquery-popbox">官网</a></li>
+<li>jquery.avgrund.js：一种新的定于弹出的模态框 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fvoronianski%2Fjquery.avgrund.js">官网</a></li>
+<li>vex：新的、拥有高度可配置和易于改变样式功能的对话框库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FHubSpot%2Fvex">官网</a></li>
+<li>bootstrap-modal：对 Bootstrap
+默认的模态框类进行扩展。其支持响应式、可堆叠和 ajax 等。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjschr%2Fbootstrap-modal">官网</a></li>
+<li>css-modal：纯 CSS 打造的模态框。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdrublic%2Fcss-modal">官网</a></li>
+<li>jquery-popup-overlay：是一个响应式的和可访问性强的模态框和工具提示框（tooltips）jQuery
+插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fvast-engineering%2Fjquery-popup-overlay">官网</a></li>
+<li>layer：国内最多人使用的web弹层组件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsentsin%2Flayer%2F">官网</a></li>
+</ul>
+<h3 id="滚动">滚动</h3>
+<ul>
+<li>scrollMonitor：滚动发生时，可以监听元素的、简单、快速的 API。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsakabako%2FscrollMonitor">官网</a></li>
+<li>headroom：除非你需要显示页面头部（header），否则将隐藏它，以腾出页面头部空间。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FWickyNilliams%2Fheadroom.js">官网</a></li>
+<li>onepage-scroll：创建一个类似 Apple 的单页面滚动网站（iPhone 5S
+网站）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fpeachananr%2Fonepage-scroll">官网</a></li>
+<li>iscroll：高性能、轻量、无依赖、兼容多平台的 JavaScript 滚动组件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcubiq%2Fiscroll">官网</a></li>
+<li>skrollr：独立（不依赖 jQuery） 的视差滚动库，适用于移动设备（Android
++ iOS）和桌面电脑。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FPrinzhorn%2Fskrollr">官网</a></li>
+<li>parallax：面向智能设备的视差引擎。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwagerfield%2Fparallax">官网</a></li>
+<li>stellar.js：让视差滚动变简单。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmarkdalgleish%2Fstellar.js">官网</a></li>
+<li>plax：基于 jQuery 的视差库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcameronmcefee%2Fplax">官网</a></li>
+<li>jparallax：创建可交互视差效果的 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fstephband%2Fjparallax">官网</a></li>
+<li>fullPage：简单和易于使用的、用于创建全屏滚动网站的插件（也被称为单页面网站）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Falvarotrigo%2FfullPage.js">官网</a></li>
+<li>ScrollMenu：让老旧无聊的滚动条焕然一新。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fs-yadav%2FScrollMenu">官网</a></li>
+</ul>
+<h3 id="菜单">菜单</h3>
+<ul>
+<li>jQuery-menu-aim：当用户光标放在特定下拉菜单项时触发事件。可制作响应式的、大数据量的下拉菜单，如
+Amazon 的。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkamens%2FjQuery-menu-aim">官网</a></li>
+<li>jQuery contextMenu：右键菜单（contextMenu） 管理工具。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fswisnl%2FjQuery-contextMenu">官网</a></li>
+<li>Slideout：为移动设备的 web
+应用制作出响应式的、可触摸滑出的导航菜单。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmango%2Fslideout">官网</a></li>
+<li>Slide and swipe：一个基于 touchSwipe 库的滑出菜单插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FJoanClaret%2Fslide-and-swipe-menu">官网</a></li>
+</ul>
+<h3 id="表格栅格">表格/栅格</h3>
+<ul>
+<li>jTable：基于 CRUD 表创建 AJAX 的 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fhikalkan%2Fjtable">官网</a></li>
+<li>DataTables：这是一个非常灵活的工具，在渐进增强的基础上，将高级的交互效果加到
+HTML 表格。（jQuery 插件）<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.datatables.net%2F">官网</a></li>
+<li>floatThead：（jQuery
+插件）锁定表格头部，只允许表格内容滚动。适用于任何表格，而且不需要额外的
+html 或 css。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmkoryak%2FfloatThead">官网</a></li>
+<li>Masonry：瀑布流式的网格布局库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fmasonry.desandro.com%2F">官网</a></li>
+<li>Packery：使用装箱算法（bin-packing）的网格布局库。支持拖拽布局。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fpackery.metafizzy.co%2F">官网</a></li>
+<li>Isotope：可过滤和可排序的网格布局的库，它能实现 Masonry、Packery
+等布局。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fisotope.metafizzy.co%2F">官网</a></li>
+</ul>
+<h3 id="框架-1">框架</h3>
+<ul>
+<li>Semantic UI：拥有大量主题和元素的 UI 套件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fsemantic-ui.com%2F">官网</a></li>
+</ul>
+<h3 id="手势">手势</h3>
+<ul>
+<li>hammer.js：拥有多种触摸手势的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fhammerjs%2Fhammer.js">官网</a></li>
+<li>touchemulator：在桌面电脑模仿触摸输入。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fhammerjs%2Ftouchemulator">官网</a></li>
+<li>Dragula：超级易于使用的拖拽库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbevacqua%2Fdragula%2F">官网</a></li>
+</ul>
+<h3 id="触摸">触摸</h3>
+<ul>
+<li>fastclick.js：去除触屏用户300ms点击延误。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fftlabs%2Ffastclick">官网</a></li>
+<li>dropload.js：移动端下拉刷新，上拉加载更多。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fximan%2Fdropload">官网</a></li>
+<li>touchslide.js：触屏滑动特效。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fwww.superslide2.com%2FtouchSlide%2F">官网</a></li>
+</ul>
+<h3 id="地图">地图</h3>
+<ul>
+<li>Leaflet：对移动设备友好的、可交互的地图 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FLeaflet%2FLeaflet">官网</a></li>
+<li>Cesium：开源的、基于 WebGL 实现的虚拟地球仪和地图引擎。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FAnalyticalGraphicsInc%2Fcesium">官网</a></li>
+<li>gmaps：以最简单的方式使用 Google 地图。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FHPNeo%2Fgmaps">官网</a></li>
+<li>polymaps：一个免费的、兼容现代 web
+浏览器的、用于制作动态可交互的地图 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsimplegeo%2Fpolymaps">官网</a></li>
+<li>kartograph.js：开源的 Kartograph SVG 地图渲染器。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkartograph%2Fkartograph.js">官网</a></li>
+<li>mapbox.js：Mapbox 的 API，Leaflet 的插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmapbox%2Fmapbox.js">官网</a></li>
+<li>jqvmap：矢量地图 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmanifestinteractive%2Fjqvmap">官网</a></li>
+<li>OpenLayers3：高性能的、功能丰富的库，能满足你对地图所有需求。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fopenlayers.org%2F">官网</a></li>
+</ul>
+<h3 id="视频音频">视频/音频</h3>
+<ul>
+<li>prettyembed.js：更完美地嵌入 YouTube ——
+拥有很好的选项，如高分辨率的预览图、嵌入选项的高级定制和可选的 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmike-zarandona%2Fprettyembed.js">官网</a>FitVids
+支持。</li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fhtml5media%2F">html5media</a>：能在所有主流浏览器播放多媒体标签中定义的多媒体文件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fetianen%2Fhtml5media">官网</a></li>
+<li>Play-em JS：Play'em 是一个 JavaScript
+组件，它能管理音乐/视频播放顺序，通过在一个 DIV
+元素里嵌入几个播放器（Youtube、Soundcloud 和
+Vimeo）来控制一系列歌曲的播放。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fadrienjoly%2Fplayemjs">官网</a></li>
+<li>polyplayer：将 YouTube、Soundcloud 和 Vimeo 播放器的 API
+统一成一套。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FAcconut%2Fpolyplayer">官网</a></li>
+<li>flowplayer： HTML5 视频播放器 <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fflowplayer.org%2F">官网</a>、<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fflowplayer%2Fflowplayer">Github</a></li>
+<li>mediaelement：让 HTML5、 Flash 播放器和模仿 HTML5 媒介元素 API 的
+Silverlight shim，在所有浏览器拥有一致的 UI。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fmediaelementjs.com%2F">官网</a>、<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjohndyer%2Fmediaelement">Github</a></li>
+<li>SoundJS：让音频在 web 上运行更简单的库。它为不同浏览器提供了一致的
+API。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FCreateJS%2FSoundJS">官网</a></li>
+</ul>
+<h3 id="动画">动画</h3>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fvelocity-js%2F">velocity</a>：加速
+JavaScript 动画。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fjulianshapiro%2Fvelocity">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fjquery-transit%2F">jquery.transit</a>：拥有超级流畅的
+CSS3 变换和过渡的 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Frstacruz%2Fjquery.transit">官网</a></li>
+<li>impess.js：在 HTML 文档里，运用 CSS3 变换和过渡制作类似 Prezi
+的展现效果。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fimpress%2Fimpress.js">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fbounce-js%2F">bounce.js</a>：可以立刻创建有趣的
+CSS3 动画。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftictail%2Fbounce.js">官网</a></li>
+<li>GreenSock-JS：适用于所有主流浏览器的高性能 HTML5 动画。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgreensock%2FGreenSock-JS">官网</a></li>
+<li>TransitionEnd：TransitionEnd 是一个运用 transitonend
+事件的、跨浏览器的库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FEvandroLG%2FtransitionEnd">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fdynamics-js%2F">Dynamics.js</a>：用于创建基于物理知识的
+CSS 动画库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fmichaelvillar%2Fdynamics.js">官网</a></li>
+</ul>
+<h3 id="图片处理">图片处理</h3>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Flena-js%2F">lena.js</a>：拥有滤镜和实用功能的图像处理库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdavidsonfellipe%2Flena.js">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fpica%2F">pica</a>：高质量地调整图片大小（拥有快速的、纯
+JS 实现的 Lanczos 滤镜算法）。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fnodeca%2Fpica">官网</a></li>
+<li>cropper：一个简单的图像裁剪 jQuery 插件。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffengyuanchen%2Fcropper">官网</a></li>
+<li>AlloyImage：腾讯前端开源的基于HTML5的专业级图像处理开源引擎。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FAlloyTeam%2FAlloyImage">官网</a></li>
+</ul>
+<h3 id="ecmascript-6">ECMAScript 6</h3>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fecmascript-6%2F">es6features</a>：ECMAScript
+6 特性概述。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Flukehoban%2Fes6features">官网</a></li>
+<li>es6-features：ECMAScript 6: 特性概述和比较。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Frse%2Fes6-features">官网</a></li>
+<li>ECMAScript 6 compatibility table ：Compatibility tables
+展示了各种平台上所有 ECMAScript 6 特性的支持程度。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fkangax.github.io%2Fcompat-table%2Fes6%2F">官网</a></li>
+<li>Babel (Formerly 6to5)：将 ES6+ 代码转换成纯 ES5。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbabel%2Fbabel">官网</a></li>
+<li>Traceur compiler：ES6 特性转 ES5。包括
+classes、generators、promises、destructuring <a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fgoogle%2Ftraceur-compiler">官网</a>patterns、default
+parameters 等。</li>
+</ul>
+<h3 id="软件开发工具包sdk">软件开发工具包(SDK)</h3>
+<ul>
+<li>javascript-sdk-design：从工作和个人经验中提炼出来的 JavaScript SDK
+设计指导。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fhuei90%2Fjavascript-sdk-design">官网</a></li>
+</ul>
+<h3 id="大杂烩">大杂烩</h3>
+<ul>
+<li>echo：利用 data-* 属性延迟加载图片。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ftoddmotto%2Fecho">官网</a></li>
+<li>picturefill：响应式图片显示插件，使浏览器支持 srcset、size 属性。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fscottjehl%2Fpicturefill">官网</a></li>
+<li>platform.js：一个平台检测库，几乎适用于所有 JavaScript 平台。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbestiejs%2Fplatform.js">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fjson3%2F">json3</a>：一个现代
+JSON 实现库，几乎兼容所有 JavaScript 平台。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fbestiejs%2Fjson3">官网</a></li>
+<li>Logical Or Not：一个关于 JavaScript 特性的游戏。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fgabinaureche.com%2Flogicalornot%2F">官网</a></li>
+<li>BitSet.js：实现位向量的 JavaScript 库。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Finfusion%2FBitSet.js">官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Fhao.jobbole.com%2Fedge-js%2F">Edge.js</a>：运行在一个进程中运行.NET和Node.js代码。<a
+target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=http%3A%2F%2Ftjanczuk.github.io%2Fedge%2F">官网</a>、[GitHub](</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>王瑞兵
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://vector9584.github.io/2021/01/28/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8js%E6%8F%92%E4%BB%B6/" title="前端常用js插件">https://vector9584.github.io/2021/01/28/前端常用js插件/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/01/27/AJAX%E5%AD%A6%E4%B9%A0/" rel="prev" title="AJAX学习">
+                  <i class="fa fa-angle-left"></i> AJAX学习
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/01/28/Web%E5%AD%A6%E4%B9%A0/" rel="next" title="Web学习">
+                  Web学习 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">王瑞兵</span>
+  </div><div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("3/17/2020 23:55:11");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+<a href="https://icp.gov.moe/?keyword=20231015" target="view_window" style="border-bottom:none">
+  <img src="https://cdn.bili33.top/gh/Vikutorika/assets@master/img/GovMoe/icon120.png" style="display:inline-block;vertical-align:middle;width:20px;height:20px;">
+  萌ICP备20231015号
+</a >
+
+
+
+<script>
+    
+        reloadPages = ['Echarts','Tableau','书籍','电影','游戏','歌曲']
+        document.addEventListener("click", function (event) {
+        
+            clickElement = event.target.innerText
+            
+            
+            if(reloadPages.indexOf(clickElement) > -1){
+                
+                
+                
+                
+                
+                if(event.target.tagName==='A'){
+                  window.location.href=event.target.href
+                }else if(event.target.tagName==='SPAN'){
+                window.location.href=event.target.parentElement.href
+                }
+            }
+        });
+</script>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3,"priority":true,"url":"https://vector9584.github.io/2021/01/28/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8js%E6%8F%92%E4%BB%B6/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"vector9584","repo":"vector9584.github.io","client_id":"b42d32a40fbaaf12f8ca","client_secret":"7b76e445bb7e15d2762970bfbe766c73e9b0fa79","admin_user":"vector9584","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"23663baeab067b85baa10563244b5bb4"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

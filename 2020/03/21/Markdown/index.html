@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CCedarville+Cursive:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"vector9584.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac","show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言 Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown的好处在于 - 易读、易写、易改动 - 兼容HTML - 跨平台使用，并且越来越多的网站支持Markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown">
+<meta property="og:url" content="https://vector9584.github.io/2020/03/21/Markdown/index.html">
+<meta property="og:site_name" content="Mocha">
+<meta property="og:description" content="前言 Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown的好处在于 - 易读、易写、易改动 - 兼容HTML - 跨平台使用，并且越来越多的网站支持Markdown">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-21T02:16:03.000Z">
+<meta property="article:modified_time" content="2023-10-17T11:42:38.000Z">
+<meta property="article:author" content="王瑞兵">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://vector9584.github.io/2020/03/21/Markdown/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://vector9584.github.io/2020/03/21/Markdown/","path":"/2020/03/21/Markdown/","title":"Markdown"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Markdown | Mocha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mocha</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A6%E5%86%99%E5%B7%A5%E5%85%B7"><span class="nav-number">2.</span> <span class="nav-text">书写工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typora"><span class="nav-number">2.1.</span> <span class="nav-text">Typora</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#visual-studio-code"><span class="nav-number">2.2.</span> <span class="nav-text">Visual Studio Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notepad"><span class="nav-number">2.3.</span> <span class="nav-text">Notepad++</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">1. 多级标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%A0%87%E9%A2%98"><span class="nav-number">3.2.</span> <span class="nav-text">2. 有序标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E6%A0%87%E9%A2%98"><span class="nav-number">3.3.</span> <span class="nav-text">3. 无序标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">3.4.</span> <span class="nav-text">4. 代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%98%E5%8F%A0%E6%A0%87%E7%AD%BE"><span class="nav-number">3.5.</span> <span class="nav-text">5. 折叠标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%85%E4%B8%AD%E6%98%BE%E7%A4%BA"><span class="nav-number">3.6.</span> <span class="nav-text">6. 居中显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F%E9%A2%9C%E8%89%B2%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.7.</span> <span class="nav-text">7. 字体、大小、颜色设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E5%8F%AF%E5%B5%8C%E5%A5%97"><span class="nav-number">3.8.</span> <span class="nav-text">8. 引用(可嵌套)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E6%A0%87%E8%AE%B0"><span class="nav-number">3.9.</span> <span class="nav-text">9. 行内标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%86%85%E9%83%A8%E8%B7%B3%E8%BD%AC"><span class="nav-number">3.10.</span> <span class="nav-text">10. 文章内部跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.11.</span> <span class="nav-text">11. 插入连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">3.12.</span> <span class="nav-text">12. 插入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%A1%A8%E6%A0%BC"><span class="nav-number">3.13.</span> <span class="nav-text">13. 插入表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%A1%8C%E9%97%B4%E5%85%AC%E5%BC%8F"><span class="nav-number">3.14.</span> <span class="nav-text">14. 插入行间公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F"><span class="nav-number">3.15.</span> <span class="nav-text">15. 插入行内公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E9%80%89%E6%A1%86"><span class="nav-number">3.16.</span> <span class="nav-text">16. 复选框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%9A%94%E7%AC%A6"><span class="nav-number">3.17.</span> <span class="nav-text">17. 分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%84%9A%E6%B3%A8"><span class="nav-number">3.18.</span> <span class="nav-text">18. 脚注</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E6%A0%87%E8%AE%B0"><span class="nav-number">3.19.</span> <span class="nav-text">19. 语义标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%A1%A8%E6%83%85"><span class="nav-number">3.20.</span> <span class="nav-text">20. 插入表情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E5%9B%BE1"><span class="nav-number">3.21.</span> <span class="nav-text">21. 流程图1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E5%9B%BE2"><span class="nav-number">3.22.</span> <span class="nav-text">22. 流程图2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%98%E7%89%B9%E5%9B%BE"><span class="nav-number">3.23.</span> <span class="nav-text">23. 甘特图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uml%E5%9B%BE"><span class="nav-number">3.24.</span> <span class="nav-text">24. UML图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown%E8%AF%AD%E6%B3%95%E6%B7%B1%E5%85%A5"><span class="nav-number">4.</span> <span class="nav-text">Markdown语法深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%A7%E6%A0%87%E9%A2%98-1"><span class="nav-number">4.1.</span> <span class="nav-text">1. 多级标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B4%E5%88%86%E5%89%B2%E5%B9%B3%E7%BA%BF"><span class="nav-number">4.2.</span> <span class="nav-text">2. 水分割平线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C"><span class="nav-number">4.3.</span> <span class="nav-text">3. 强制换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E6%A0%87%E8%AE%B0%E8%BF%9B%E9%98%B6"><span class="nav-number">4.4.</span> <span class="nav-text">4. 语义标记进阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6"><span class="nav-number">4.5.</span> <span class="nav-text">5. 发送邮件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E5%83%8F"><span class="nav-number">4.6.</span> <span class="nav-text">6. 插入图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%A1%86"><span class="nav-number">4.7.</span> <span class="nav-text">7. 文本框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E5%92%8C%E8%BE%93%E5%85%A5"><span class="nav-number">4.8.</span> <span class="nav-text">8. 表单和输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%AF%AD%E6%B3%95%E7%BD%97%E5%88%97"><span class="nav-number">4.9.</span> <span class="nav-text">9. 其他语法罗列</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王瑞兵"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">王瑞兵</p>
+  <div class="site-description" itemprop="description">不满是向上的车轮，能够载着不自满的人类，向人道前进</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vector9584" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/8482661" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;8482661" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://119.91.113.10:8080/vector9584" title="Server → http:&#x2F;&#x2F;119.91.113.10:8080&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fa-solid fa-server fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/admin/" title="Admin → &#x2F;admin&#x2F;" rel="noopener me"><i class="fa-solid fa-pen-nib fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vector9584.github.io/2020/03/21/Markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="王瑞兵">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mocha">
+      <meta itemprop="description" content="不满是向上的车轮，能够载着不自满的人类，向人道前进">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Markdown | Mocha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Markdown
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-03-21 10:16:03" itemprop="dateCreated datePublished" datetime="2020-03-21T10:16:03+08:00">2020-03-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-17 19:42:38" itemprop="dateModified" datetime="2023-10-17T19:42:38+08:00">2023-10-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="前言">前言</h2>
+<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown的好处在于
+- 易读、易写、易改动 - 兼容HTML -
+跨平台使用，并且越来越多的网站支持Markdown <span id="more"></span></p>
+<p>Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如<span
+class="math inline">\(\LaTeX\)</span>,Docbook。Markdown增强版中比较有名的有Markdown
+Extra、MultiMarkdown、Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。（<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/markdown/3245829?fr=aladdin">百度百科</a>）</p>
+<h2 id="书写工具">书写工具</h2>
+<h3 id="typora">Typora</h3>
+<p><a target="_blank" rel="noopener" href="https://www.typora.io/"
+title="官网">Typora</a>是一个所见即所得的编辑工具，界面简洁，使用方便。可进行错别字标注。可以方便的插入图片与表格，语法自动补全，更有多个<a
+target="_blank" rel="noopener" href="http://theme.typora.io/">主题</a>可供选择。写文章时我比较喜欢<span
+class="math inline">\(Academic\)</span>主题，在光线较暗时我喜欢用<span
+class="math inline">\(Night\)</span>主题。</p>
+<p>Typora支持Pandoc插件，可以支持更多格式的导出，若要支持内联公式需要在偏好设置中勾选。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">常用功能</th>
+<th style="text-align: center;">快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">加粗</td>
+<td style="text-align: center;">Ctrl+B</td>
+</tr>
+<tr>
+<td style="text-align: center;">倾斜</td>
+<td style="text-align: center;">Ctrl+I</td>
+</tr>
+<tr>
+<td style="text-align: center;">下划线</td>
+<td style="text-align: center;">Ctrl+U</td>
+</tr>
+<tr>
+<td style="text-align: center;">超链接</td>
+<td style="text-align: center;">Ctrl+K</td>
+</tr>
+<tr>
+<td style="text-align: center;">插入表格</td>
+<td style="text-align: center;">Ctrl+T</td>
+</tr>
+<tr>
+<td style="text-align: center;">删除线</td>
+<td style="text-align: center;">Alt+Shift+5</td>
+</tr>
+<tr>
+<td style="text-align: center;">着重关键字</td>
+<td style="text-align: center;">Ctrl+Shift+`</td>
+</tr>
+<tr>
+<td style="text-align: center;">清除格式</td>
+<td style="text-align: center;">Ctrl+\</td>
+</tr>
+<tr>
+<td style="text-align: center;">选中一行</td>
+<td style="text-align: center;">Ctrl+L</td>
+</tr>
+<tr>
+<td style="text-align: center;">侧边栏</td>
+<td style="text-align: center;">Ctrl+Shift+L</td>
+</tr>
+</tbody>
+</table>
+<h3 id="visual-studio-code">Visual Studio Code</h3>
+<p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio
+Code</a>是一款轻量级的编辑器，本身支持Markdown，只需要新建一个文件类型为<kbd>md</kbd>的文件即可书写和预览。但是为了更方便的使用经常会搭配一些插件使用。</p>
+<table>
+<colgroup>
+<col style="width: 75%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">插件名称</th>
+<th style="text-align: center;">主要功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><a
+target="_blank" rel="noopener" href="https://shd101wyy.github.io/markdown-preview-enhanced/#/"
+title="由于不会配置，它的导出功能不尽理想">Markdown Preview
+Enhanced</a></td>
+<td style="text-align: center;">预览、导出、插入图片</td>
+</tr>
+<tr>
+<td style="text-align: center;">vscode-pdf</td>
+<td style="text-align: center;">支持PDF查看</td>
+</tr>
+<tr>
+<td style="text-align: center;">markdown-all-in-one</td>
+<td style="text-align: center;">快捷键、目录、预览</td>
+</tr>
+<tr>
+<td style="text-align: center;">Markdown TOC</td>
+<td style="text-align: center;">生成目录</td>
+</tr>
+<tr>
+<td style="text-align: center;">Markdown Math</td>
+<td style="text-align: center;">支持内联公式</td>
+</tr>
+<tr>
+<td style="text-align: center;">Markdown PDF</td>
+<td style="text-align: center;">PDF输出</td>
+</tr>
+<tr>
+<td style="text-align: center;">EverMonkey</td>
+<td style="text-align: center;">上传印象笔记</td>
+</tr>
+<tr>
+<td style="text-align: center;">Markdown Theme Kit</td>
+<td style="text-align: center;">主题</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notepad">Notepad++</h3>
+<p>本人主要将其作为查看器，其功能性可以自行探索，此处不多赘述。</p>
+<h2 id="基本语法">基本语法</h2>
+<p>此处的语法是使用Hexo写博客时常用的语法，很多具有相同功能的语法就不再赘述。在此所列部分语法为了达到显示效果，运用了转义字符，<strong><font color=red>请勿完全拷贝使用</font></strong>，拷贝时可进入源码模式将<strong><font color=red>\</font></strong>或<strong><font color=red>HTML语句</font></strong>删除使用。</p>
+<h3 id="多级标题">1. 多级标题</h3>
+<blockquote>
+<p>#（空格） ##（空格） ……</p>
+</blockquote>
+<h3 id="有序标题">2. 有序标题</h3>
+<blockquote>
+<p>1.(空格) 2.(空格) ……</p>
+</blockquote>
+<h3 id="无序标题">3. 无序标题</h3>
+<blockquote>
+<p>-(空格)</p>
+</blockquote>
+<h3 id="代码块">4. 代码块</h3>
+<blockquote>
+<p>```(语言选择)</p>
+<p>​ 代码</p>
+<p>```</p>
+</blockquote>
+<h3 id="折叠标签">5. 折叠标签</h3>
+<blockquote>
+<p>&lt;summary&gt;在外显示&lt;/summary&gt; 包含的内容
+&lt;/details&gt;</p>
+</blockquote>
+<h3 id="居中显示">6. 居中显示</h3>
+<blockquote>
+<p>&lt;center&gt;内容&lt;/center&gt;</p>
+</blockquote>
+<h3 id="字体大小颜色设置">7. <span
+id="html">字体、大小、颜色设置</span></h3>
+<blockquote>
+<p>&lt;font face="华文新魏" size=10
+color=pink&gt;这里展示文字&lt;/font&gt;</p>
+</blockquote>
+<h3 id="引用可嵌套">8. 引用(可嵌套)</h3>
+<blockquote>
+<p>&gt;(空格)</p>
+</blockquote>
+<h3 id="行内标记">9. 行内标记</h3>
+<blockquote>
+<p>`内容`</p>
+</blockquote>
+<h3 id="文章内部跳转">10. 文章内部跳转</h3>
+<blockquote>
+<p>&lt;span id="jump"&gt;跳转到的地方&lt;/span&gt; [点击跳转](#jump)</p>
+</blockquote>
+<h3 id="插入连接">11. 插入连接</h3>
+<blockquote>
+<p>[显示文字](URL（空格）"描述")</p>
+</blockquote>
+<h3 id="插入图片">12. 插入图片</h3>
+<blockquote>
+<p>![描述](路径/图片.jpg)</p>
+</blockquote>
+<h3 id="插入表格">13. 插入表格</h3>
+<blockquote>
+<p>表头1|表头2|表头3 :---:|:----|----: 居中|左对齐|右对齐</p>
+</blockquote>
+<h3 id="插入行间公式">14. 插入行间<a
+target="_blank" rel="noopener" href="https://katex.org/docs/supported.html">公式</a></h3>
+<blockquote>
+<p>$$ 语法 $​$</p>
+</blockquote>
+<h3 id="插入行内公式">15. 插入行内<a
+target="_blank" rel="noopener" href="https://katex.org/docs/supported.html">公式</a></h3>
+<blockquote>
+<p><font color=black><span
+class="math inline">\(&lt;/font&gt;语法&lt;font
+color=black&gt;\)</span></font></p>
+</blockquote>
+<h3 id="复选框">16. 复选框</h3>
+<blockquote>
+<p>-(空格)[(空格)]（空格）文字</p>
+</blockquote>
+<h3 id="分隔符">17. 分隔符</h3>
+<blockquote>
+<p>---</p>
+</blockquote>
+<h3 id="脚注">18. 脚注</h3>
+<blockquote>
+<p>Markdown[^1]</p>
+<p>[^1]: Markdown是一种纯文本标记语言 // 在文章最后面显示脚注</p>
+</blockquote>
+<h3 id="语义标记">19. 语义标记</h3>
+<blockquote>
+<p>*斜体* **加粗**<br />
+***加粗+斜体*** ~~删除线~~<br />
+==背景色==<br />
+&lt;u&gt;下划线&lt;/u&gt; ^上标^ ~下标~ _强调_</p>
+</blockquote>
+<h3 id="插入表情">20. 插入表情</h3>
+<blockquote>
+<p>:happy(英文表情单词)</p>
+</blockquote>
+<h3 id="流程图1">21. 流程图1</h3>
+<blockquote>
+<p>```flow st=&gt;start: 开始 e=&gt;end: 结束 op=&gt;operation: 我的操作
+cond=&gt;condition: 判断确认？ st-&gt;op-&gt;cond cond(yes)-&gt;e
+cond(no)-&gt;op ```</p>
+</blockquote>
+<h3 id="流程图2">22. 流程图2</h3>
+<blockquote>
+<p>```mermaid graph LR A[长方形] -- 链接 --&gt; B((圆)) A --&gt;
+C(圆角长方形) B --&gt; D{菱形} C --&gt; D ```</p>
+</blockquote>
+<h3 id="甘特图">23. 甘特图</h3>
+<blockquote>
+<p>```mermaid gantt dateFormat YYYY-MM-DD title Adding GANTT diagram
+functionality to mermaid section 现有任务 已完成 :done, des1,
+2014-01-06,2014-01-08 进行中 :active, des2, 2014-01-09, 3d 计划中 :
+des3, after des2, 5d ```</p>
+</blockquote>
+<h3 id="uml图">24. UML图</h3>
+<blockquote>
+<p>```mermaid sequenceDiagram 张三 -&gt;&gt; 李四: 你好！李四,
+最近怎么样? 李四--&gt;&gt;王五: 你最近怎么样，王五？ 李四--x 张三:
+我很好，谢谢! 李四-x 王五: 我很好，谢谢! Note right of 王五:
+李四想了很长时间, 文字太长了<br/>不适合放在一行.</p>
+<p>李四--&gt;&gt;张三: 打量着王五... 张三-&gt;&gt;王五: 很好... 王五,
+你怎么样? ```</p>
+</blockquote>
+<h2 id="markdown语法深入">Markdown语法深入</h2>
+<p>Markdown一般情况下支持HTML语言，HTML几乎能完成Markdown的格式操作，在此处重复功能就不过多赘述，通过学习HTML和CSS可以对Markdown的排版进一步优化，上一部分内容中为常用的基本语法，其中包括了一些<a
+href="#html">HTML语言</a>，此部分内容会根据自身的HTML与CSS学习情况不断更新。</p>
+<h3 id="多级标题-1">1. 多级标题</h3>
+<blockquote>
+<p>&lt;h1&gt;一级标题&lt;/h1&gt;</p>
+<p>&lt;h6&gt;六级标题&lt;/h6&gt;</p>
+</blockquote>
+<h3 id="水分割平线">2. 水分割平线</h3>
+<blockquote>
+<p>&lt;hr&gt;</p>
+</blockquote>
+<h3 id="强制换行">3. 强制换行</h3>
+<blockquote>
+<p>&lt;br&gt;</p>
+</blockquote>
+<h3 id="语义标记进阶">4. 语义标记进阶</h3>
+<blockquote>
+<p>&lt;p&gt;段落&lt;/p&gt;</p>
+<p>&lt;b&gt;粗体&lt;/b&gt; = &lt;strong&gt;粗体&lt;/strong&gt;</p>
+<p>&lt;i&gt;斜体&lt;/i&gt; = &lt;em&gt;斜体&lt;/em&gt;</p>
+<p>&lt;small&gt;缩小字体&lt;/small&gt;</p>
+<p>&lt;big&gt;放大字体&lt;/big&gt;</p>
+<p>&lt;del&gt;删除线&lt;/del&gt;</p>
+<p>&lt;ins&gt;下划线&lt;/ins&gt;</p>
+<p>&lt;bdo dir='rtl'&gt;文字从右到左显示&lt;/bdo&gt;</p>
+</blockquote>
+<h3 id="发送邮件">5. 发送邮件</h3>
+<blockquote>
+<p>&lt;a href="mailto: someone@example.com?subject=Hello%20again"
+target="_top"&gt;发送邮件&lt;/a&gt;</p>
+<p>进阶：mailto:someone@example.com?cc=other@example.com&amp;bcc=last@example.com&amp;subject=theme&amp;body=content</p>
+</blockquote>
+<h3 id="插入图像">6. 插入图像</h3>
+<blockquote>
+<p>&lt;img src="URL" alt="替换文本"
+align="bottom(默认);middle(居中);top(顶部)" border="10(边框)" width="宽"
+height="高"&gt;</p>
+</blockquote>
+<h3 id="文本框">7. 文本框</h3>
+<blockquote>
+<p>&lt;textarea rows="10" cols="30"&gt;文本框&lt;/textarea&gt;</p>
+</blockquote>
+<h3 id="表单和输入">8. 表单和输入</h3>
+<blockquote>
+<p>通过查看源码来查看语法：</p>
+<form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+<p>​ Name:<br></p>
+<p>​ <input type="text" name="name" value="your name"><br></p>
+<p>​ E-mail:<br></p>
+<p>​ <input type="text" name="mail" value="your email"><br></p>
+<p>​ Comment:<br></p>
+<p>​
+<input type="text" name="comment" value="your comment" size="50"><br><br></p>
+<p>​ <input type="submit" value="发送">
+<input type="reset" value="重置"></p>
+​
+</form>
+</blockquote>
+<h3 id="其他语法罗列">9. 其他语法罗列</h3>
+<blockquote>
+<table class="reference notranslate">
+<tbody>
+<tr>
+<th align="left" width="25%">
+标签
+</th>
+<th align="left" width="75%">
+描述
+</th>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-comment.html" class="one-pan-link-mark">&lt;!--...--&gt;</a>
+</td>
+<td>
+定义注释
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-doctype.html" class="one-pan-link-mark">&lt;!DOCTYPE&gt;</a>
+</td>
+<td>
+定义文档类型
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-a.html" class="one-pan-link-mark">&lt;a&gt;</a>
+</td>
+<td>
+定义超文本链接
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-abbr.html" class="one-pan-link-mark">&lt;abbr&gt;</a>
+</td>
+<td>
+定义缩写
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-acronym.html">&lt;acronym&gt;</a>
+</td>
+<td>
+<span class="deprecated">定义只取首字母的缩写，不支持HTML5</span>
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-address.html" class="one-pan-link-mark">&lt;address&gt;</a>
+</td>
+<td>
+定义文档作者或拥有者的联系信息
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-applet.html">&lt;applet&gt;</a>
+</td>
+<td>
+HTML5中不赞成使用。定义嵌入的 applet。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-area.html" class="one-pan-link-mark">&lt;area&gt;</a>
+</td>
+<td>
+定义图像映射内部的区域
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-article.html" class="one-pan-link-mark">&lt;article&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义一个文章区域
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-aside.html" class="one-pan-link-mark">&lt;aside&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义页面的侧边栏内容
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-audio.html" class="one-pan-link-mark">&lt;audio&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义音频内容
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-b.html" class="one-pan-link-mark">&lt;b&gt;</a>
+</td>
+<td>
+定义文本粗体
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-base.html" class="one-pan-link-mark">&lt;base&gt;</a>
+</td>
+<td>
+定义页面中所有链接的默认地址或默认目标。
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-basefont.html">&lt;basefont&gt;</a>
+</td>
+<td>
+HTML5不支持，不赞成使用。定义页面中文本的默认字体、颜色或尺寸。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-bdi.html" class="one-pan-link-mark">&lt;bdi&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+允许您设置一段文本，使其脱离其父元素的文本方向设置。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-bdo.html" class="one-pan-link-mark">&lt;bdo&gt;</a>
+</td>
+<td>
+定义文字方向
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-big.html">&lt;big&gt;</a>
+</td>
+<td>
+定义大号文本，HTML5不支持
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-blockquote.html" class="one-pan-link-mark">&lt;blockquote&gt;</a>
+</td>
+<td>
+定义长的引用
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-body.html" class="one-pan-link-mark">&lt;body&gt;</a>
+</td>
+<td>
+定义文档的主体
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-br.html" class="one-pan-link-mark">&lt;br&gt;</a>
+</td>
+<td>
+定义换行
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-button.html" class="one-pan-link-mark">&lt;button&gt;</a>
+</td>
+<td>
+定义一个点击按钮
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-canvas.html" class="one-pan-link-mark">&lt;canvas&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义图形，比如图表和其他图像,标签只是图形容器，您必须使用脚本来绘制图形
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-caption.html" class="one-pan-link-mark">&lt;caption&gt;</a>
+</td>
+<td>
+定义表格标题
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-center.html">&lt;center&gt;</a>
+</td>
+<td>
+HTML5不支持，不赞成使用。定义居中文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-cite.html" class="one-pan-link-mark">&lt;cite&gt;</a>
+</td>
+<td>
+定义引用(citation)
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-code.html" class="one-pan-link-mark">&lt;code&gt;</a>
+</td>
+<td>
+定义计算机代码文本
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-col.html" class="one-pan-link-mark">&lt;col&gt;</a>
+</td>
+<td>
+定义表格中一个或多个列的属性值
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-colgroup.html" class="one-pan-link-mark">&lt;colgroup&gt;</a>
+</td>
+<td>
+定义表格中供格式化的列组
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-command.html" class="one-pan-link-mark">&lt;command&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义命令按钮，比如单选按钮、复选框或按钮
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-datalist.html" class="one-pan-link-mark">&lt;datalist&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-dd.html" class="one-pan-link-mark">&lt;dd&gt;</a>
+</td>
+<td>
+定义定义列表中项目的描述
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-del.html" class="one-pan-link-mark">&lt;del&gt;</a>
+</td>
+<td>
+定义被删除文本
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-details.html" class="one-pan-link-mark">&lt;details&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+用于描述文档或文档某个部分的细节
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-dfn.html" class="one-pan-link-mark">&lt;dfn&gt;</a>
+</td>
+<td>
+定义定义项目
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-dialog.html" class="one-pan-link-mark">&lt;dialog&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义对话框，比如提示框
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-dir.html">&lt;dir&gt;</a>
+</td>
+<td>
+HTML5不支持，不赞成使用。定义目录列表。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-div.html" class="one-pan-link-mark">&lt;div&gt;</a>
+</td>
+<td>
+定义文档中的节
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-dl.html" class="one-pan-link-mark">&lt;dl&gt;</a>
+</td>
+<td>
+定义列表详情
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-dt.html" class="one-pan-link-mark">&lt;dt&gt;</a>
+</td>
+<td>
+定义列表中的项目
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-em.html" class="one-pan-link-mark">&lt;em&gt;</a>
+</td>
+<td>
+定义强调文本
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-embed.html" class="one-pan-link-mark">&lt;embed&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义嵌入的内容，比如插件。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-fieldset.html" class="one-pan-link-mark">&lt;fieldset&gt;</a>
+</td>
+<td>
+定义围绕表单中元素的边框
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-figcaption.html" class="one-pan-link-mark">&lt;figcaption&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义&lt;figure&gt; 元素的标题
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-figure.html" class="one-pan-link-mark">&lt;figure&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+规定独立的流内容（图像、图表、照片、代码等等）。
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-font.html">&lt;font&gt;</a>
+</td>
+<td>
+HTML5不支持，不赞成使用。定义文字的字体、尺寸和颜色。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-footer.html" class="one-pan-link-mark">&lt;footer&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义 section 或 document 的页脚。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-form.html" class="one-pan-link-mark">&lt;form&gt;</a>
+</td>
+<td>
+定义了HTML文档的表单
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-frame.html">&lt;frame&gt;</a>
+</td>
+<td>
+定义框架集的窗口或框架
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-frameset.html">&lt;frameset&gt;</a>
+</td>
+<td>
+定义框架集
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-hn.html" class="one-pan-link-mark">&lt;h1&gt;
+to &lt;h6&gt;</a>
+</td>
+<td>
+定义 HTML 标题
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-head.html" class="one-pan-link-mark">&lt;head&gt;</a>
+</td>
+<td>
+定义关于文档的信息
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-header.html" class="one-pan-link-mark">&lt;header&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义了文档的头部区域
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-hr.html" class="one-pan-link-mark">&lt;hr&gt;</a>
+</td>
+<td>
+定义水平线
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-html.html" class="one-pan-link-mark">&lt;html&gt;</a>
+</td>
+<td>
+定义 HTML 文档
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-i.html" class="one-pan-link-mark">&lt;i&gt;</a>
+</td>
+<td>
+定义斜体字
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-iframe.html" class="one-pan-link-mark">&lt;iframe&gt;</a>
+</td>
+<td>
+定义内联框架
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-img.html" class="one-pan-link-mark">&lt;img&gt;</a>
+</td>
+<td>
+定义图像
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-input.html" class="one-pan-link-mark">&lt;input&gt;</a>
+</td>
+<td>
+定义输入控件
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-ins.html" class="one-pan-link-mark">&lt;ins&gt;</a>
+</td>
+<td>
+定义被插入文本
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-kbd.html" class="one-pan-link-mark">&lt;kbd&gt;</a>
+</td>
+<td>
+定义键盘文本
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-keygen.html" class="one-pan-link-mark">&lt;keygen&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+规定用于表单的密钥对生成器字段。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-label.html" class="one-pan-link-mark">&lt;label&gt;</a>
+</td>
+<td>
+定义 input 元素的标注
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-legend.html" class="one-pan-link-mark">&lt;legend&gt;</a>
+</td>
+<td>
+定义 fieldset 元素的标题。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-li.html" class="one-pan-link-mark">&lt;li&gt;</a>
+</td>
+<td>
+定义列表的项目
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-link.html" class="one-pan-link-mark">&lt;link&gt;</a>
+</td>
+<td>
+定义文档与外部资源的关系
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-main.html" class="one-pan-link-mark">&lt;main&gt;</a>
+</td>
+<td>
+定义文档的主体部分。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-map.html" class="one-pan-link-mark">&lt;map&gt;</a>
+</td>
+<td>
+定义图像映射
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-mark.html" class="one-pan-link-mark">&lt;mark&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义带有记号的文本。请在需要突出显示文本时使用 &lt;m&gt; 标签。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-menu.html" class="one-pan-link-mark">&lt;menu&gt;</a>
+</td>
+<td>
+不赞成使用。定义菜单列表。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-meta.html" class="one-pan-link-mark">&lt;meta&gt;</a>
+</td>
+<td>
+定义关于 HTML 文档的元信息。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-meter.html" class="one-pan-link-mark">&lt;meter&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义度量衡。仅用于已知最大和最小值的度量。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-nav.html" class="one-pan-link-mark">&lt;nav&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义导航链接的部分
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-noframes.html">&lt;noframes&gt;</a>
+</td>
+<td>
+定义针对不支持框架的用户的替代内容。HTML5不支持
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-noscript.html" class="one-pan-link-mark">&lt;noscript&gt;</a>
+</td>
+<td>
+定义针对不支持客户端脚本的用户的替代内容。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-object.html" class="one-pan-link-mark">&lt;object&gt;</a>
+</td>
+<td>
+定义内嵌对象
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-ol.html" class="one-pan-link-mark">&lt;ol&gt;</a>
+</td>
+<td>
+定义有序列表。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-optgroup.html" class="one-pan-link-mark">&lt;optgroup&gt;</a>
+</td>
+<td>
+定义选择列表中相关选项的组合。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-option.html" class="one-pan-link-mark">&lt;option&gt;</a>
+</td>
+<td>
+定义选择列表中的选项。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-output.html" class="one-pan-link-mark">&lt;output&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义不同类型的输出，比如脚本的输出。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-p.html" class="one-pan-link-mark">&lt;p&gt;</a>
+</td>
+<td>
+定义段落。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-param.html" class="one-pan-link-mark">&lt;param&gt;</a>
+</td>
+<td>
+定义对象的参数。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-pre.html" class="one-pan-link-mark">&lt;pre&gt;</a>
+</td>
+<td>
+定义预格式文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-progress.html" class="one-pan-link-mark">&lt;progress&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义运行中的进度（进程）。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-q.html" class="one-pan-link-mark">&lt;q&gt;</a>
+</td>
+<td>
+定义短的引用。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-rp.html" class="one-pan-link-mark">&lt;rp&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+&lt;rp&gt; 标签在 ruby 注释中使用，以定义不支持 ruby
+元素的浏览器所显示的内容。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-rt.html" class="one-pan-link-mark">&lt;rt&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+&lt;rt&gt; 标签定义字符（中文注音或字符）的解释或发音。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-ruby.html" class="one-pan-link-mark">&lt;ruby&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+&lt;ruby&gt; 标签定义 ruby 注释（中文注音或字符）。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-s.html" class="one-pan-link-mark">&lt;s&gt;</a>
+</td>
+<td>
+不赞成使用。定义加删除线的文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-samp.html" class="one-pan-link-mark">&lt;samp&gt;</a>
+</td>
+<td>
+定义计算机代码样本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-script.html" class="one-pan-link-mark">&lt;script&gt;</a>
+</td>
+<td>
+定义客户端脚本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-section.html" class="one-pan-link-mark">&lt;section&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+&lt;section&gt;
+标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-select.html" class="one-pan-link-mark">&lt;select&gt;</a>
+</td>
+<td>
+定义选择列表（下拉列表）。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-small.html" class="one-pan-link-mark">&lt;small&gt;</a>
+</td>
+<td>
+定义小号文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-source.html" class="one-pan-link-mark">&lt;source&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+&lt;source&gt; 标签为媒介元素（比如 &lt;video&gt; 和
+&lt;audio&gt;）定义媒介资源。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-span.html" class="one-pan-link-mark">&lt;span&gt;</a>
+</td>
+<td>
+定义文档中的节。
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-strike.html">&lt;strike&gt;</a>
+</td>
+<td>
+HTML5不支持，不赞成使用。定义加删除线文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-strong.html" class="one-pan-link-mark">&lt;strong&gt;</a>
+</td>
+<td>
+定义强调文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-style.html" class="one-pan-link-mark">&lt;style&gt;</a>
+</td>
+<td>
+定义文档的样式信息。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-sub.html" class="one-pan-link-mark">&lt;sub&gt;</a>
+</td>
+<td>
+定义下标文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-summary.html" class="one-pan-link-mark">&lt;summary&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+&lt;summary&gt; 标签包含 details 元素的标题，"details"
+元素用于描述有关文档或文档片段的详细信息。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-sup.html" class="one-pan-link-mark">&lt;sup&gt;</a>
+</td>
+<td>
+定义上标文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-table.html" class="one-pan-link-mark">&lt;table&gt;</a>
+</td>
+<td>
+定义表格。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-tbody.html" class="one-pan-link-mark">&lt;tbody&gt;</a>
+</td>
+<td>
+定义表格中的主体内容。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-td.html" class="one-pan-link-mark">&lt;td&gt;</a>
+</td>
+<td>
+定义表格中的单元。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-textarea.html" class="one-pan-link-mark">&lt;textarea&gt;</a>
+</td>
+<td>
+定义多行的文本输入控件。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-tfoot.html" class="one-pan-link-mark">&lt;tfoot&gt;</a>
+</td>
+<td>
+定义表格中的表注内容（脚注）。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-th.html" class="one-pan-link-mark">&lt;th&gt;</a>
+</td>
+<td>
+定义表格中的表头单元格。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-thead.html" class="one-pan-link-mark">&lt;thead&gt;</a>
+</td>
+<td>
+定义表格中的表头内容。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-time.html" class="one-pan-link-mark">&lt;time&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+定义日期或时间，或者两者。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-title.html" class="one-pan-link-mark">&lt;title&gt;</a>
+</td>
+<td>
+定义文档的标题。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-tr.html" class="one-pan-link-mark">&lt;tr&gt;</a>
+</td>
+<td>
+定义表格中的行。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-track.html" class="one-pan-link-mark">&lt;track&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+&lt;track&gt; 标签为诸如 video 元素之类的媒介规定外部文本轨道。
+</td>
+</tr>
+<tr>
+<td>
+<a class="notsupported one-pan-link-mark" target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-tt.html">&lt;tt&gt;</a>
+</td>
+<td>
+定义打字机文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-u.html" class="one-pan-link-mark">&lt;u&gt;</a>
+</td>
+<td>
+不赞成使用。定义下划线文本。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-ul.html" class="one-pan-link-mark">&lt;ul&gt;</a>
+</td>
+<td>
+定义无序列表。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-var.html" class="one-pan-link-mark">&lt;var&gt;</a>
+</td>
+<td>
+定义文本的变量部分。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-video.html" class="one-pan-link-mark">&lt;video&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+&lt;video&gt; 标签定义视频，比如电影片段或其他视频流。
+</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-wbr.html" class="one-pan-link-mark">&lt;wbr&gt;</a><span
+class="new">New</span>
+</td>
+<td>
+规定在文本中的何处适合添加换行符。
+</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>王瑞兵
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://vector9584.github.io/2020/03/21/Markdown/" title="Markdown">https://vector9584.github.io/2020/03/21/Markdown/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Markdown/" rel="tag"><i class="fa fa-tag"></i> Markdown</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/21/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="prev" title="Hexo博客搭建">
+                  <i class="fa fa-angle-left"></i> Hexo博客搭建
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/03/21/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" rel="next" title="哈夫曼编码">
+                  哈夫曼编码 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">王瑞兵</span>
+  </div><div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("3/17/2020 23:55:11");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+<a href="https://icp.gov.moe/?keyword=20231015" target="view_window" style="border-bottom:none">
+  <img src="https://cdn.bili33.top/gh/Vikutorika/assets@master/img/GovMoe/icon120.png" style="display:inline-block;vertical-align:middle;width:20px;height:20px;">
+  萌ICP备20231015号
+</a >
+
+
+
+<script>
+    
+        reloadPages = ['Echarts','Tableau','书籍','电影','游戏','歌曲']
+        document.addEventListener("click", function (event) {
+        
+            clickElement = event.target.innerText
+            
+            
+            if(reloadPages.indexOf(clickElement) > -1){
+                
+                
+                
+                
+                
+                if(event.target.tagName==='A'){
+                  window.location.href=event.target.href
+                }else if(event.target.tagName==='SPAN'){
+                window.location.href=event.target.parentElement.href
+                }
+            }
+        });
+</script>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3,"priority":true,"url":"https://vector9584.github.io/2020/03/21/Markdown/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"vector9584","repo":"vector9584.github.io","client_id":"b42d32a40fbaaf12f8ca","client_secret":"7b76e445bb7e15d2762970bfbe766c73e9b0fa79","admin_user":"vector9584","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"c5e72349421a96ac86ecb09b1383ed41"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

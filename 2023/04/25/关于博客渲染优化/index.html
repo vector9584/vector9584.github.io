@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CCedarville+Cursive:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"vector9584.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac","show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这两天主要针对博客页面渲染做了优化，最新成果为豆瓣页面的集成，所以从两个方面展开：Pjax与豆瓣页面集成。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于博客渲染优化">
+<meta property="og:url" content="https://vector9584.github.io/2023/04/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:site_name" content="Mocha">
+<meta property="og:description" content="这两天主要针对博客页面渲染做了优化，最新成果为豆瓣页面的集成，所以从两个方面展开：Pjax与豆瓣页面集成。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://vector9584.github.io/2023/04/25/关于博客渲染优/pasted-1.png">
+<meta property="article:published_time" content="2023-04-25T12:57:00.000Z">
+<meta property="article:modified_time" content="2023-10-17T11:42:38.000Z">
+<meta property="article:author" content="王瑞兵">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vector9584.github.io/2023/04/25/关于博客渲染优/pasted-1.png">
+
+
+<link rel="canonical" href="https://vector9584.github.io/2023/04/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://vector9584.github.io/2023/04/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96/","path":"/2023/04/25/关于博客渲染优化/","title":"关于博客渲染优化"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>关于博客渲染优化 | Mocha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mocha</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86-pjax-%E5%88%B7%E6%96%B0%E5%8C%BA%E5%9F%9F%E5%88%86%E7%A6%BB"><span class="nav-number">1.1.</span> <span class="nav-text">将 PJAX 刷新区域分离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7"><span class="nav-number">1.1.2.</span> <span class="nav-text">一致性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BD%BD%E8%84%9A%E6%9C%AC"><span class="nav-number">1.1.3.</span> <span class="nav-text">重新加载脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E8%84%9A%E6%9C%AC"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">第一类脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E8%84%9A%E6%9C%AC"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">第二类脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%B1%BB%E8%84%9A%E6%9C%AC"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">第三类脚本</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%80%83"><span class="nav-number">2.</span> <span class="nav-text">我的思考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B1%86%E7%93%A3%E5%8A%9F%E8%83%BD%E5%BC%80%E5%8F%91"><span class="nav-number">3.</span> <span class="nav-text">豆瓣功能开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王瑞兵"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">王瑞兵</p>
+  <div class="site-description" itemprop="description">不满是向上的车轮，能够载着不自满的人类，向人道前进</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vector9584" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/8482661" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;8482661" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://119.91.113.10:8080/vector9584" title="Server → http:&#x2F;&#x2F;119.91.113.10:8080&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fa-solid fa-server fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/admin/" title="Admin → &#x2F;admin&#x2F;" rel="noopener me"><i class="fa-solid fa-pen-nib fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vector9584.github.io/2023/04/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="王瑞兵">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mocha">
+      <meta itemprop="description" content="不满是向上的车轮，能够载着不自满的人类，向人道前进">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="关于博客渲染优化 | Mocha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于博客渲染优化
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-04-25 20:57:00" itemprop="dateCreated datePublished" datetime="2023-04-25T20:57:00+08:00">2023-04-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-17 19:42:38" itemprop="dateModified" datetime="2023-10-17T19:42:38+08:00">2023-10-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>这两天主要针对博客页面渲染做了优化，最新成果为豆瓣页面的集成，所以从两个方面展开：Pjax与豆瓣页面集成。</p>
+<span id="more"></span>
+<h1 id="介绍">介绍</h1>
+<p>2019 年 8 月，Hexo 的 NexT 主题正式加入 PJAX 功能。最初的 PR 一共包含
+35 个 commit，约 600 行代码改动。不过这个数字有些夸张，其中约有 200
+行是在适配 PJAX 过程中，发现一些插件对于 PJAX
+不友好，顺手修改了。此后根据收到的用户反馈，又用了不下十个 PR，修复了
+PJAX 中全部已知问题。</p>
+<p>由于在同一时期，NexT 已有弃用 jQuery 的计划，因此没有采用广泛使用的
+jquery-pjax，而是用了一个较为小众的库：moOx/pjax，并且根据需求修改了一些功能。
+适配 PJAX 的要点总结来说有以下几条。</p>
+<h2 id="将-pjax-刷新区域分离">将 PJAX 刷新区域分离</h2>
+<p>对于一个网站中的全部网页，往往具有一些在每个页面中相同的部分，以及在每个页面中不同的部分。相同部分可能包括
+<code>&lt;head&gt;</code> 中加载的
+<code>&lt;script&gt;</code>，以及导航栏、页脚等组件。不同部分则是页面的正文部分等。PJAX
+的刷新区域应当只包含这些不同的部分。因此，将页面中的内容进行分类非常重要。对于使用各种模版引擎生成的网站，这一操作往往并不复杂，并且还有些额外的好处，例如可以对相同的内容进行缓存，加快网站的生成时间。</p>
+<h3 id="选择器">选择器</h3>
+<p>一般 PJAX
+会根据设定的选择器来确定刷新页面中的哪些区域。这时需要确保选择器的唯一性。例如，如果文章内容由
+Markdown 渲染生成，那么可能会在各个 Heading 处产生带有
+<code>id</code>的元素。需要避免它们与 PJAX 刷新区域的 <code>id</code>
+冲突，那么可以考虑使用 <code>class</code> 进行选择。</p>
+<h3 id="一致性">一致性</h3>
+<p>另一个问题是 PJAX 刷新过程中，页面状态的一致性。NexT 主题在适配 PJAX
+时就遇到了这个问题。在侧边栏中有两个区域：文章目录和站点概览。与之对应的是两个<code>&lt;button&gt;</code>，点击一个
+<code>&lt;button&gt;</code> 便会显示其对应的区域，隐藏另一个；这一过程由
+className
+控制。但有一些页面，例如首页，是没有文章目录的。如果从一个文章页面通过
+PJAX
+刷新回到首页，就可能导致侧边栏中的两个区域都被隐藏，看上去没有内容，并且
+<code>&lt;button&gt;</code>
+的状态与侧栏中两个区域的状态不符合。解决方案有两种：</p>
+<ul>
+<li>在每次 PJAX
+刷新后，根据情况「点击」其中一个按钮，确保侧边栏显示正确；</li>
+<li>将控制显示的 className 移动到刷新区域外，例如设置为
+<code>&lt;body&gt;</code> 的<code>className</code>。</li>
+</ul>
+<p>第二种方案可以减少 DOM reflow，保证 PJAX 刷新时渲染一步到位。</p>
+<h3 id="重新加载脚本">重新加载脚本</h3>
+<p>一些常见的 PJAX
+插件都自带了重新加载脚本的功能，但为了精确地控制，这一部分可以考虑自行实现。</p>
+<p>页面中的脚本大致可以分为三类：</p>
+<ul>
+<li>在每个页面中都存在，但只需要加载一次，重复加载反而有可能导致问题（例如音乐播放器，看板娘，背景动画等）</li>
+<li>在每个页面中都存在，并且 PJAX
+刷新时需要重新加载（例如访问量统计，FancyBox 等）</li>
+<li>仅在部分页面中存在，不使用时没有必要加载（例如
+MathJax，网站评论区等）</li>
+</ul>
+<h4 id="第一类脚本">第一类脚本</h4>
+<p>对于第一类脚本，将其放在 PJAX
+刷新区域之外即可，不需要进行任何其它的处理。这里额外提一下
+<code>addEventListener</code> 的问题。一般的 PJAX 插件会给出 PJAX
+刷新完成时的事件，需要正确的使用。而 <code>DOMContentLoaded</code> 和
+<code>load</code> 事件都只会触发一次。</p>
+<p>此外，应当避免重复注册相同的
+<code>addEventListener</code>。如果每个新页面都使用匿名的回调函数注册一个相同的事件，最后一个事件将触发所有的回调函数，场面一定非常壮观。要避免这个问题，可以：</p>
+<ul>
+<li>不使用匿名函数作为回调函数，而是将其封装，通过 <code>function</code>
+进行声明，然后将其作为 <code>addEventListener</code>
+的参数，这可以保证其只触发一次；</li>
+<li>或者在必要时使用 <code>removeEventListener</code>。</li>
+</ul>
+<h4 id="第二类脚本">第二类脚本</h4>
+<p>对于第二类脚本，需要在 PJAX
+刷新完成后，重新执行。最简单的方法是复制这个脚本的属性和内容，然后将其移除，再通过
+<code>replaceChild</code> 方法将复制插入到原来的位置。</p>
+<p>为了使 PJAX 区分第一类和第二类脚本，避免错误地加载，NexT
+使用的方法是为全部第二类脚本加上 <code>data-pjax</code>
+属性。这样，重新加载脚本的代码如下所示。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> elements = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;script[data-pjax]&#x27;</span>);</span><br><span class="line">elements.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">element</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> code = element.<span class="property">text</span> || element.<span class="property">textContent</span> || element.<span class="property">innerHTML</span> || <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="keyword">const</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (element.<span class="property">id</span>) &#123;</span><br><span class="line">        script.<span class="property">id</span> = element.<span class="property">id</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (element.<span class="property">className</span>) &#123;</span><br><span class="line">        script.<span class="property">className</span> = element.<span class="property">className</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (element.<span class="property">type</span>) &#123;</span><br><span class="line">        script.<span class="property">type</span> = element.<span class="property">type</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (element.<span class="property">src</span>) &#123;</span><br><span class="line">        script.<span class="property">src</span> = element.<span class="property">src</span>;</span><br><span class="line">        <span class="comment">// Force synchronous loading of peripheral JS.</span></span><br><span class="line">        script.<span class="property">async</span> = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (element.<span class="property">dataset</span>.<span class="property">pjax</span> !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">        script.<span class="property">dataset</span>.<span class="property">pjax</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (code !== <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">        script.<span class="title function_">appendChild</span>(<span class="variable language_">document</span>.<span class="title function_">createTextNode</span>(code));</span><br><span class="line">    &#125;</span><br><span class="line">    element.<span class="property">parentNode</span>.<span class="title function_">replaceChild</span>(script, element);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>复制 <code>type</code> 是为了避免执行非 JS 脚本，例如 MathJax
+的配置。复制 <code>dataset.pjax</code> 则是为了确保在多次的 PJAX
+刷新中，<code>script[data-pjax]</code> 选择器始终有效。</p>
+<h4 id="第三类脚本">第三类脚本</h4>
+<p>比较麻烦的是第三类脚本。对于那些可以重复进行初始化的插件而言，其「本体」只需要加载一次，此后的
+PJAX 刷新过程只需要再次进行初始化。典型的例子是 Valine 和 MathJax。对于
+Valine 而言，每个新页面中，重新执行 <code>new Valine()</code>
+即可。而对于
+MathJax，初始化也是类似的。无论如何，最佳的实现应当保证：</p>
+<ul>
+<li>如果用户通过 PJAX 浏览的页面中，都不包含数学公式，那么无需加载
+MathJax，减少网络请求；</li>
+<li>如果用户浏览到了第一个包含数学公式的页面，那么需要加载
+MathJax；</li>
+<li>在此后用户浏览的所有页面中，如果包含数学公式，那么只需要调用以下方法，重新进行渲染</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">MathJax</span>.<span class="property">startup</span>.<span class="property">document</span>.<span class="title function_">state</span>(<span class="number">0</span>);</span><br><span class="line"><span class="title class_">MathJax</span>.<span class="title function_">typesetClear</span>();</span><br><span class="line"><span class="title class_">MathJax</span>.<span class="title function_">texReset</span>();</span><br><span class="line"><span class="title class_">MathJax</span>.<span class="title function_">typesetPromise</span>();</span><br></pre></td></tr></table></figure>
+<p>当然，你也可以通过其它方式实现同样的效果。如果要省事的话，可以将第三类脚本按照第二类的方式进行处理。唯一的不同是需要将其放置在
+PJAX 刷新区域之内，否则可能造成额外的网络请求和资源消耗。</p>
+<h1 id="我的思考">我的思考</h1>
+<p>在出现pjax这个问题的时候，是我使用豆瓣插件<code>hexo-douban</code>，发现其生成的页面必须在加载之后刷新才能显示内容，为了验证是页面js没有加载的问题，我查看了我引入了js的两篇博客：<code>Tableau</code>和<code>Echarts</code>，结果不出所料。</p>
+<p>因此基于上方的参考，我决定将刷新页面这个js脚本放在没有局部更新的部位，这样就能全局监听。</p>
+<p>因为之前修改过<code>footer.njk</code>（添加了底部网站运行时间的js）验证了其全局有效性，所以见代码写在这个部分。</p>
+<p>这个地方的代码是用来修复pjax的bug，原因做以下说明，首先整个页面部分刷新，不是全局刷新，就会导致有些是后来进入的页面需要加载js，然而由于页面没有刷新所以js无法加载进来（CSS和HTML不影响）</p>
+<p>经过测试，写在div等html中的js是可以加载的，起初的想法是让用户进入到这些需要刷新的页面，点一下我写的一个按钮，刷新一下页面，但是这样我觉得麻烦，要看的人也会觉得麻烦</p>
+<p>然后我就想能不能监听url变化，当用户url变化的时候，判断进入了那个页面不就可以定向的处理需要刷新的页面了吗，但是这个地方我脑子抽了，既然用户都换了新的页面，你在这个页面写的js，下一个页面能用吗，不知道咋想的</p>
+<p>然后我又在网上看到了hash这种东西，说白了他就是一个页面的锚点，跳转到当前页面的某个位置，我觉得这个东西好啊，首先不会改变当前页面（js可以在当前页面就生效），然后你锚点内容随便写，比如我写一个：此页面需要刷新，然后捕捉hash变化不就行了</p>
+<p>但是我又天真了，这个锚点是用户与页面交互产生的，或者说你通过锚点可以定位到页面某个位置，锚点本身在url里面没有任何意义，当我在config里面把文章url设置为：title/#hash之后，我点击这个链接的a标签，结果url只能定位到title层级，没有再往下的了，而且，仔细看生成的文章目录也变成了title/hash/index，乱的一塌糊涂</p>
+<p>通过上面的失败，我发现文章都是通过a标签点进去的，那我直接监听a标签的点击事件不就行了，经过判断，菜单栏里面都是a标签、主页文章都是a标签，但是分类、归档、标签是span，单独处理一下（它们的上级标签是a标签）</p>
+<p>最后我想通过给post配置formate来控制页面是否刷新，不过这样菜单好像又不行了，走一步看一步吧</p>
+<p>凌晨四点钟，经过电脑测试，实现了点击标签刷新的功能，本来打算安然入睡，结果躺在床上，用手机看，发现刷新的功能又神奇的消失了……</p>
+<p>试来试去，最后定位到是浏览器的原因，chrome有<code>event.path</code>这个元素，但是safari浏览器没有，必须要用<code>event.target.parentElement</code>，然而这个问题是需要用safari浏览器调试才能发现的，没错，研究safair开发又耗费了半个多小时，最后终于大功告成，实现了不需要的pjax元素跳转时刷新页面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">reloadPages = [<span class="string">&#x27;Echarts&#x27;</span>,<span class="string">&#x27;Tableau&#x27;</span>,<span class="string">&#x27;书籍&#x27;</span>,<span class="string">&#x27;电影&#x27;</span>,<span class="string">&#x27;游戏&#x27;</span>,<span class="string">&#x27;歌曲&#x27;</span>]</span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">        &#123;# 点击元素的内部文本 #&#125;</span><br><span class="line">            clickElement = event.<span class="property">target</span>.<span class="property">innerText</span></span><br><span class="line">            &#123;# 点击元素的类型，暂时先不写，后面用来修复bug #&#125;</span><br><span class="line">            &#123;# <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">target</span>.<span class="property">tagName</span>) #&#125;</span><br><span class="line">            <span class="keyword">if</span>(reloadPages.<span class="title function_">indexOf</span>(clickElement) &gt; -<span class="number">1</span>)&#123;</span><br><span class="line">                &#123;# 判断为此页面需要刷新 #&#125;</span><br><span class="line">                &#123;# 以下两种方法都可以 #&#125;</span><br><span class="line">                &#123;# 谁能想到safari居然没有 event.<span class="property">path</span> 这个元素，无语 #&#125;</span><br><span class="line">                &#123;# <span class="variable language_">window</span>.<span class="property">location</span>.<span class="title function_">replace</span>(event.<span class="property">path</span>[<span class="number">0</span>].<span class="property">href</span>) #&#125;</span><br><span class="line">                &#123;# <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>=event.<span class="property">path</span>[<span class="number">0</span>].<span class="property">href</span> #&#125;</span><br><span class="line">                <span class="keyword">if</span>(event.<span class="property">target</span>.<span class="property">tagName</span>===<span class="string">&#x27;A&#x27;</span>)&#123;</span><br><span class="line">                  <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>=event.<span class="property">target</span>.<span class="property">href</span></span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(event.<span class="property">target</span>.<span class="property">tagName</span>===<span class="string">&#x27;SPAN&#x27;</span>)&#123;</span><br><span class="line">                <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>=event.<span class="property">target</span>.<span class="property">parentElement</span>.<span class="property">href</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="豆瓣功能开发">豆瓣功能开发</h1>
+<p>这个部分也废了一天的心思，主要纠结于两点：呈现方式和跳转方式。</p>
+<p>首先通过安装插件和构建自己的豆瓣账号，只用了很短的时间，然后很顺畅的就生成了页面，但是豆瓣能够生成的页面有四个：书籍、电影、游戏和音乐，加上之前主页的五个菜单，菜单栏就有九个按钮之多！</p>
+<p>于是我开始研究二级菜单的功能，通过不断的查找，我终于放弃了，next主题似乎是不支持二级菜单的。</p>
+<p>然后我就将目光转向了about这个界面，当时生成它的时候，把它的types改成了about，它就变成一个单独的html渲染了，那么除了tags、categories、archives之外，是不是只要添加了type就会渲染称为一个空白页面？</p>
+<p>通过尝试，确实如此！</p>
+<p>于是我生成了豆瓣页面菜单，然后在里面集成四个页面不就行了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &#x27;douban&#x27;</span><br></pre></td></tr></table></figure>
+<p>并且在这个页面添加了四个a标签，定位分别是<code>./movies</code>、<code>./books</code>、<code>./songs</code>、<code>./games</code>，用来跳转。</p>
+<p>然后我修改了豆瓣页面生成的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">douban:</span><br><span class="line">  id: 169786780</span><br><span class="line">  builtin: false</span><br><span class="line">  item_per_page: 10</span><br><span class="line">  meta_max_line: 4</span><br><span class="line">  customize_layout: page</span><br><span class="line">  book:</span><br><span class="line">    path: douban/books/index.html</span><br><span class="line">    title: &#x27;This is my book title&#x27;</span><br><span class="line">    quote: &#x27;This is my book quote&#x27;</span><br><span class="line">    option:</span><br><span class="line">  movie:</span><br><span class="line">    path: douban/movies/index.html</span><br><span class="line">    title: &#x27;This is my movie title&#x27;</span><br><span class="line">    quote: &#x27;This is my movie quote&#x27;</span><br><span class="line">    option:</span><br><span class="line">  game:</span><br><span class="line">    path: douban/games/index.html</span><br><span class="line">    title: &#x27;This is my game title&#x27;</span><br><span class="line">    quote: &#x27;This is my game quote&#x27;</span><br><span class="line">    option:</span><br><span class="line">  song:</span><br><span class="line">    path: douban/songs/index.html</span><br><span class="line">    title: &#x27;This is my song title&#x27;</span><br><span class="line">    quote: &#x27;This is my song quote&#x27;</span><br><span class="line">    option:</span><br><span class="line">  timeout: 10000</span><br></pre></td></tr></table></figure>
+<p>生成页面后，我进入到页面<code>douban</code>页面，当我点击a标签跳转的时候，我惊喜的发现，新生成的豆瓣页面在两个位置添加了标题导航。</p>
+<figure>
+<img src="/2023/04/25/关于博客渲染优/pasted-1.png"
+alt="filename already exists, renamed" />
+<figcaption aria-hidden="true">filename already exists,
+renamed</figcaption>
+</figure>
+<p>然后我就去研究了一下，首先，<code>hexo-douban</code>生成的页面如果在二级目录，会根据页面所在目录，生成这个导航，然后上一级导航的名称是链接过来a标签的名称，简而言之就是页面显示的字（哪怕用的是英文，用的也是翻译过后的结果，和路由无关），其次二级菜单的字是存放生成页面文件夹的字（如果是英文就会自动转换为全部大写。</p>
+<p>这样就完美解决了路由导航的问题，首页也可以设置跳转和进行评论啦。</p>
+<p>要注意的一点就是，点击douban页面a标签的内容必须写在footer中对页面进行刷新，内容要一致，否则进去还是看不到内容的。</p>
+<p>想了一下，这个豆瓣的内容也算是和我息息相关嘛，还是把它放到about下面吧</p>
+<h1 id="参考文献">参考文献</h1>
+<ul>
+<li>https://keisawaakira.github.io/_posts/2020-06-01-pjax/</li>
+<li>https://www.yousazoe.top/archives/cea8188d.html</li>
+<li>https://zhangshuqiao.org/2020-06/NexT%E9%80%82%E9%85%8DPJAX%E7%9A%84%E6%96%B9%E6%A1%88/</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>原作者： </strong>王瑞兵
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://vector9584.github.io/2023/04/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96/" title="关于博客渲染优化">https://vector9584.github.io/2023/04/25/关于博客渲染优化/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/23/Hexo-NexT%E7%9A%84Tag%E8%AF%A6%E8%A7%A3/" rel="prev" title="Hexo-NexT的Tag详解">
+                  <i class="fa fa-angle-left"></i> Hexo-NexT的Tag详解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/05/11/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" rel="next" title="最短路径规划">
+                  最短路径规划 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">王瑞兵</span>
+  </div><div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("3/17/2020 23:55:11");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+<a href="https://icp.gov.moe/?keyword=20231015" target="view_window" style="border-bottom:none">
+  <img src="https://cdn.bili33.top/gh/Vikutorika/assets@master/img/GovMoe/icon120.png" style="display:inline-block;vertical-align:middle;width:20px;height:20px;">
+  萌ICP备20231015号
+</a >
+
+
+
+<script>
+    
+        reloadPages = ['Echarts','Tableau','书籍','电影','游戏','歌曲']
+        document.addEventListener("click", function (event) {
+        
+            clickElement = event.target.innerText
+            
+            
+            if(reloadPages.indexOf(clickElement) > -1){
+                
+                
+                
+                
+                
+                if(event.target.tagName==='A'){
+                  window.location.href=event.target.href
+                }else if(event.target.tagName==='SPAN'){
+                window.location.href=event.target.parentElement.href
+                }
+            }
+        });
+</script>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3,"priority":true,"url":"https://vector9584.github.io/2023/04/25/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"vector9584","repo":"vector9584.github.io","client_id":"b42d32a40fbaaf12f8ca","client_secret":"7b76e445bb7e15d2762970bfbe766c73e9b0fa79","admin_user":"vector9584","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"89edb443ae57ca5772a1b6d8694cf236"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

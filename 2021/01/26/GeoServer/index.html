@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CCedarville+Cursive:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"vector9584.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"style":"mac","show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="GeoServer is an open source server for sharing geospatial data. Designed for interoperability, it publishes data from any major spatial data source using open standards.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GeoServer">
+<meta property="og:url" content="https://vector9584.github.io/2021/01/26/GeoServer/index.html">
+<meta property="og:site_name" content="Mocha">
+<meta property="og:description" content="GeoServer is an open source server for sharing geospatial data. Designed for interoperability, it publishes data from any major spatial data source using open standards.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://vector9584.github.io/添加新的数据存储.jpg">
+<meta property="og:image" content="https://vector9584.github.io/导出样式.jpg">
+<meta property="og:image" content="https://vector9584.github.io/保存图层样式.jpg">
+<meta property="og:image" content="https://vector9584.github.io/导入样式文件.jpg">
+<meta property="og:image" content="https://vector9584.github.io/图层管理工具栏.jpg">
+<meta property="og:image" content="https://vector9584.github.io/WMS服务.jpg">
+<meta property="og:image" content="https://vector9584.github.io/WMS发布设置.jpg">
+<meta property="og:image" content="https://vector9584.github.io/添加新的数据存储.jpg">
+<meta property="og:image" content="https://vector9584.github.io/插件安装.jpg">
+<meta property="og:image" content="https://vector9584.github.io/样式设置.jpg">
+<meta property="og:image" content="https://vector9584.github.io/样式设置.jpg">
+<meta property="og:image" content="https://vector9584.github.io/QGIS工具.jpg">
+<meta property="article:published_time" content="2021-01-26T12:58:30.000Z">
+<meta property="article:modified_time" content="2023-10-17T11:42:38.000Z">
+<meta property="article:author" content="王瑞兵">
+<meta property="article:tag" content="webgis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vector9584.github.io/添加新的数据存储.jpg">
+
+
+<link rel="canonical" href="https://vector9584.github.io/2021/01/26/GeoServer/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://vector9584.github.io/2021/01/26/GeoServer/","path":"/2021/01/26/GeoServer/","title":"GeoServer"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>GeoServer | Mocha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mocha</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E7%8E%AF%E5%A2%831.8"><span class="nav-number">1.1.</span> <span class="nav-text">Java环境（1.8）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装包下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEjava-path"><span class="nav-number">1.1.2.</span> <span class="nav-text">配置Java Path</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">打开环境变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%8F%98%E9%87%8F-java_home"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">添加用户变量 —— JAVA_HOME</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%8F%98%E9%87%8F-classpath"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">添加用户变量 —— CLASSPATH</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E7%94%A8%E6%88%B7%E5%8F%98%E9%87%8F-path"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">编辑用户变量 —— Path</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E8%AF%95%E8%BF%90%E8%A1%8C"><span class="nav-number">1.1.3.</span> <span class="nav-text">验证试运行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat8"><span class="nav-number">1.2.</span> <span class="nav-text">Tomcat（8）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#geoserverwar-2.16"><span class="nav-number">1.3.</span> <span class="nav-text">GeoServer（war 2.16）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E6%8F%92%E4%BB%B6geoserver-plugin"><span class="nav-number">1.3.1.</span> <span class="nav-text">涉及到的插件（GeoServer
+Plugin）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#qgis3.14"><span class="nav-number">1.4.</span> <span class="nav-text">QGIS（3.14）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E6%8F%92%E4%BB%B6qgis-plugin"><span class="nav-number">1.4.1.</span> <span class="nav-text">涉及到的插件（QGIS Plugin）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">2.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-number">3.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B8%83%E4%B8%8E%E6%A0%B7%E5%BC%8F%E8%81%94%E5%8A%A8"><span class="nav-number">4.</span> <span class="nav-text">矢量数据发布与样式联动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B8%83"><span class="nav-number">4.1.</span> <span class="nav-text">数据发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F%E8%81%94%E5%8A%A8"><span class="nav-number">4.2.</span> <span class="nav-text">样式联动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#qgis%E5%A6%82%E4%BD%95%E8%B0%83%E7%94%A8%E5%B7%B2%E7%BB%8F%E5%8F%91%E5%B8%83%E7%9A%84%E5%9C%B0%E5%9B%BE"><span class="nav-number">4.3.</span> <span class="nav-text">QGIS如何调用已经发布的地图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%85%E6%A0%BC%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B8%83"><span class="nav-number">5.</span> <span class="nav-text">栅格数据发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%85%E6%A0%BC%E6%95%B0%E6%8D%AE%E6%A0%B7%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">栅格数据样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E7%89%87%E6%8F%92%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">切片插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="王瑞兵"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">王瑞兵</p>
+  <div class="site-description" itemprop="description">不满是向上的车轮，能够载着不自满的人类，向人道前进</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vector9584" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/8482661" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;8482661" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://119.91.113.10:8080/vector9584" title="Server → http:&#x2F;&#x2F;119.91.113.10:8080&#x2F;vector9584" rel="noopener me" target="_blank"><i class="fa-solid fa-server fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/admin/" title="Admin → &#x2F;admin&#x2F;" rel="noopener me"><i class="fa-solid fa-pen-nib fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vector9584.github.io/2021/01/26/GeoServer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="王瑞兵">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mocha">
+      <meta itemprop="description" content="不满是向上的车轮，能够载着不自满的人类，向人道前进">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="GeoServer | Mocha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GeoServer
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-26 20:58:30" itemprop="dateCreated datePublished" datetime="2021-01-26T20:58:30+08:00">2021-01-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-17 19:42:38" itemprop="dateModified" datetime="2023-10-17T19:42:38+08:00">2023-10-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>GeoServer is an open source server for sharing geospatial data.
+Designed for interoperability, it publishes data from any major spatial
+data source using open standards.</p>
+<span id="more"></span>
+<p>golang:linux系统下集成了许多开源GIS工具的Linux</p>
+<p>geoserver和arcgis server功能类似：实现地图发布功能、分享地图</p>
+<p>GeoServer:Open source server for sharing geospatial data</p>
+<p>商用GIS工具能实现的，用开源工具同样可以实现</p>
+<h2 id="环境准备">环境准备</h2>
+<h3 id="java环境1.8">Java环境（1.8）</h3>
+<h4 id="安装包下载">安装包下载</h4>
+<p><a
+target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">java8</a>下载地址</p>
+<h4 id="配置java-path">配置Java Path</h4>
+<h5 id="打开环境变量">打开环境变量</h5>
+<ul>
+<li><p>方法1：选中我的电脑 --&gt; 键盘按下 Alt + Enter --&gt;
+高级系统设置 --&gt; 环境变量</p></li>
+<li><p>方法2：键盘按下 win + r --&gt; 输入 sysdm.cpl --&gt; 高级 --&gt;
+环境变量</p></li>
+<li><p>方法3：win10系统下，工具栏有搜索图标，点击后直接搜索"环境变量"</p></li>
+</ul>
+<h5 id="添加用户变量-java_home">添加用户变量 —— JAVA_HOME</h5>
+<p>点击新建，输入变量名(JAVA_HOME)与变量值(java安装路径Java1.8.0)，点击确定。</p>
+<h5 id="添加用户变量-classpath">添加用户变量 —— CLASSPATH</h5>
+<p>继续点击新建，输入变量名与变量值，点击确定</p>
+<p>变量值：<code>;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;</code></p>
+<h5 id="编辑用户变量-path">编辑用户变量 —— Path</h5>
+<p>选中Path，点击编辑，点击新建，输入下面的路径，记得一行输入一个路径。</p>
+<p><code>%JAVA_HOME%\bin</code></p>
+<p><code>%JAVA_HOME%\jre\bin</code></p>
+<p>所有的窗口一路按下【确定】，否则无效。</p>
+<h4 id="验证试运行">验证试运行</h4>
+<p>方法：键盘按下 win + r --&gt; 输入 cmd --&gt; 键盘按下 回车 --&gt;
+输入java --&gt; 键盘按下回车</p>
+<p>结果：若出现一堆提示性语句，则表示安装成功。</p>
+<p>在cmd下，也可以输入 java -version 试试。</p>
+<h3 id="tomcat8">Tomcat（8）</h3>
+<p><a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-80.cgi">下载官网</a></p>
+<p>下载压缩包并解压</p>
+<p>进入bin目录</p>
+<p>复制地址，添加到环境变量</p>
+<p>bat文件是windows下运行的批处理文件</p>
+<p>sh是Linux系统下运行的批处理文件</p>
+<blockquote>
+<p>把tomcat的编码修改和系统一致就解决乱码问题，方法入戏：</p>
+<p>1、找到apache-tomcat-7.0.92/conf/logging.properties</p>
+<p>2、添加语句：java.util.logging.ConsoleHandler.encoding = GBK</p>
+</blockquote>
+<h3 id="geoserverwar-2.16">GeoServer（war 2.16）</h3>
+<p><a target="_blank" rel="noopener" href="http://geoserver.org/release/stable/">下载官网</a></p>
+<p>选择Web Archive（Web Archive (war) for servlet
+containers.）下载war包</p>
+<p>war包：前端页面集成包</p>
+<p>将下载的war.zip文件进行解压</p>
+<p>将war文件放入Tomcat安装路径下webapps中</p>
+<h4 id="涉及到的插件geoserver-plugin">涉及到的插件（GeoServer
+Plugin）</h4>
+<ul>
+<li>mbtiles(2.16)</li>
+</ul>
+<p>mb-tiles是一类数据格式</p>
+<ul>
+<li>wps(2.16)</li>
+</ul>
+<p>是运行mbtiles的一个环境</p>
+<h3 id="qgis3.14">QGIS（3.14）</h3>
+<h4 id="涉及到的插件qgis-plugin">涉及到的插件（QGIS Plugin）</h4>
+<ul>
+<li>SLD4raster：支持RGB三波段显示</li>
+</ul>
+<h2 id="其他">其他</h2>
+<ul>
+<li>CSS：层叠样式表</li>
+<li>PostGIS：数据库（基于Postgrid进行的二次开发）</li>
+<li>Udig：为GeoServer配图的工具</li>
+<li>Bulk vector export as SLD and GeoJson：QGIS插件</li>
+</ul>
+<h2 id="运行">运行</h2>
+<p>在Tomcat的bin目录中找到startup.bat运行就可以了</p>
+<p>此过程中会自动解压war包</p>
+<p>注：startup调用的是同目录下catalina.sh</p>
+<p>启动后访问localhost:8080/geoserver</p>
+<p>初始账号：admin</p>
+<p>初始密码：geoserver</p>
+<h2 id="矢量数据发布与样式联动">矢量数据发布与样式联动</h2>
+<h3 id="数据发布">数据发布</h3>
+<p>首先进入工作区目录，添加新的工作区</p>
+<p>Name：WMS</p>
+<p>命名空间URI：wms.lol</p>
+<p>点击保存</p>
+<p>进入启用，并作为默认工作区</p>
+<p>最后保存</p>
+<p>进入数据存储目录</p>
+<p>添加新的数据存储</p>
+<figure>
+<img src="/添加新的数据存储.jpg" alt="添加新的数据存储" />
+<figcaption aria-hidden="true">添加新的数据存储</figcaption>
+</figure>
+<p>选择文件格式（shp）</p>
+<p>选择工作区（此时是默认工作空间，上一步设置的）</p>
+<p>数据源名称成（line）</p>
+<p>文件位置（点选发布文件）</p>
+<blockquote>
+<p>文件夹方式：将发布文件放到适合GeoServer文件选择的位置</p>
+<p>数据库方式：调用数据库进行操作</p>
+</blockquote>
+<p>字符集（矢量数据table中的编码方式，要与发布时一致）：UTF-8</p>
+<p>点保存之后图层就已经保存了</p>
+<p>图层的发布</p>
+<p>继续刚刚的页面，点击发布</p>
+<p>图层名称设置</p>
+<blockquote>
+<p>数据有很多级别，最后有一个明确的记录：哪一层用了哪个名字</p>
+</blockquote>
+<p>边框</p>
+<p>从数据中计算-&gt;Compute from native bounds</p>
+<blockquote>
+<p>此处会计算数据边界并给出对应位置</p>
+</blockquote>
+<p>在下面的要素类型中是dbf属性信息，从这里我们也可以确认之前的字符集编码格式是否选择正确</p>
+<p>保存</p>
+<p>然后进入Layer Preview</p>
+<p>在openlayers中可以查看（OpenLyers）</p>
+<h3 id="样式联动">样式联动</h3>
+<p>进入Styles</p>
+<p>Add a new stye</p>
+<blockquote>
+<p>有两种实现格式的方法：SLD（OGC认可的方式）、装一个CSS插件</p>
+</blockquote>
+<p>输入名称</p>
+<p>选择工作区</p>
+<p>Format选择SLD</p>
+<p>Generate a default style选择Line（shp格式为线状）</p>
+<p>然后点击后面的Generate，将会在下方生成样式模板</p>
+<p>点击最下面的Validate进行验证，看看是否有语法错误（其实写错了也没关系）</p>
+<p>当点击Apply（应用）之后上方就会多出一些功能：data;publishing;layer
+preview;layer attributes</p>
+<p>在Publishing模块里面可以对添加的图层进行样式链接（Associated打勾）</p>
+<p>点击Apply进行保存</p>
+<p>再进入Layer preview就可以预览，在右上角还有图例</p>
+<p>到此为止大家就尝试了SLD修改样式，但是大家会发现，修改样式居然用代码来进行设置，不够优雅</p>
+<p>接下来我们用QGIS解决</p>
+<p>首先打开QGIS，加载该文件</p>
+<p>然后调整样式</p>
+<p>图层&gt;属性&gt;渲染</p>
+<p>可以再里面设置在多少比例尺出现，在多少比例尺消失</p>
+<p>符号化&gt;基于规则</p>
+<p>双击进入，进行基于样式的显示设置（和上方功能一样，但是是基于样式的）</p>
+<blockquote>
+<p>按住ctrl可以缓慢缩放</p>
+</blockquote>
+<p>设置完成后，Apply</p>
+<p>属性页面左下角</p>
+<p>样式-&gt;保存样式</p>
+<figure>
+<img src="/导出样式.jpg" alt="导出样式" />
+<figcaption aria-hidden="true">导出样式</figcaption>
+</figure>
+<p>新打开对话框中保存样式选择：作为SLD样式文件</p>
+<p>然后选择文件保存路径</p>
+<figure>
+<img src="/保存图层样式.jpg" alt="保存图层样式" />
+<figcaption aria-hidden="true">保存图层样式</figcaption>
+</figure>
+<p>回到我们的GeoServer样式管理界面，在Data标签中找到Style Content</p>
+<p>单机选择文件，导入之前设置的样式文件（sld文件）</p>
+<p>然后点击Upload，覆盖当前的样式</p>
+<figure>
+<img src="/导入样式文件.jpg" alt="导入样式文件" />
+<figcaption aria-hidden="true">导入样式文件</figcaption>
+</figure>
+<p>此时观察最下面的代码，已经改变了</p>
+<p>Apply之后我们在Layer Preview就可以看到修改后的样式</p>
+<h3 id="qgis如何调用已经发布的地图">QGIS如何调用已经发布的地图</h3>
+<p>用wms即可发布（默认wms发布）</p>
+<p>在QGIS工具栏空白处右击，勾选“图层管理工具栏”</p>
+<figure>
+<img src="/图层管理工具栏.jpg" alt="图层管理工具栏" />
+<figcaption aria-hidden="true">图层管理工具栏</figcaption>
+</figure>
+<p>在QGIS界面右侧出现一纵栏，选择“添加WMS图层”</p>
+<figure>
+<img src="/WMS服务.jpg" alt="WMS服务" />
+<figcaption aria-hidden="true">WMS服务</figcaption>
+</figure>
+<p>进行一些简单的设置</p>
+<blockquote>
+<p>注意：此时的网址是预览网址</p>
+</blockquote>
+<figure>
+<img src="/WMS发布设置.jpg" alt="WMS发布设置" />
+<figcaption aria-hidden="true">WMS发布设置</figcaption>
+</figure>
+<p>然后我们点添加，即可把图层添加进来了</p>
+<h2 id="栅格数据发布">栅格数据发布</h2>
+<p>进入数据存储目录</p>
+<p>添加新的数据存储</p>
+<figure>
+<img src="/添加新的数据存储.jpg" alt="添加新的数据存储" />
+<figcaption aria-hidden="true">添加新的数据存储</figcaption>
+</figure>
+<p>选择文件格式（GeoTIFF）</p>
+<p>选择工作区（此时是默认工作空间，上一步设置的WMS）</p>
+<p>数据源名称成（kejicheng）</p>
+<p>连接参数（点击浏览）</p>
+<p>点保存并发布之后图层就已经可以用了</p>
+<h2 id="栅格数据样式">栅格数据样式</h2>
+<p>QGIS本身也可以导出栅格样式，但是功能不够完备（如不支持RGB三波段样式）</p>
+<p>打开QGIS，点击菜单栏的插件-&gt;管理并安装插件</p>
+<figure>
+<img src="/插件安装.jpg" alt="插件安装" />
+<figcaption aria-hidden="true">插件安装</figcaption>
+</figure>
+<p>搜索并安装SLD4raster</p>
+<p>加载栅格文件</p>
+<p>打开属性-&gt;符号化</p>
+<p>渲染类型：等高线和山体阴影官方没有说支持</p>
+<p>此处我们选择单波段伪彩色</p>
+<p>进行基本的样式设置</p>
+<figure>
+<img src="/样式设置.jpg" alt="样式设置" />
+<figcaption aria-hidden="true">样式设置</figcaption>
+</figure>
+<p>然后打开插件进行基本设置</p>
+<figure>
+<img src="/样式设置.jpg" alt="样式设置" />
+<figcaption aria-hidden="true">样式设置</figcaption>
+</figure>
+<p>进行上传</p>
+<p>回到GeoServer，在style里面我们可以看到新添加了一个样式</p>
+<blockquote>
+<p>哪些样式可以导出：</p>
+<p>透明度</p>
+</blockquote>
+<blockquote>
+<p>比例尺样式不好用，需要从矢量中复制格式过来</p>
+</blockquote>
+<p>山体阴影的样式解决办法：</p>
+<p>样式选择山体阴影-&gt;文件导出</p>
+<p>输出模式：渲染位图</p>
+<p>直接以该灰度导出，然后该文件作为原文件</p>
+<h2 id="切片插件">切片插件</h2>
+<p><a
+target="_blank" rel="noopener" href="https://www.maptiler.com/google-maps-coordinates-tile-bounds-projection/">切片地图展示页</a></p>
+<p>在GeoServer中想要使用瓦片地图发布需要两个插件</p>
+<p>mbtiles-plugin</p>
+<p>wps-plugin</p>
+<p>首先把两个zip文件解压，解压文件放在同一个文件夹中（所有jar包）</p>
+<p>将这些文件剪切出来，放在Tomcat文件夹下的</p>
+<p>webapps-&gt;geoserver-&gt;WEB-INF-&gt;lib</p>
+<p>将需要替换的文件进行替换</p>
+<blockquote>
+<p>当添加了插件文件后，运行Tomcat会比较慢一点</p>
+</blockquote>
+<p>重启Tomcat</p>
+<p>进入数据存储-&gt;添加新的数据存储-&gt;MBTiles</p>
+<p>可以看到我们已经可以创建瓦片地图数据</p>
+<p>来到QGIS我们加载好想要创建瓦片地图的数据</p>
+<p>在工具箱中找到以下工具</p>
+<figure>
+<img src="/QGIS工具.jpg" alt="QGIS工具" />
+<figcaption aria-hidden="true">QGIS工具</figcaption>
+</figure>
+<h2 id="总结">总结</h2>
+<p>arcgis server局域网访问必须是https</p>
+<p>https://10.1.74.112:6443/arcgis/manager/</p>
+<p>http://10.1.74.112:8080/</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>王瑞兵
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://vector9584.github.io/2021/01/26/GeoServer/" title="GeoServer">https://vector9584.github.io/2021/01/26/GeoServer/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/webgis/" rel="tag"><i class="fa fa-tag"></i> webgis</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/01/07/Mysql-Sever%E5%AE%89%E8%A3%85/" rel="prev" title="Mysql Sever安装">
+                  <i class="fa fa-angle-left"></i> Mysql Sever安装
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/01/27/AJAX%E5%AD%A6%E4%B9%A0/" rel="next" title="AJAX学习">
+                  AJAX学习 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">王瑞兵</span>
+  </div><div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("3/17/2020 23:55:11");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+<a href="https://icp.gov.moe/?keyword=20231015" target="view_window" style="border-bottom:none">
+  <img src="https://cdn.bili33.top/gh/Vikutorika/assets@master/img/GovMoe/icon120.png" style="display:inline-block;vertical-align:middle;width:20px;height:20px;">
+  萌ICP备20231015号
+</a >
+
+
+
+<script>
+    
+        reloadPages = ['Echarts','Tableau','书籍','电影','游戏','歌曲']
+        document.addEventListener("click", function (event) {
+        
+            clickElement = event.target.innerText
+            
+            
+            if(reloadPages.indexOf(clickElement) > -1){
+                
+                
+                
+                
+                
+                if(event.target.tagName==='A'){
+                  window.location.href=event.target.href
+                }else if(event.target.tagName==='SPAN'){
+                window.location.href=event.target.parentElement.href
+                }
+            }
+        });
+</script>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3,"priority":true,"url":"https://vector9584.github.io/2021/01/26/GeoServer/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"vector9584","repo":"vector9584.github.io","client_id":"b42d32a40fbaaf12f8ca","client_secret":"7b76e445bb7e15d2762970bfbe766c73e9b0fa79","admin_user":"vector9584","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"59ac0292de61db9fa576f4b6e78497ca"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

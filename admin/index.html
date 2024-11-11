@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 网页每秒钟刷新一次，方便调试 -->
+  <!-- <meta http-equiv="refresh" content="1"> -->
+  <title>Document</title>
+  <style>
+    * {
+      /* 初始化，清除页面元素的内外边距 */
+      padding: 0;
+      margin: 0;
+      /* 盒子模型 */
+      box-sizing: border-box;
+    }
+
+    body {
+      /* 弹性布局，让页面元素垂直+水平居中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 让页面始终占浏览器可视区域总高度 */
+      height: 100vh;
+      /* 背景渐变色 */
+      background: #aa4b6b;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      /* background: linear-gradient(teal, gray); */
+      /* background: url("images/login_bac.jpg") no-repeat center center; */
+    }
+
+    .login {
+      /* 弹性布局，让子元素成为弹性项目 */
+      display: flex;
+      /* 让弹性项目垂直排列，原理是改变盒子的主轴方向，父元素就是弹性盒子，现在改变后的主轴方向是向下了 */
+      flex-direction: column;
+      /* 让弹性项目在交叉轴方向水平居中，现在主轴的方向是向下，交叉轴的方向是与主轴垂直，交叉轴的方向是向右 */
+      align-items: center;
+      width: 25rem;
+      /* 注意这里是padding */
+      padding: 2rem 2.5rem 1rem 2.5rem;
+      background-color: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1rem 1.6rem rgba(0, 0, 0, 0.4);
+    }
+
+    .login h2 {
+      color: rgb(221, 204, 204);
+      margin-bottom: 1.5rem;
+      letter-spacing: 3px;
+    }
+
+    .login .login_box {
+      /* 相对定位 */
+      position: relative;
+      width: 100%;
+    }
+
+    .login .wrap {
+      text-align: center;
+      width: 12.5;
+      height: 2.5rem;
+    }
+
+    #myCanvas {
+      border: .05rem solid #ccc;
+      background-color: #ffffff;
+    }
+
+    .Canvas {
+      text-align: center;
+    }
+
+    #val {
+      margin: .9rem 0;
+    }
+
+    .login .login_box input {
+      /* 清除input框自带的边框和轮廓 */
+      outline: none;
+      border: none;
+      width: 100%;
+      padding: .5rem 0;
+      margin-bottom: 1.8rem;
+      color: #ffffff;
+      font-size: 1rem;
+      border-bottom: .06rem solid #ffffff;
+      /* 背景颜色为透明色 */
+      background-color: transparent;
+    }
+
+    .login .login_box label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: .6rem 0;
+      color: #ffffff;
+      /* 能否被选中 */
+      pointer-events: none;
+    }
+
+    /* :focus 选择器是当input获得焦点时触发的样式，"+"是相邻兄弟选择器，去找与input相邻的兄弟label */
+    /* :valid 选择器是判断input框的内容是否合法，如果合法会执行下面的属性代码，不合法就不会执行 */
+    /* input框写了required，当没有required，input框的值就会被认为一直合法，多以一直是在下的样式 */
+    /* 但是密码不会，密码框的值为空，这句话不合法，required不能为空，当我们给密码框写东西的时候才会执行以下代码 */
+    .login .login_box input:focus+label,
+    .login .login_box input:valid+label {
+      top: -1.3rem;
+      color: rgb(15, 222, 230);
+      font-size: .8rem;
+    }
+
+    .login a {
+      overflow: hidden;
+      position: relative;
+      padding: .6rem 1.2rem;
+      margin-top: 1rem;
+      color: rgb(12, 194, 240);
+      /* 取消a原有的下划线 */
+      text-decoration: none;
+      /* 有0.5秒的延迟 */
+      transition: all 0.5s;
+    }
+
+    /* 当光标移动到上面 */
+    .login a:hover {
+      color: #ffffff;
+      /* 圆角 */
+      border-radius: .16rem;
+      background-color: #03e9f4;
+      box-shadow: 0 0 .16rem #03e9f4, 0 0 1.6rem #03e9f4, 0 0 3rem #03e9f4, 0 0 6.25rem #03e9f4;
+    }
+
+    .login a span {
+      position: absolute;
+    }
+
+    .login a span:first-child {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      /* to right就是往右 */
+      background: linear-gradient(to right, transparent, #03e9f4);
+      /* 动画 名称 时长 linear是匀速运动 infinite是无限次运动 */
+      animation: move1 1s linear infinite;
+    }
+
+    .login a span:nth-child(2) {
+      right: 0;
+      top: -100%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(transparent, #03e9f4);
+      /* 0.25是延时时间 */
+      animation: move2 1s linear 0.25s infinite;
+    }
+
+    .login a span:nth-child(3) {
+      right: -100%;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to left, transparent, #03e9f4);
+      animation: move3 1s linear 0.5s infinite;
+    }
+
+    .login a span:last-child {
+      left: 0;
+      bottom: -100%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(#03e9f4, transparent);
+      animation: move4 1s linear 0.75s infinite;
+    }
+
+    /* 动画 */
+    @keyframes move1 {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    @keyframes move2 {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    @keyframes move3 {
+      0% {
+        right: -100%;
+      }
+
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    @keyframes move4 {
+      0% {
+        bottom: -100%;
+      }
+
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h2>博客后台登陆</h2>
+    <div class="login_box">
+      <!-- require就是不能为空，必须在css效果中有很大作用 -->
+      <input type="text" required id="user">
+      <label for="">用户名</label>
+    </div>
+    <div class="login_box">
+      <!-- 可以简写为required -->
+      <input type="password" required id="password">
+      <label for="">密码</label>
+    </div>
+    <div class="login_box">
+      <!-- 可以简写为required -->
+      <input type="text" required id="passcode">
+      <label for="">验证码</label>
+    </div>
+
+
+    <div class="wrap">
+      <div class="Canvas">
+        <canvas width="80" height="30" id="myCanvas"></canvas>
+      </div>
+    </div>
+
+
+    <a href="javascript:void(0)" class="btn">
+      登录
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+  </div>
+  <script>
+  
+    // 获取随机字符串函数
+    function randomString(len) {
+      // 如果没有传递参数 默认就是是 5
+      len = len || 5
+      // 从这里随机 抽取 
+      let chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
+      // 获取字符串的长度
+      let maxPos = chars.length
+      // 存储生存好的验证码字符串
+      var val = ''
+      // 循环
+      for (var i = 0; i < len; i++) {
+        // charAt 返回字符串中的 某个位置 的字符 传递的参数是 字符的 位置 数字
+        // Math.random() 获取一个 0 ~ 1 的 数字 包括 小数
+        val += chars.charAt(Math.random() * maxPos)
+      }
+      return val
+    }
+    // 获取随机颜色函数
+    function randomColor() {
+      var r = Math.floor(Math.random() * 256)
+      var g = Math.floor(Math.random() * 256)
+      var b = Math.floor(Math.random() * 256)
+
+      return "rgb(" + r + ", " + b + "," + r + ")"
+    }
+    // 获取 canvas 元素
+    const c = document.querySelector('#myCanvas')
+    // 获取随机字符
+    var varification = randomString()
+    // canvas 验证 填充函数
+    function cav() {
+      // 随机验证码字符串
+      varification = randomString()
+      // 获取canvas 的 宽度
+      const cxtwidth = c.offsetWidth
+      // 获取canvas 的 高度
+      const cxtheight = c.offsetHeight
+      // 创建画布
+      const ctx = c.getContext('2d')
+      // 重置画布
+      ctx.clearRect(0, 0, cxtwidth, cxtheight)
+      // 字体颜色
+      ctx.fillStyle = 'red'
+      // 字体大小 和 字体 类型
+      ctx.font = '20px Arial'
+      // 填充
+      ctx.fillText(varification, 10, 25)
+      // 验证码上显示的线条
+      for (var i = 0; i <= 5; i++) {
+        ctx.strokeStyle = randomColor()
+        // 起始点
+        ctx.beginPath();
+        // 移动到指定位置 不创建 路径
+        ctx.moveTo(Math.random() * cxtwidth, Math.random() * cxtheight);
+        // 创建一个新的点
+        ctx.lineTo(Math.random() * cxtwidth, Math.random() * cxtheight)
+        // 填充
+        ctx.stroke()
+      }
+      // 验证码上显示的小点
+      for (var i = 0; i <= 30; i++) {
+        ctx.strokeStyle = randomColor()
+        // 起始点
+        ctx.beginPath();
+        let x = Math.random() * cxtwidth
+        let y = Math.random() * cxtheight
+        // 移动
+        ctx.moveTo(x, y)
+        // 创建一个新的点
+        ctx.lineTo(x + 1, y + 1)
+        // 填充
+        ctx.stroke()
+      }
+    }
+    cav()
+    // 点击 验证码 容器触发
+    c.addEventListener('click', () => {
+      // 重新调用 
+      cav()
+    })
+    // 获取按钮
+    var btn = document.querySelector('.btn')
+    // 获取文本框
+    var user = document.querySelector('#user')
+    var password = document.querySelector('#password')
+    var passcode = document.querySelector('#passcode')
+    // 点击按钮 触发
+    btn.addEventListener('click', () => {
+      // 首先确定都有值
+      if (user.value && password.value && passcode.value) {
+        if (user.value == 'vector' && password.value == 'qingnanzikong' && passcode.value == varification) {
+          window.location.href = 'http://119.91.113.10:5000/admin'
+        } else {
+          alert('内容错误，请重新填写!')
+          cav() //刷新验证码
+          return
+        }
+      } else {
+        alert("请检查内容是否完整、正确！")
+        cav()
+        return
+      }
+    })
+       //回车事件
+document.body.addEventListener('keyup', function (e) {
+    //判断按键code值
+    if (e.keyCode == '13') {
+        btn.click()
+    }
+})
+  </script>
+</body>
+
+</html>
