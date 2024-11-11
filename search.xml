@@ -3613,9 +3613,7 @@ href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>�
 <li>data属性（该属性中通常会存储一些数据），可以是自己定义的，也可以是服务器请求的</li>
 </ul></li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 显示message数据 ，好处：数据和界面完全分离--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;another_message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//let(es6中定义变量,后面可以进行修改)/const(es6中定义常量)/var(有缺陷，没有变量的作用域) 定义变量</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//let name = &#x27;why&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//name = &#x27;xxx&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//编程范式：声明式编程</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,<span class="comment">//让vue管理这个div,用于挂载要管理的元素</span></span></span><br><span class="line"><span class="language-javascript">            <span class="attr">data</span>: &#123;<span class="comment">//定义数据</span></span></span><br><span class="line"><span class="language-javascript">                <span class="attr">message</span>: <span class="string">&#x27;Hello！！！&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">another_message</span>: <span class="string">&#x27;Vuejs&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//原始js的做法(编程范式：命令式编程，我告诉你一步一步怎么做)</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//1.创建div元素，设置id属性</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//2.定义一个变量叫message</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//3.将message变量放在前面的div元素中显示</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//4.修改message数据：今天天气不错（</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//5.将修改后的数据再次替换到div元素</span></span></span><br></pre></td></tr></table></figure>
-<p><img
-src="C:\Users\vecto\AppData\Roaming\marktext\images\2022-09-06-16-20-43-image.png" /></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 显示message数据 ，好处：数据和界面完全分离--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;another_message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//let(es6中定义变量,后面可以进行修改)/const(es6中定义常量)/var(有缺陷，没有变量的作用域) 定义变量</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//let name = &#x27;why&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//name = &#x27;xxx&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//编程范式：声明式编程</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,<span class="comment">//让vue管理这个div,用于挂载要管理的元素</span></span></span><br><span class="line"><span class="language-javascript">            <span class="attr">data</span>: &#123;<span class="comment">//定义数据</span></span></span><br><span class="line"><span class="language-javascript">                <span class="attr">message</span>: <span class="string">&#x27;Hello！！！&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">another_message</span>: <span class="string">&#x27;Vuejs&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//原始js的做法(编程范式：命令式编程，我告诉你一步一步怎么做)</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//1.创建div元素，设置id属性</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//2.定义一个变量叫message</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//3.将message变量放在前面的div元素中显示</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//4.修改message数据：今天天气不错（</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//5.将修改后的数据再次替换到div元素 </span></span></span><br></pre></td></tr></table></figure>
 <h4 id="vue显示列表">Vue显示列表</h4>
 <p>使用<code>v-for</code>指令遍历写好的数组，再也不需要在JavaScript代码中完成DOM的拼接相关操作了。</p>
 <p>添加的列表是响应式的，在<code>console</code>中使用</p>
@@ -3642,6 +3640,10 @@ data-cites="click">@click</span>（语法糖)</li>
 <h3 id="mvvm架构">MVVM架构</h3>
 <p><a href="https://zh.wikipedia.org/wiki/MVVM">MVVM</a>（Model View
 View Model）维基百科官方解释，此处不赘述</p>
+<figure>
+<img src="./MVVM.png" alt="MVVM" />
+<figcaption aria-hidden="true">MVVM</figcaption>
+</figure>
 <p>View层：</p>
 <blockquote>
 <p>视图层，在我们前端开发中，通常就是DOM层，主要作用就是给用户展示各种信息</p>
@@ -3656,8 +3658,6 @@ View Model）维基百科官方解释，此处不赘述</p>
 Binding，也就是数据绑定，将Model的改变实时的反应到View中；另一方面它实现了DOM
 Listener，也就是DOM监听，当DOM发生一些事件（点击、滚动、touch等）时，可以监听到，并在需要的情况下改变对应的Data</p>
 </blockquote>
-<p><img
-src="C:\Users\vecto\AppData\Roaming\marktext\images\2022-09-06-16-54-13-image.png" /></p>
 <p><a href="https://v2.cn.vuejs.org/v2/api">Vue.js开发文档</a></p>
 <ul>
 <li>el:
@@ -3707,7 +3707,7 @@ xxx，release版本表示已经释放过，已经测试过的版本</p>
 <p>生命周期中有很多的回调，以下举几个例子</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../js/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> obj = &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">conter</span>: <span class="number">0</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">message</span>: <span class="string">&#x27;abc&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: obj,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">methods</span>: &#123;&#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">beforeCreate</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//使用created做一些网络请求</span></span></span><br><span class="line"><span class="language-javascript">        <span class="attr">created</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;created&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">mounted</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;mounted&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure>
-<img src="/Vue生命周期.png" alt="Vue生命周期" />
+<img src="./Vue生命周期.png" alt="Vue生命周期" />
 <figcaption aria-hidden="true">Vue生命周期</figcaption>
 </figure>
 <h2 id="vue基础语法">Vue基础语法</h2>
@@ -5940,7 +5940,7 @@ class="new">New</span>
 <p><a
 href="https://nodejs.org/en/">Nodejs</a>是管理js包的一个软件，你可以通过nodejs在网上下载js包并进行管理。</p>
 <figure>
-<img src="/nodejs下载.jpg" alt="nodejs下载" />
+<img src="./nodejs下载.jpg" alt="nodejs下载" />
 <figcaption aria-hidden="true">nodejs下载</figcaption>
 </figure>
 <p>安装过程如果没有特别的需求，默认下一步即可。</p>
@@ -5964,7 +5964,7 @@ href="https://nodejs.org/en/">Nodejs</a>是管理js包的一个软件，你可�
 <p>建立一个空的文件夹，用来存储自己的博客文件</p>
 <h3 id="git">Git</h3>
 <figure>
-<img src="/git下载.png" alt="git下载" />
+<img src="./git下载.png" alt="git下载" />
 <figcaption aria-hidden="true">git下载</figcaption>
 </figure>
 <p>git是代码管理器，用以控制版本号，搭建hexo的代码要传到远端服务器需要用git来控制并操作</p>
@@ -5976,7 +5976,7 @@ href="https://git-scm.com/downloads">git</a>下载并安装</h4>
 Bash Here</p>
 <p>此时会出现命令行窗口，并且路径为当前文件夹的绝对路径</p>
 <figure>
-<img src="/git操作界面.jpg" alt="git操作界面" />
+<img src="./git操作界面.jpg" alt="git操作界面" />
 <figcaption aria-hidden="true">git操作界面</figcaption>
 </figure>
 <h2 id="hexo博客搭建">Hexo博客搭建</h2>
@@ -5986,14 +5986,14 @@ Bash Here</p>
 <p>这个过程需要一定时间</p>
 <p>我们查看一下目录下生成了什么文件</p>
 <figure>
-<img src="/博客目录.jpg" alt="hexo文件" />
+<img src="./博客目录.jpg" alt="hexo文件" />
 <figcaption aria-hidden="true">hexo文件</figcaption>
 </figure>
 <p>我们后续深入博客都是基于这些文件来做，如果要深层次开发，就需要对每个文件夹下面的文件都要了解，此处内容我会不断更新。</p>
 <h3 id="启动博客">启动博客</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <figure>
-<img src="/启动端口.jpg" alt="启动端口" />
+<img src="./启动端口.jpg" alt="启动端口" />
 <figcaption aria-hidden="true">启动端口</figcaption>
 </figure>
 <p>可以看到此时在localhost:4000启动了我们的博客服务。</p>
@@ -6025,21 +6025,21 @@ href="https://vector9584.gitee.io/2020/03/21/Markdown/">Markdown</a>这篇博客
 <p>有两个选择：<code>github</code>、<code>码云</code></p>
 <p>这两个都是代码管理终端，新注册的账号提供一个pages服务：把你的代码以网页形式渲染展示，免费的一般都仅有一个仓库提供这个服务。</p>
 <p>此处我比较推荐码云，首先服务器在国内，访问比较快，其次是中文界面，比较友好。</p>
-<h3 id="马云官网进行账号注册"><a
-href="https://gitee.com/">马云官网</a>进行账号注册</h3>
+<h3 id="码云官网进行账号注册"><a
+href="https://gitee.com/">码云官网</a>进行账号注册</h3>
 <h3 id="新建仓库">新建仓库</h3>
 <figure>
-<img src="/新建仓库.png" alt="新建仓库" />
+<img src="./新建仓库.png" alt="新建仓库" />
 <figcaption aria-hidden="true">新建仓库</figcaption>
 </figure>
 <p>进去之后大家只需要起一个仓库的名字就可以了，注意此处的路径必须是：你注册的昵称.gitee.io。如：vector9584.gitee.io</p>
 <figure>
-<img src="/创建仓库.jpg" alt="创建仓库" />
+<img src="./创建仓库.jpg" alt="创建仓库" />
 <figcaption aria-hidden="true">创建仓库</figcaption>
 </figure>
 <p>点击最下面的创建后会跳转页面</p>
 <figure>
-<img src="/上传链接.png" alt="上传链接" />
+<img src="./上传链接.png" alt="上传链接" />
 <figcaption aria-hidden="true">上传链接</figcaption>
 </figure>
 <p>复制这个链接</p>
@@ -6058,7 +6058,7 @@ href="https://gitee.com/">马云官网</a>进行账号注册</h3>
 <h3 id="启动pages服务">启动Pages服务</h3>
 <p>我们来到码云仓库界面，可以看到在代码界面已经上传了很多文件</p>
 <figure>
-<img src="/启动pages服务.png" alt="启动pages服务" />
+<img src="./启动pages服务.png" alt="启动pages服务" />
 <figcaption aria-hidden="true">启动pages服务</figcaption>
 </figure>
 <p>点击服务，并选择pages服务，选择启动</p>
@@ -6069,7 +6069,7 @@ href="https://gitee.com/">马云官网</a>进行账号注册</h3>
 <h4 id="查找主题">查找主题</h4>
 <p>hexo官网提供了非常多的主题，通过点击上面的图片可以进行预览，通过点击名字可以进如到下载界面</p>
 <figure>
-<img src="/hexo主题.png" alt="hexo主题" />
+<img src="./hexo主题.png" alt="hexo主题" />
 <figcaption aria-hidden="true">hexo主题</figcaption>
 </figure>
 <h4 id="下载主题">下载主题</h4>
@@ -6126,7 +6126,7 @@ href="https://github.com/ecomfe/zrender">ZRender</a>，提供直观，交互丰�
 <h2 id="echarts测试">Echarts测试</h2>
 <h3 id="折线图-line">折线图 <em><font color=gray>Line</font></em></h3>
 <h4 id="基本折线图">基本折线图</h4>
-<div id="echarts6935" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5338" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6138,7 +6138,7 @@ href="https://github.com/ecomfe/zrender">ZRender</a>，提供直观，交互丰�
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6935'));
+        var myChart = echarts.init(document.getElementById('echarts5338'));
         // 指定图表的配置项和数据
         var option = {
     xAxis: {
@@ -6157,7 +6157,7 @@ href="https://github.com/ecomfe/zrender">ZRender</a>，提供直观，交互丰�
         myChart.setOption(option);
 </script>
 <h4 id="堆积面积图">堆积面积图</h4>
-<div id="echarts7084" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5257" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6169,7 +6169,7 @@ href="https://github.com/ecomfe/zrender">ZRender</a>，提供直观，交互丰�
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7084'));
+        var myChart = echarts.init(document.getElementById('echarts5257'));
         // 指定图表的配置项和数据
         var option = option = null;
 option = {
@@ -6263,7 +6263,7 @@ if (option && typeof option === "object") {
         myChart.setOption(option);
 </script>
 <h4 id="雨量流量关系图">雨量流量关系图</h4>
-<div id="echarts7692" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts765" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6275,7 +6275,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7692'));
+        var myChart = echarts.init(document.getElementById('echarts765'));
         // 指定图表的配置项和数据
         var option = option = null;
 option = {
@@ -6457,7 +6457,7 @@ if (option && typeof option === "object") {
         myChart.setOption(option);
 </script>
 <h3 id="柱状图-bar">柱状图 <em><font color=gray>Bar</font></em></h3>
-<div id="echarts8914" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5448" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6469,7 +6469,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8914'));
+        var myChart = echarts.init(document.getElementById('echarts5448'));
         // 指定图表的配置项和数据
         var option = option = null;
 var xAxisData = [];
@@ -6537,7 +6537,7 @@ if (option && typeof option === "object") {
 </script>
 <h3 id="散点图-point">散点图 <em><font color=gray>Point</font></em></h3>
 <h4 id="散布aqi颜色">散布Aqi颜色</h4>
-<div id="echarts5510" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts8616" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6549,7 +6549,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5510'));
+        var myChart = echarts.init(document.getElementById('echarts8616'));
         // 指定图表的配置项和数据
         var option = option = null;
 var dataBJ = [
@@ -6839,7 +6839,7 @@ if (option && typeof option === "object") {
 <h3 id="旭日图-circle">旭日图
 <em><font color=gray>Circle</font></em></h3>
 <h4 id="饮料香精">饮料香精</h4>
-<div id="echarts1879" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5143" style="width: 81%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -6851,7 +6851,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1879'));
+        var myChart = echarts.init(document.getElementById('echarts5143'));
         // 指定图表的配置项和数据
         var option = option = null;
 var data = [{
@@ -7574,7 +7574,7 @@ if (option && typeof option === "object") {
 <h3 id="平行坐标系-parallel">平行坐标系
 <em><font color=gray>Parallel</font></em></h3>
 <h4 id="平行aqi">平行Aqi</h4>
-<div id="echarts5843" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts2854" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -7586,7 +7586,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5843'));
+        var myChart = echarts.init(document.getElementById('echarts2854'));
         // 指定图表的配置项和数据
         var option = option = null;
 // Schema:
@@ -7828,7 +7828,7 @@ if (option && typeof option === "object") {
 <h3 id="象形柱图-pictorialbar">象形柱图
 <em><font color=gray>PictorialBar</font></em></h3>
 <h4 id="圣诞驯鹿的速度">圣诞驯鹿的速度</h4>
-<div id="echarts6947" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts7458" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -7840,7 +7840,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6947'));
+        var myChart = echarts.init(document.getElementById('echarts7458'));
         // 指定图表的配置项和数据
         var option = option = null;
 var pathSymbols = {
@@ -7945,7 +7945,7 @@ if (option && typeof option === "object") {
 </script>
 <h3 id="热力图-thermodynamic">热力图
 <em><font color=gray>Thermodynamic</font></em></h3>
-<div id="echarts4563" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5780" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
 <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;services=&amp;t=20230906113724"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&amp;ak=rA4hkVP29Z2LB35VfAtgqmiC7iFBFl6Q&amp;__ec_v__=20190126"></script>
@@ -7957,7 +7957,7 @@ if (option && typeof option === "object") {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4563'));
+        var myChart = echarts.init(document.getElementById('echarts5780'));
         // 指定图表的配置项和数据
         var option = option = null;
 var hours = ['12a', '1a', '2a', '3a', '4a', '5a', '6a',
