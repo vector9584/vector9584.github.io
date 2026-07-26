@@ -16,10 +16,25 @@ markNoPjaxLinks();
 const pjax = new Pjax({
   selectors: [
     'head title',
+    // Precede .main-inner to prevent placeholder TOC changes asap
+    '.post-toc-wrap',
     '.main-inner',
     '.languages',
     '.pjax'
   ],
+  switches: {
+    '.post-toc-wrap': function(oldWrap, newWrap) {
+      if (newWrap.querySelector('.post-toc')) {
+        Pjax.switches.outerHTML.call(this, oldWrap, newWrap);
+      } else {
+        const curTOC = oldWrap.querySelector('.post-toc');
+        if (curTOC) {
+          curTOC.classList.add('placeholder-toc');
+        }
+        this.onSwitch();
+      }
+    }
+  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
