@@ -3,6 +3,9 @@
 document.addEventListener('page:loaded', () => {
   if (!CONFIG.page.comments) return;
 
+  const container = document.querySelector('.gitalk-container');
+  if (!container) return;
+
   NexT.utils.loadComments('.gitalk-container')
     .then(() => NexT.utils.getScript(CONFIG.gitalk.js, {
       condition: window.Gitalk
@@ -19,6 +22,6 @@ document.addEventListener('page:loaded', () => {
         language           : CONFIG.gitalk.language || window.navigator.language,
         distractionFreeMode: CONFIG.gitalk.distraction_free_mode
       });
-      gitalk.render(document.querySelector('.gitalk-container'));
+      gitalk.render(container);
     });
 });
